@@ -1,0 +1,552 @@
+{
+  "Kale": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Spinach": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Broccoli": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Bell Pepper": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Sweet Potato": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Zucchini": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Avocado": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Tomato": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Carrots": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Celery": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Brussels Sprouts": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Asparagus": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Corn": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Green Beans": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Cauliflower": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Red Onion": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Cucumber": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Romaine Lettuce": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Eggplant": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Mushrooms": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Bok Choy": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Butternut Squash": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": true
+  },
+  "Blueberries": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Strawberries": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Bananas": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Gala Apples": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Navel Oranges": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Watermelon": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Red Seedless Grapes": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Lemons": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Peaches": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Mangoes": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Bartlett Pears": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Pineapple": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Kiwi": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Cantaloupe": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Raspberries": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Cherries": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Chicken Breast": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Ground Turkey": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Salmon Fillet": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Eggs": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Firm Tofu": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Black Beans": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Lentils": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Chickpeas": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Ground Beef": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Shrimp": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Pork Chops": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Tempeh": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Edamame": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Canned Tuna": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Brown Rice": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Quinoa": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Rolled Oats": {
+    "containsGluten": true,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Whole Wheat Bread": {
+    "containsGluten": true,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Whole Wheat Pasta": {
+    "containsGluten": true,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Flour Tortillas": {
+    "containsGluten": true,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Wild Rice": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Corn Tortillas": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Whole Milk": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": true
+  },
+  "2% Milk": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": true
+  },
+  "Almond Milk": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": true
+  },
+  "Oat Milk": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": true
+  },
+  "Cheddar Cheese": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": true
+  },
+  "Butter": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": true
+  },
+  "Cream Cheese": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": true
+  },
+  "Mozzarella Cheese": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": true
+  },
+  "Greek Yogurt": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": true
+  },
+  "Cottage Cheese": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": true
+  },
+  "Olive Oil": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Peanut Butter": {
+    "containsGluten": false,
+    "containsPeanut": true,
+    "containsDairy": true
+  },
+  "Almond Butter": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": true
+  },
+  "Honey": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Marinara Sauce": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Salsa": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Soy Sauce": {
+    "containsGluten": true,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Hot Sauce": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Chicken Broth": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Coconut Oil": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Maple Syrup": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Balsamic Vinegar": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Tomato Paste": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Vegetable Broth": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Hummus": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Trail Mix": {
+    "containsGluten": false,
+    "containsPeanut": true,
+    "containsDairy": false
+  },
+  "Granola Bars": {
+    "containsGluten": true,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Dark Chocolate": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": true
+  },
+  "Popcorn": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Mixed Nuts": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Rice Cakes": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Pretzels": {
+    "containsGluten": true,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Baby Spinach": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Cod Fillet": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Jasmine Rice": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "String Cheese": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": true
+  },
+  "Dijon Mustard": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Pita Chips": {
+    "containsGluten": true,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Yellow Onion": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Garlic": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Beets": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Blackberries": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Chicken Thighs": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Smoked Salmon": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Couscous": {
+    "containsGluten": true,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Sourdough Bread": {
+    "containsGluten": true,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Parmesan Cheese": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": true
+  },
+  "Sour Cream": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": true
+  },
+  "Rice Vinegar": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  },
+  "Beef Jerky": {
+    "containsGluten": false,
+    "containsPeanut": false,
+    "containsDairy": false
+  }
+}

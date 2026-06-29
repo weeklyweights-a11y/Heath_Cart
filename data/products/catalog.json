@@ -1,0 +1,3450 @@
+[
+  {
+    "nameEn": "Kale",
+    "category": "Vegetables",
+    "subcategory": "Leafy Greens",
+    "description": "Curly kale, rich in iron and vitamins A and K.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "kale",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 3.49,
+        "sku": "HC-VEG-KALE-1LB"
+      },
+      {
+        "weightValue": 0.5,
+        "weightUnit": "lb",
+        "price": 1.99,
+        "sku": "HC-VEG-KALE-0.5LB"
+      },
+      {
+        "weightValue": 5,
+        "weightUnit": "oz",
+        "price": 2.99,
+        "sku": "HC-VEG-KALE-5OZ"
+      }
+    ],
+    "imageUrl": "/products/kale.webp"
+  },
+  {
+    "nameEn": "Spinach",
+    "category": "Vegetables",
+    "subcategory": "Leafy Greens",
+    "description": "Fresh baby spinach for salads and cooking.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "spinach",
+    "variants": [
+      {
+        "weightValue": 10,
+        "weightUnit": "oz",
+        "price": 3.29,
+        "sku": "HC-VEG-SPIN-10OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 4.49,
+        "sku": "HC-VEG-SPIN-16OZ"
+      },
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 4.99,
+        "sku": "HC-VEG-SPIN-1LB"
+      }
+    ],
+    "imageUrl": "/products/spinach.webp"
+  },
+  {
+    "nameEn": "Broccoli",
+    "category": "Vegetables",
+    "subcategory": "Cruciferous",
+    "description": "Fresh broccoli crowns, high in fiber and vitamin C.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "broccoli",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 2.49,
+        "sku": "HC-VEG-BROC-1LB"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 4.29,
+        "sku": "HC-VEG-BROC-2LB"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 2.99,
+        "sku": "HC-VEG-BROC-12OZ"
+      }
+    ],
+    "imageUrl": "/products/broccoli.webp"
+  },
+  {
+    "nameEn": "Bell Pepper",
+    "category": "Vegetables",
+    "subcategory": "Peppers",
+    "description": "Colorful bell peppers, sweet and crisp.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "bell-pepper",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 2.99,
+        "sku": "HC-VEG-BELL-1LB"
+      },
+      {
+        "weightValue": 3,
+        "weightUnit": "each",
+        "price": 3.49,
+        "sku": "HC-VEG-BELL-3CT"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "each",
+        "price": 2.49,
+        "sku": "HC-VEG-BELL-2CT"
+      }
+    ],
+    "imageUrl": "/products/bell-pepper.webp"
+  },
+  {
+    "nameEn": "Sweet Potato",
+    "category": "Vegetables",
+    "subcategory": "Root Vegetables",
+    "description": "Orange-flesh sweet potatoes, naturally sweet and nutritious.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "sweet-potato",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 1.49,
+        "sku": "HC-VEG-SWP-1LB"
+      },
+      {
+        "weightValue": 3,
+        "weightUnit": "lb",
+        "price": 3.99,
+        "sku": "HC-VEG-SWP-3LB"
+      },
+      {
+        "weightValue": 5,
+        "weightUnit": "lb",
+        "price": 5.49,
+        "sku": "HC-VEG-SWP-5LB"
+      }
+    ],
+    "imageUrl": "/products/sweet-potato.webp"
+  },
+  {
+    "nameEn": "Zucchini",
+    "category": "Vegetables",
+    "subcategory": "Squash",
+    "description": "Fresh green zucchini, versatile for grilling and baking.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "zucchini",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 1.99,
+        "sku": "HC-VEG-ZUC-1LB"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 3.49,
+        "sku": "HC-VEG-ZUC-2LB"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "each",
+        "price": 2.29,
+        "sku": "HC-VEG-ZUC-2CT"
+      }
+    ],
+    "imageUrl": "/products/zucchini.webp"
+  },
+  {
+    "nameEn": "Avocado",
+    "category": "Vegetables",
+    "subcategory": "Fruit Vegetables",
+    "description": "Hass avocados, creamy and heart-healthy fats.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "avocado",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "each",
+        "price": 1.79,
+        "sku": "HC-VEG-AVO-1EA"
+      },
+      {
+        "weightValue": 4,
+        "weightUnit": "each",
+        "price": 5.99,
+        "sku": "HC-VEG-AVO-4CT"
+      },
+      {
+        "weightValue": 6,
+        "weightUnit": "each",
+        "price": 8.49,
+        "sku": "HC-VEG-AVO-6CT"
+      }
+    ],
+    "imageUrl": "/products/avocado.webp"
+  },
+  {
+    "nameEn": "Tomato",
+    "category": "Vegetables",
+    "subcategory": "Fruit Vegetables",
+    "description": "Vine-ripened tomatoes for salads and cooking.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "tomato",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 2.49,
+        "sku": "HC-VEG-TOM-1LB"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 4.29,
+        "sku": "HC-VEG-TOM-2LB"
+      },
+      {
+        "weightValue": 4,
+        "weightUnit": "each",
+        "price": 3.99,
+        "sku": "HC-VEG-TOM-4CT"
+      }
+    ],
+    "imageUrl": "/products/tomato.webp"
+  },
+  {
+    "nameEn": "Carrots",
+    "category": "Vegetables",
+    "subcategory": "Root Vegetables",
+    "description": "Whole carrots, rich in beta-carotene.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "carrots",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 1.29,
+        "sku": "HC-VEG-CAR-1LB"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 2.29,
+        "sku": "HC-VEG-CAR-2LB"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 2.49,
+        "sku": "HC-VEG-CAR-16OZ"
+      }
+    ],
+    "imageUrl": "/products/carrots.webp"
+  },
+  {
+    "nameEn": "Celery",
+    "category": "Vegetables",
+    "subcategory": "Stalk Vegetables",
+    "description": "Crisp celery stalks for snacking and cooking.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "celery",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "each",
+        "price": 2.29,
+        "sku": "HC-VEG-CEL-1EA"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 2.99,
+        "sku": "HC-VEG-CEL-16OZ"
+      },
+      {
+        "weightValue": 24,
+        "weightUnit": "oz",
+        "price": 3.79,
+        "sku": "HC-VEG-CEL-24OZ"
+      }
+    ],
+    "imageUrl": "/products/celery.webp"
+  },
+  {
+    "nameEn": "Brussels Sprouts",
+    "category": "Vegetables",
+    "subcategory": "Cruciferous",
+    "description": "Fresh Brussels sprouts, perfect roasted.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "brussels-sprouts",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 3.99,
+        "sku": "HC-VEG-BRU-1LB"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 3.29,
+        "sku": "HC-VEG-BRU-12OZ"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 6.99,
+        "sku": "HC-VEG-BRU-2LB"
+      }
+    ],
+    "imageUrl": "/products/brussels-sprouts.webp"
+  },
+  {
+    "nameEn": "Asparagus",
+    "category": "Vegetables",
+    "subcategory": "Stalk Vegetables",
+    "description": "Tender asparagus spears, peak spring vegetable.",
+    "usdaFoodCode": null,
+    "isSeasonal": true,
+    "availableMonths": [
+      3,
+      4,
+      5
+    ],
+    "imageSlug": "asparagus",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 4.99,
+        "sku": "HC-VEG-ASP-1LB"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 4.29,
+        "sku": "HC-VEG-ASP-12OZ"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 8.99,
+        "sku": "HC-VEG-ASP-2LB"
+      }
+    ],
+    "imageUrl": "/products/asparagus.webp"
+  },
+  {
+    "nameEn": "Corn",
+    "category": "Vegetables",
+    "subcategory": "Stalk Vegetables",
+    "description": "Sweet corn on the cob, summer favorite.",
+    "usdaFoodCode": null,
+    "isSeasonal": true,
+    "availableMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "imageSlug": "corn",
+    "variants": [
+      {
+        "weightValue": 4,
+        "weightUnit": "each",
+        "price": 3.99,
+        "sku": "HC-VEG-CORN-4CT"
+      },
+      {
+        "weightValue": 6,
+        "weightUnit": "each",
+        "price": 5.49,
+        "sku": "HC-VEG-CORN-6CT"
+      },
+      {
+        "weightValue": 8,
+        "weightUnit": "each",
+        "price": 6.99,
+        "sku": "HC-VEG-CORN-8CT"
+      }
+    ],
+    "imageUrl": "/products/corn.webp"
+  },
+  {
+    "nameEn": "Green Beans",
+    "category": "Vegetables",
+    "subcategory": "Legume Vegetables",
+    "description": "Fresh green beans, snap and cook quickly.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "green-beans",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 2.99,
+        "sku": "HC-VEG-GB-1LB"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 2.49,
+        "sku": "HC-VEG-GB-12OZ"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 5.29,
+        "sku": "HC-VEG-GB-2LB"
+      }
+    ],
+    "imageUrl": "/products/green-beans.webp"
+  },
+  {
+    "nameEn": "Cauliflower",
+    "category": "Vegetables",
+    "subcategory": "Cruciferous",
+    "description": "White cauliflower head, low-carb staple.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "cauliflower",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "each",
+        "price": 3.49,
+        "sku": "HC-VEG-CAU-1EA"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 5.99,
+        "sku": "HC-VEG-CAU-2LB"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 3.99,
+        "sku": "HC-VEG-CAU-16OZ"
+      }
+    ],
+    "imageUrl": "/products/cauliflower.webp"
+  },
+  {
+    "nameEn": "Red Onion",
+    "category": "Vegetables",
+    "subcategory": "Alliums",
+    "description": "Mild red onions for salads and grilling.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "red-onion",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 1.49,
+        "sku": "HC-VEG-RON-1LB"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 2.49,
+        "sku": "HC-VEG-RON-2LB"
+      },
+      {
+        "weightValue": 3,
+        "weightUnit": "lb",
+        "price": 3.29,
+        "sku": "HC-VEG-RON-3LB"
+      }
+    ],
+    "imageUrl": "/products/red-onion.webp"
+  },
+  {
+    "nameEn": "Cucumber",
+    "category": "Vegetables",
+    "subcategory": "Gourds",
+    "description": "English cucumbers, cool and hydrating.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "cucumber",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "each",
+        "price": 1.29,
+        "sku": "HC-VEG-CUC-1EA"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "each",
+        "price": 2.29,
+        "sku": "HC-VEG-CUC-2CT"
+      },
+      {
+        "weightValue": 3,
+        "weightUnit": "each",
+        "price": 2.99,
+        "sku": "HC-VEG-CUC-3CT"
+      }
+    ],
+    "imageUrl": "/products/cucumber.webp"
+  },
+  {
+    "nameEn": "Romaine Lettuce",
+    "category": "Vegetables",
+    "subcategory": "Leafy Greens",
+    "description": "Crisp romaine hearts for Caesar salads.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "romaine-lettuce",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "each",
+        "price": 2.49,
+        "sku": "HC-VEG-ROM-1EA"
+      },
+      {
+        "weightValue": 3,
+        "weightUnit": "each",
+        "price": 5.99,
+        "sku": "HC-VEG-ROM-3CT"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 3.29,
+        "sku": "HC-VEG-ROM-12OZ"
+      }
+    ],
+    "imageUrl": "/products/romaine-lettuce.webp"
+  },
+  {
+    "nameEn": "Eggplant",
+    "category": "Vegetables",
+    "subcategory": "Nightshades",
+    "description": "Purple globe eggplant for roasting and grilling.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "eggplant",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "each",
+        "price": 2.49,
+        "sku": "HC-VEG-EGG-1EA"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "each",
+        "price": 4.29,
+        "sku": "HC-VEG-EGG-2CT"
+      },
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 2.99,
+        "sku": "HC-VEG-EGG-1LB"
+      }
+    ],
+    "imageUrl": "/products/eggplant.webp"
+  },
+  {
+    "nameEn": "Mushrooms",
+    "category": "Vegetables",
+    "subcategory": "Fungi",
+    "description": "White button mushrooms, umami-rich.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "mushrooms",
+    "variants": [
+      {
+        "weightValue": 8,
+        "weightUnit": "oz",
+        "price": 2.49,
+        "sku": "HC-VEG-MUS-8OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 4.29,
+        "sku": "HC-VEG-MUS-16OZ"
+      },
+      {
+        "weightValue": 24,
+        "weightUnit": "oz",
+        "price": 5.99,
+        "sku": "HC-VEG-MUS-24OZ"
+      }
+    ],
+    "imageUrl": "/products/mushrooms.webp"
+  },
+  {
+    "nameEn": "Bok Choy",
+    "category": "Vegetables",
+    "subcategory": "Leafy Greens",
+    "description": "Baby bok choy for stir-fries and soups.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "bok-choy",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 2.99,
+        "sku": "HC-VEG-BC-1LB"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 2.49,
+        "sku": "HC-VEG-BC-12OZ"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "each",
+        "price": 3.49,
+        "sku": "HC-VEG-BC-2CT"
+      }
+    ],
+    "imageUrl": "/products/bok-choy.webp"
+  },
+  {
+    "nameEn": "Butternut Squash",
+    "category": "Vegetables",
+    "subcategory": "Squash",
+    "description": "Sweet butternut squash, ideal for roasting.",
+    "usdaFoodCode": null,
+    "isSeasonal": true,
+    "availableMonths": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "imageSlug": "butternut-squash",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "each",
+        "price": 3.99,
+        "sku": "HC-VEG-BSQ-1EA"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 4.49,
+        "sku": "HC-VEG-BSQ-2LB"
+      },
+      {
+        "weightValue": 3,
+        "weightUnit": "lb",
+        "price": 5.99,
+        "sku": "HC-VEG-BSQ-3LB"
+      }
+    ],
+    "imageUrl": "/products/butternut-squash.webp"
+  },
+  {
+    "nameEn": "Blueberries",
+    "category": "Fruits",
+    "subcategory": "Berries",
+    "description": "Fresh blueberries packed with antioxidants.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "blueberries",
+    "variants": [
+      {
+        "weightValue": 6,
+        "weightUnit": "oz",
+        "price": 3.99,
+        "sku": "HC-FRT-BLU-6OZ"
+      },
+      {
+        "weightValue": 18,
+        "weightUnit": "oz",
+        "price": 7.99,
+        "sku": "HC-FRT-BLU-18OZ"
+      },
+      {
+        "weightValue": 1,
+        "weightUnit": "pint",
+        "price": 4.49,
+        "sku": "HC-FRT-BLU-1PT"
+      }
+    ],
+    "imageUrl": "/products/blueberries.webp"
+  },
+  {
+    "nameEn": "Strawberries",
+    "category": "Fruits",
+    "subcategory": "Berries",
+    "description": "Sweet California strawberries.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "strawberries",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 4.49,
+        "sku": "HC-FRT-STR-1LB"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 5.99,
+        "sku": "HC-FRT-STR-16OZ"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 7.99,
+        "sku": "HC-FRT-STR-2LB"
+      }
+    ],
+    "imageUrl": "/products/strawberries.webp"
+  },
+  {
+    "nameEn": "Bananas",
+    "category": "Fruits",
+    "subcategory": "Tropical",
+    "description": "Ripe bananas, potassium-rich snack.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "bananas",
+    "variants": [
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 1.29,
+        "sku": "HC-FRT-BAN-2LB"
+      },
+      {
+        "weightValue": 3,
+        "weightUnit": "lb",
+        "price": 1.79,
+        "sku": "HC-FRT-BAN-3LB"
+      },
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 0.69,
+        "sku": "HC-FRT-BAN-1LB"
+      }
+    ],
+    "imageUrl": "/products/bananas.webp"
+  },
+  {
+    "nameEn": "Gala Apples",
+    "category": "Fruits",
+    "subcategory": "Tree Fruit",
+    "description": "Crisp Gala apples, mildly sweet.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "gala-apples",
+    "variants": [
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 3.49,
+        "sku": "HC-FRT-GAL-2LB"
+      },
+      {
+        "weightValue": 3,
+        "weightUnit": "lb",
+        "price": 4.99,
+        "sku": "HC-FRT-GAL-3LB"
+      },
+      {
+        "weightValue": 5,
+        "weightUnit": "lb",
+        "price": 7.49,
+        "sku": "HC-FRT-GAL-5LB"
+      }
+    ],
+    "imageUrl": "/products/gala-apples.webp"
+  },
+  {
+    "nameEn": "Navel Oranges",
+    "category": "Fruits",
+    "subcategory": "Citrus",
+    "description": "Juicy navel oranges, seedless and sweet.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "navel-oranges",
+    "variants": [
+      {
+        "weightValue": 3,
+        "weightUnit": "lb",
+        "price": 4.99,
+        "sku": "HC-FRT-NAV-3LB"
+      },
+      {
+        "weightValue": 5,
+        "weightUnit": "lb",
+        "price": 6.99,
+        "sku": "HC-FRT-NAV-5LB"
+      },
+      {
+        "weightValue": 8,
+        "weightUnit": "lb",
+        "price": 9.99,
+        "sku": "HC-FRT-NAV-8LB"
+      }
+    ],
+    "imageUrl": "/products/navel-oranges.webp"
+  },
+  {
+    "nameEn": "Watermelon",
+    "category": "Fruits",
+    "subcategory": "Melons",
+    "description": "Seedless watermelon, refreshing summer fruit.",
+    "usdaFoodCode": null,
+    "isSeasonal": true,
+    "availableMonths": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "imageSlug": "watermelon",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "each",
+        "price": 7.99,
+        "sku": "HC-FRT-WAT-1EA"
+      },
+      {
+        "weightValue": 0.5,
+        "weightUnit": "each",
+        "price": 4.99,
+        "sku": "HC-FRT-WAT-HALF"
+      },
+      {
+        "weightValue": 10,
+        "weightUnit": "lb",
+        "price": 8.99,
+        "sku": "HC-FRT-WAT-10LB"
+      }
+    ],
+    "imageUrl": "/products/watermelon.webp"
+  },
+  {
+    "nameEn": "Red Seedless Grapes",
+    "category": "Fruits",
+    "subcategory": "Grapes",
+    "description": "Sweet red seedless grapes.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "red-seedless-grapes",
+    "variants": [
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 5.99,
+        "sku": "HC-FRT-GRP-2LB"
+      },
+      {
+        "weightValue": 3,
+        "weightUnit": "lb",
+        "price": 7.99,
+        "sku": "HC-FRT-GRP-3LB"
+      },
+      {
+        "weightValue": 1.5,
+        "weightUnit": "lb",
+        "price": 4.49,
+        "sku": "HC-FRT-GRP-1.5LB"
+      }
+    ],
+    "imageUrl": "/products/red-seedless-grapes.webp"
+  },
+  {
+    "nameEn": "Lemons",
+    "category": "Fruits",
+    "subcategory": "Citrus",
+    "description": "Fresh lemons for cooking and beverages.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "lemons",
+    "variants": [
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 3.49,
+        "sku": "HC-FRT-LEM-2LB"
+      },
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 1.99,
+        "sku": "HC-FRT-LEM-1LB"
+      },
+      {
+        "weightValue": 5,
+        "weightUnit": "each",
+        "price": 2.99,
+        "sku": "HC-FRT-LEM-5CT"
+      }
+    ],
+    "imageUrl": "/products/lemons.webp"
+  },
+  {
+    "nameEn": "Peaches",
+    "category": "Fruits",
+    "subcategory": "Stone Fruit",
+    "description": "Tree-ripened yellow peaches, summer stone fruit.",
+    "usdaFoodCode": null,
+    "isSeasonal": true,
+    "availableMonths": [
+      6,
+      7,
+      8
+    ],
+    "imageSlug": "peaches",
+    "variants": [
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 4.99,
+        "sku": "HC-FRT-PEA-2LB"
+      },
+      {
+        "weightValue": 3,
+        "weightUnit": "lb",
+        "price": 6.49,
+        "sku": "HC-FRT-PEA-3LB"
+      },
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 3.49,
+        "sku": "HC-FRT-PEA-1LB"
+      }
+    ],
+    "imageUrl": "/products/peaches.webp"
+  },
+  {
+    "nameEn": "Mangoes",
+    "category": "Fruits",
+    "subcategory": "Tropical",
+    "description": "Ripe Ataulfo mangoes, creamy and sweet.",
+    "usdaFoodCode": 9000001,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "mangoes",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "each",
+        "price": 1.49,
+        "sku": "HC-FRT-MAN-1EA"
+      },
+      {
+        "weightValue": 4,
+        "weightUnit": "each",
+        "price": 4.99,
+        "sku": "HC-FRT-MAN-4CT"
+      },
+      {
+        "weightValue": 6,
+        "weightUnit": "each",
+        "price": 6.99,
+        "sku": "HC-FRT-MAN-6CT"
+      }
+    ],
+    "imageUrl": "/products/mangoes.webp"
+  },
+  {
+    "nameEn": "Bartlett Pears",
+    "category": "Fruits",
+    "subcategory": "Tree Fruit",
+    "description": "Juicy Bartlett pears, soft when ripe.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "bartlett-pears",
+    "variants": [
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 3.99,
+        "sku": "HC-FRT-PEA2-2LB"
+      },
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 2.49,
+        "sku": "HC-FRT-PEA2-1LB"
+      },
+      {
+        "weightValue": 4,
+        "weightUnit": "each",
+        "price": 4.49,
+        "sku": "HC-FRT-PEA2-4CT"
+      }
+    ],
+    "imageUrl": "/products/bartlett-pears.webp"
+  },
+  {
+    "nameEn": "Pineapple",
+    "category": "Fruits",
+    "subcategory": "Tropical",
+    "description": "Whole golden pineapple, tropical sweetness.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "pineapple",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "each",
+        "price": 3.99,
+        "sku": "HC-FRT-PIN-1EA"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 4.49,
+        "sku": "HC-FRT-PIN-16OZ"
+      },
+      {
+        "weightValue": 32,
+        "weightUnit": "oz",
+        "price": 6.99,
+        "sku": "HC-FRT-PIN-32OZ"
+      }
+    ],
+    "imageUrl": "/products/pineapple.webp"
+  },
+  {
+    "nameEn": "Kiwi",
+    "category": "Fruits",
+    "subcategory": "Tropical",
+    "description": "Green kiwifruit, tangy and vitamin C rich.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "kiwi",
+    "variants": [
+      {
+        "weightValue": 4,
+        "weightUnit": "each",
+        "price": 3.49,
+        "sku": "HC-FRT-KIW-4CT"
+      },
+      {
+        "weightValue": 6,
+        "weightUnit": "each",
+        "price": 4.99,
+        "sku": "HC-FRT-KIW-6CT"
+      },
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 4.29,
+        "sku": "HC-FRT-KIW-1LB"
+      }
+    ],
+    "imageUrl": "/products/kiwi.webp"
+  },
+  {
+    "nameEn": "Cantaloupe",
+    "category": "Fruits",
+    "subcategory": "Melons",
+    "description": "Whole cantaloupe melon, sweet orange flesh.",
+    "usdaFoodCode": null,
+    "isSeasonal": true,
+    "availableMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "imageSlug": "cantaloupe",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "each",
+        "price": 3.49,
+        "sku": "HC-FRT-CAN-1EA"
+      },
+      {
+        "weightValue": 0.5,
+        "weightUnit": "each",
+        "price": 2.49,
+        "sku": "HC-FRT-CAN-HALF"
+      },
+      {
+        "weightValue": 5,
+        "weightUnit": "lb",
+        "price": 4.99,
+        "sku": "HC-FRT-CAN-5LB"
+      }
+    ],
+    "imageUrl": "/products/cantaloupe.webp"
+  },
+  {
+    "nameEn": "Raspberries",
+    "category": "Fruits",
+    "subcategory": "Berries",
+    "description": "Fresh raspberries, delicate and tart-sweet.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "raspberries",
+    "variants": [
+      {
+        "weightValue": 6,
+        "weightUnit": "oz",
+        "price": 4.49,
+        "sku": "HC-FRT-RAS-6OZ"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 7.99,
+        "sku": "HC-FRT-RAS-12OZ"
+      },
+      {
+        "weightValue": 1,
+        "weightUnit": "pint",
+        "price": 5.49,
+        "sku": "HC-FRT-RAS-1PT"
+      }
+    ],
+    "imageUrl": "/products/raspberries.webp"
+  },
+  {
+    "nameEn": "Cherries",
+    "category": "Fruits",
+    "subcategory": "Stone Fruit",
+    "description": "Sweet dark cherries, short summer season.",
+    "usdaFoodCode": null,
+    "isSeasonal": true,
+    "availableMonths": [
+      5,
+      6,
+      7
+    ],
+    "imageSlug": "cherries",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 5.99,
+        "sku": "HC-FRT-CHE-1LB"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 10.99,
+        "sku": "HC-FRT-CHE-2LB"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 7.49,
+        "sku": "HC-FRT-CHE-16OZ"
+      }
+    ],
+    "imageUrl": "/products/cherries.webp"
+  },
+  {
+    "nameEn": "Chicken Breast",
+    "category": "Proteins",
+    "subcategory": "Poultry",
+    "description": "Boneless skinless chicken breast, lean protein.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "chicken-breast",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 5.99,
+        "sku": "HC-PRO-CHB-1LB"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 10.99,
+        "sku": "HC-PRO-CHB-2LB"
+      },
+      {
+        "weightValue": 3,
+        "weightUnit": "lb",
+        "price": 15.49,
+        "sku": "HC-PRO-CHB-3LB"
+      }
+    ],
+    "imageUrl": "/products/chicken-breast.webp"
+  },
+  {
+    "nameEn": "Ground Turkey",
+    "category": "Proteins",
+    "subcategory": "Poultry",
+    "description": "93% lean ground turkey.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "ground-turkey",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 5.49,
+        "sku": "HC-PRO-GTU-1LB"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 9.99,
+        "sku": "HC-PRO-GTU-2LB"
+      },
+      {
+        "weightValue": 3,
+        "weightUnit": "lb",
+        "price": 13.99,
+        "sku": "HC-PRO-GTU-3LB"
+      }
+    ],
+    "imageUrl": "/products/ground-turkey.webp"
+  },
+  {
+    "nameEn": "Salmon Fillet",
+    "category": "Proteins",
+    "subcategory": "Seafood",
+    "description": "Fresh Atlantic salmon fillet, omega-3 rich.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "salmon-fillet",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 12.99,
+        "sku": "HC-PRO-SAL-1LB"
+      },
+      {
+        "weightValue": 0.5,
+        "weightUnit": "lb",
+        "price": 7.49,
+        "sku": "HC-PRO-SAL-0.5LB"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 10.99,
+        "sku": "HC-PRO-SAL-12OZ"
+      }
+    ],
+    "imageUrl": "/products/salmon-fillet.webp"
+  },
+  {
+    "nameEn": "Eggs",
+    "category": "Proteins",
+    "subcategory": "Eggs",
+    "description": "Large grade A eggs, cage-free.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "eggs",
+    "variants": [
+      {
+        "weightValue": 12,
+        "weightUnit": "each",
+        "price": 4.29,
+        "sku": "HC-PRO-EGG-12CT"
+      },
+      {
+        "weightValue": 18,
+        "weightUnit": "each",
+        "price": 5.99,
+        "sku": "HC-PRO-EGG-18CT"
+      },
+      {
+        "weightValue": 24,
+        "weightUnit": "each",
+        "price": 7.49,
+        "sku": "HC-PRO-EGG-24CT"
+      }
+    ],
+    "imageUrl": "/products/eggs.webp"
+  },
+  {
+    "nameEn": "Firm Tofu",
+    "category": "Proteins",
+    "subcategory": "Plant Protein",
+    "description": "Organic firm tofu block, versatile plant protein.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "firm-tofu",
+    "variants": [
+      {
+        "weightValue": 14,
+        "weightUnit": "oz",
+        "price": 2.49,
+        "sku": "HC-PRO-TOF-14OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 2.79,
+        "sku": "HC-PRO-TOF-16OZ"
+      },
+      {
+        "weightValue": 28,
+        "weightUnit": "oz",
+        "price": 4.49,
+        "sku": "HC-PRO-TOF-28OZ"
+      }
+    ],
+    "imageUrl": "/products/firm-tofu.webp"
+  },
+  {
+    "nameEn": "Black Beans",
+    "category": "Proteins",
+    "subcategory": "Legumes",
+    "description": "Dried black beans, fiber and protein rich.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "black-beans",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 1.99,
+        "sku": "HC-PRO-BKB-1LB"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 3.49,
+        "sku": "HC-PRO-BKB-2LB"
+      },
+      {
+        "weightValue": 15,
+        "weightUnit": "oz",
+        "price": 1.29,
+        "sku": "HC-PRO-BKB-15OZ"
+      }
+    ],
+    "imageUrl": "/products/black-beans.webp"
+  },
+  {
+    "nameEn": "Lentils",
+    "category": "Proteins",
+    "subcategory": "Legumes",
+    "description": "Brown lentils, quick-cooking legume.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "lentils",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 2.29,
+        "sku": "HC-PRO-LEN-1LB"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 3.99,
+        "sku": "HC-PRO-LEN-2LB"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 2.49,
+        "sku": "HC-PRO-LEN-16OZ"
+      }
+    ],
+    "imageUrl": "/products/lentils.webp"
+  },
+  {
+    "nameEn": "Chickpeas",
+    "category": "Proteins",
+    "subcategory": "Legumes",
+    "description": "Dried chickpeas for hummus and curries.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "chickpeas",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 2.49,
+        "sku": "HC-PRO-CHP-1LB"
+      },
+      {
+        "weightValue": 15,
+        "weightUnit": "oz",
+        "price": 1.19,
+        "sku": "HC-PRO-CHP-15OZ"
+      },
+      {
+        "weightValue": 29,
+        "weightUnit": "oz",
+        "price": 1.99,
+        "sku": "HC-PRO-CHP-29OZ"
+      }
+    ],
+    "imageUrl": "/products/chickpeas.webp"
+  },
+  {
+    "nameEn": "Ground Beef",
+    "category": "Proteins",
+    "subcategory": "Beef",
+    "description": "85/15 ground beef, versatile weeknight protein.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "ground-beef",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 6.49,
+        "sku": "HC-PRO-GBF-1LB"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 11.99,
+        "sku": "HC-PRO-GBF-2LB"
+      },
+      {
+        "weightValue": 3,
+        "weightUnit": "lb",
+        "price": 16.99,
+        "sku": "HC-PRO-GBF-3LB"
+      }
+    ],
+    "imageUrl": "/products/ground-beef.webp"
+  },
+  {
+    "nameEn": "Shrimp",
+    "category": "Proteins",
+    "subcategory": "Seafood",
+    "description": "Peeled and deveined raw shrimp.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "shrimp",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 11.99,
+        "sku": "HC-PRO-SHR-1LB"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 9.99,
+        "sku": "HC-PRO-SHR-12OZ"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 21.99,
+        "sku": "HC-PRO-SHR-2LB"
+      }
+    ],
+    "imageUrl": "/products/shrimp.webp"
+  },
+  {
+    "nameEn": "Pork Chops",
+    "category": "Proteins",
+    "subcategory": "Pork",
+    "description": "Bone-in center-cut pork chops.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "pork-chops",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 4.99,
+        "sku": "HC-PRO-PCH-1LB"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 8.99,
+        "sku": "HC-PRO-PCH-2LB"
+      },
+      {
+        "weightValue": 3,
+        "weightUnit": "lb",
+        "price": 12.49,
+        "sku": "HC-PRO-PCH-3LB"
+      }
+    ],
+    "imageUrl": "/products/pork-chops.webp"
+  },
+  {
+    "nameEn": "Tempeh",
+    "category": "Proteins",
+    "subcategory": "Plant Protein",
+    "description": "Organic soy tempeh, fermented plant protein.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "tempeh",
+    "variants": [
+      {
+        "weightValue": 8,
+        "weightUnit": "oz",
+        "price": 3.49,
+        "sku": "HC-PRO-TEM-8OZ"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 4.99,
+        "sku": "HC-PRO-TEM-12OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 5.99,
+        "sku": "HC-PRO-TEM-16OZ"
+      }
+    ],
+    "imageUrl": "/products/tempeh.webp"
+  },
+  {
+    "nameEn": "Edamame",
+    "category": "Proteins",
+    "subcategory": "Plant Protein",
+    "description": "Shelled edamame, steamed soybeans.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "edamame",
+    "variants": [
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 3.29,
+        "sku": "HC-PRO-EDA-12OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 4.29,
+        "sku": "HC-PRO-EDA-16OZ"
+      },
+      {
+        "weightValue": 32,
+        "weightUnit": "oz",
+        "price": 6.99,
+        "sku": "HC-PRO-EDA-32OZ"
+      }
+    ],
+    "imageUrl": "/products/edamame.webp"
+  },
+  {
+    "nameEn": "Canned Tuna",
+    "category": "Proteins",
+    "subcategory": "Seafood",
+    "description": "Chunk light tuna in water, pantry staple.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "canned-tuna",
+    "variants": [
+      {
+        "weightValue": 5,
+        "weightUnit": "oz",
+        "price": 1.49,
+        "sku": "HC-PRO-TUN-5OZ"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 3.49,
+        "sku": "HC-PRO-TUN-12OZ"
+      },
+      {
+        "weightValue": 4,
+        "weightUnit": "each",
+        "price": 5.49,
+        "sku": "HC-PRO-TUN-4PK"
+      }
+    ],
+    "imageUrl": "/products/canned-tuna.webp"
+  },
+  {
+    "nameEn": "Brown Rice",
+    "category": "Grains",
+    "subcategory": "Rice",
+    "description": "Long-grain brown rice, whole grain staple.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "brown-rice",
+    "variants": [
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 3.49,
+        "sku": "HC-GRN-BRR-2LB"
+      },
+      {
+        "weightValue": 5,
+        "weightUnit": "lb",
+        "price": 6.99,
+        "sku": "HC-GRN-BRR-5LB"
+      },
+      {
+        "weightValue": 32,
+        "weightUnit": "oz",
+        "price": 4.99,
+        "sku": "HC-GRN-BRR-32OZ"
+      }
+    ],
+    "imageUrl": "/products/brown-rice.webp"
+  },
+  {
+    "nameEn": "Quinoa",
+    "category": "Grains",
+    "subcategory": "Ancient Grains",
+    "description": "Tri-color quinoa, complete plant protein.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "quinoa",
+    "variants": [
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 4.99,
+        "sku": "HC-GRN-QUI-12OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 5.99,
+        "sku": "HC-GRN-QUI-16OZ"
+      },
+      {
+        "weightValue": 4,
+        "weightUnit": "lb",
+        "price": 14.99,
+        "sku": "HC-GRN-QUI-4LB"
+      }
+    ],
+    "imageUrl": "/products/quinoa.webp"
+  },
+  {
+    "nameEn": "Rolled Oats",
+    "category": "Grains",
+    "subcategory": "Oats",
+    "description": "Old-fashioned rolled oats for oatmeal.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "rolled-oats",
+    "variants": [
+      {
+        "weightValue": 18,
+        "weightUnit": "oz",
+        "price": 3.49,
+        "sku": "HC-GRN-OAT-18OZ"
+      },
+      {
+        "weightValue": 42,
+        "weightUnit": "oz",
+        "price": 5.99,
+        "sku": "HC-GRN-OAT-42OZ"
+      },
+      {
+        "weightValue": 10,
+        "weightUnit": "lb",
+        "price": 9.99,
+        "sku": "HC-GRN-OAT-10LB"
+      }
+    ],
+    "imageUrl": "/products/rolled-oats.webp"
+  },
+  {
+    "nameEn": "Whole Wheat Bread",
+    "category": "Grains",
+    "subcategory": "Bread",
+    "description": "100% whole wheat sandwich bread loaf.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "whole-wheat-bread",
+    "variants": [
+      {
+        "weightValue": 20,
+        "weightUnit": "oz",
+        "price": 3.99,
+        "sku": "HC-GRN-WWB-20OZ"
+      },
+      {
+        "weightValue": 24,
+        "weightUnit": "oz",
+        "price": 4.49,
+        "sku": "HC-GRN-WWB-24OZ"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "each",
+        "price": 7.49,
+        "sku": "HC-GRN-WWB-2PK"
+      }
+    ],
+    "imageUrl": "/products/whole-wheat-bread.webp"
+  },
+  {
+    "nameEn": "Whole Wheat Pasta",
+    "category": "Grains",
+    "subcategory": "Pasta",
+    "description": "Whole wheat penne pasta.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "whole-wheat-pasta",
+    "variants": [
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 2.29,
+        "sku": "HC-GRN-WWP-16OZ"
+      },
+      {
+        "weightValue": 32,
+        "weightUnit": "oz",
+        "price": 3.99,
+        "sku": "HC-GRN-WWP-32OZ"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 1.99,
+        "sku": "HC-GRN-WWP-12OZ"
+      }
+    ],
+    "imageUrl": "/products/whole-wheat-pasta.webp"
+  },
+  {
+    "nameEn": "Flour Tortillas",
+    "category": "Grains",
+    "subcategory": "Tortillas",
+    "description": "Soft flour tortillas, burrito size.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "flour-tortillas",
+    "variants": [
+      {
+        "weightValue": 10,
+        "weightUnit": "each",
+        "price": 3.29,
+        "sku": "HC-GRN-FTO-10CT"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 4.49,
+        "sku": "HC-GRN-FTO-16OZ"
+      },
+      {
+        "weightValue": 20,
+        "weightUnit": "each",
+        "price": 5.99,
+        "sku": "HC-GRN-FTO-20CT"
+      }
+    ],
+    "imageUrl": "/products/flour-tortillas.webp"
+  },
+  {
+    "nameEn": "Wild Rice",
+    "category": "Grains",
+    "subcategory": "Rice",
+    "description": "Long-grain wild rice blend.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "wild-rice",
+    "variants": [
+      {
+        "weightValue": 8,
+        "weightUnit": "oz",
+        "price": 4.99,
+        "sku": "HC-GRN-WIR-8OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 7.99,
+        "sku": "HC-GRN-WIR-16OZ"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 12.99,
+        "sku": "HC-GRN-WIR-2LB"
+      }
+    ],
+    "imageUrl": "/products/wild-rice.webp"
+  },
+  {
+    "nameEn": "Corn Tortillas",
+    "category": "Grains",
+    "subcategory": "Tortillas",
+    "description": "Authentic white corn tortillas.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "corn-tortillas",
+    "variants": [
+      {
+        "weightValue": 12,
+        "weightUnit": "each",
+        "price": 2.49,
+        "sku": "HC-GRN-CTO-12CT"
+      },
+      {
+        "weightValue": 30,
+        "weightUnit": "each",
+        "price": 3.99,
+        "sku": "HC-GRN-CTO-30CT"
+      },
+      {
+        "weightValue": 24,
+        "weightUnit": "oz",
+        "price": 4.29,
+        "sku": "HC-GRN-CTO-24OZ"
+      }
+    ],
+    "imageUrl": "/products/corn-tortillas.webp"
+  },
+  {
+    "nameEn": "Whole Milk",
+    "category": "Dairy",
+    "subcategory": "Milk",
+    "description": "Vitamin D whole milk, 3.25% fat.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "whole-milk",
+    "variants": [
+      {
+        "weightValue": 0.5,
+        "weightUnit": "gal",
+        "price": 2.79,
+        "sku": "HC-DAI-WMK-0.5GAL"
+      },
+      {
+        "weightValue": 1,
+        "weightUnit": "gal",
+        "price": 4.49,
+        "sku": "HC-DAI-WMK-1GAL"
+      },
+      {
+        "weightValue": 32,
+        "weightUnit": "fl oz",
+        "price": 2.29,
+        "sku": "HC-DAI-WMK-32FOZ"
+      }
+    ],
+    "imageUrl": "/products/whole-milk.webp"
+  },
+  {
+    "nameEn": "2% Milk",
+    "category": "Dairy",
+    "subcategory": "Milk",
+    "description": "Reduced-fat 2% milk.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "2-milk",
+    "variants": [
+      {
+        "weightValue": 0.5,
+        "weightUnit": "gal",
+        "price": 2.69,
+        "sku": "HC-DAI-2MK-0.5GAL"
+      },
+      {
+        "weightValue": 1,
+        "weightUnit": "gal",
+        "price": 4.29,
+        "sku": "HC-DAI-2MK-1GAL"
+      },
+      {
+        "weightValue": 64,
+        "weightUnit": "fl oz",
+        "price": 3.99,
+        "sku": "HC-DAI-2MK-64FOZ"
+      }
+    ],
+    "imageUrl": "/products/2-milk.webp"
+  },
+  {
+    "nameEn": "Almond Milk",
+    "category": "Dairy",
+    "subcategory": "Plant Milk",
+    "description": "Unsweetened almond milk, dairy-free.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "almond-milk",
+    "variants": [
+      {
+        "weightValue": 32,
+        "weightUnit": "fl oz",
+        "price": 3.49,
+        "sku": "HC-DAI-AMK-32FOZ"
+      },
+      {
+        "weightValue": 64,
+        "weightUnit": "fl oz",
+        "price": 4.99,
+        "sku": "HC-DAI-AMK-64FOZ"
+      },
+      {
+        "weightValue": 96,
+        "weightUnit": "fl oz",
+        "price": 6.99,
+        "sku": "HC-DAI-AMK-96FOZ"
+      }
+    ],
+    "imageUrl": "/products/almond-milk.webp"
+  },
+  {
+    "nameEn": "Oat Milk",
+    "category": "Dairy",
+    "subcategory": "Plant Milk",
+    "description": "Barista-style oat milk, creamy texture.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "oat-milk",
+    "variants": [
+      {
+        "weightValue": 32,
+        "weightUnit": "fl oz",
+        "price": 4.29,
+        "sku": "HC-DAI-OMK-32FOZ"
+      },
+      {
+        "weightValue": 64,
+        "weightUnit": "fl oz",
+        "price": 5.99,
+        "sku": "HC-DAI-OMK-64FOZ"
+      },
+      {
+        "weightValue": 48,
+        "weightUnit": "fl oz",
+        "price": 5.49,
+        "sku": "HC-DAI-OMK-48FOZ"
+      }
+    ],
+    "imageUrl": "/products/oat-milk.webp"
+  },
+  {
+    "nameEn": "Cheddar Cheese",
+    "category": "Dairy",
+    "subcategory": "Cheese",
+    "description": "Sharp cheddar cheese block.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "cheddar-cheese",
+    "variants": [
+      {
+        "weightValue": 8,
+        "weightUnit": "oz",
+        "price": 3.99,
+        "sku": "HC-DAI-CHE-8OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 6.99,
+        "sku": "HC-DAI-CHE-16OZ"
+      },
+      {
+        "weightValue": 32,
+        "weightUnit": "oz",
+        "price": 11.99,
+        "sku": "HC-DAI-CHE-32OZ"
+      }
+    ],
+    "imageUrl": "/products/cheddar-cheese.webp"
+  },
+  {
+    "nameEn": "Butter",
+    "category": "Dairy",
+    "subcategory": "Butter",
+    "description": "Salted butter sticks, four quarters.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "butter",
+    "variants": [
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 4.99,
+        "sku": "HC-DAI-BUT-16OZ"
+      },
+      {
+        "weightValue": 8,
+        "weightUnit": "oz",
+        "price": 3.29,
+        "sku": "HC-DAI-BUT-8OZ"
+      },
+      {
+        "weightValue": 32,
+        "weightUnit": "oz",
+        "price": 8.99,
+        "sku": "HC-DAI-BUT-32OZ"
+      }
+    ],
+    "imageUrl": "/products/butter.webp"
+  },
+  {
+    "nameEn": "Cream Cheese",
+    "category": "Dairy",
+    "subcategory": "Soft Cheese",
+    "description": "Original cream cheese spread.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "cream-cheese",
+    "variants": [
+      {
+        "weightValue": 8,
+        "weightUnit": "oz",
+        "price": 2.49,
+        "sku": "HC-DAI-CCR-8OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 4.29,
+        "sku": "HC-DAI-CCR-16OZ"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 3.49,
+        "sku": "HC-DAI-CCR-12OZ"
+      }
+    ],
+    "imageUrl": "/products/cream-cheese.webp"
+  },
+  {
+    "nameEn": "Mozzarella Cheese",
+    "category": "Dairy",
+    "subcategory": "Cheese",
+    "description": "Part-skim shredded mozzarella.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "mozzarella-cheese",
+    "variants": [
+      {
+        "weightValue": 8,
+        "weightUnit": "oz",
+        "price": 3.49,
+        "sku": "HC-DAI-MOZ-8OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 5.99,
+        "sku": "HC-DAI-MOZ-16OZ"
+      },
+      {
+        "weightValue": 32,
+        "weightUnit": "oz",
+        "price": 9.99,
+        "sku": "HC-DAI-MOZ-32OZ"
+      }
+    ],
+    "imageUrl": "/products/mozzarella-cheese.webp"
+  },
+  {
+    "nameEn": "Greek Yogurt",
+    "category": "Dairy",
+    "subcategory": "Yogurt",
+    "description": "Plain nonfat Greek yogurt, high protein.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "greek-yogurt",
+    "variants": [
+      {
+        "weightValue": 32,
+        "weightUnit": "oz",
+        "price": 5.99,
+        "sku": "HC-DAI-GY-32OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 3.99,
+        "sku": "HC-DAI-GY-16OZ"
+      },
+      {
+        "weightValue": 5.3,
+        "weightUnit": "oz",
+        "price": 1.29,
+        "sku": "HC-DAI-GY-5.3OZ"
+      }
+    ],
+    "imageUrl": "/products/greek-yogurt.webp"
+  },
+  {
+    "nameEn": "Cottage Cheese",
+    "category": "Dairy",
+    "subcategory": "Cheese",
+    "description": "Low-fat cottage cheese, protein snack.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "cottage-cheese",
+    "variants": [
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 3.49,
+        "sku": "HC-DAI-COT-16OZ"
+      },
+      {
+        "weightValue": 24,
+        "weightUnit": "oz",
+        "price": 4.99,
+        "sku": "HC-DAI-COT-24OZ"
+      },
+      {
+        "weightValue": 32,
+        "weightUnit": "oz",
+        "price": 5.99,
+        "sku": "HC-DAI-COT-32OZ"
+      }
+    ],
+    "imageUrl": "/products/cottage-cheese.webp"
+  },
+  {
+    "nameEn": "Olive Oil",
+    "category": "Pantry",
+    "subcategory": "Oils",
+    "description": "Extra virgin olive oil for cooking and dressings.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "olive-oil",
+    "variants": [
+      {
+        "weightValue": 16.9,
+        "weightUnit": "fl oz",
+        "price": 8.99,
+        "sku": "HC-PAN-OLO-16.9FOZ"
+      },
+      {
+        "weightValue": 25.5,
+        "weightUnit": "fl oz",
+        "price": 12.99,
+        "sku": "HC-PAN-OLO-25.5FOZ"
+      },
+      {
+        "weightValue": 33.8,
+        "weightUnit": "fl oz",
+        "price": 15.99,
+        "sku": "HC-PAN-OLO-33.8FOZ"
+      }
+    ],
+    "imageUrl": "/products/olive-oil.webp"
+  },
+  {
+    "nameEn": "Peanut Butter",
+    "category": "Pantry",
+    "subcategory": "Nut Butters",
+    "description": "Creamy peanut butter, no stir.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "peanut-butter",
+    "variants": [
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 3.49,
+        "sku": "HC-PAN-PNB-16OZ"
+      },
+      {
+        "weightValue": 28,
+        "weightUnit": "oz",
+        "price": 5.49,
+        "sku": "HC-PAN-PNB-28OZ"
+      },
+      {
+        "weightValue": 40,
+        "weightUnit": "oz",
+        "price": 6.99,
+        "sku": "HC-PAN-PNB-40OZ"
+      }
+    ],
+    "imageUrl": "/products/peanut-butter.webp"
+  },
+  {
+    "nameEn": "Almond Butter",
+    "category": "Pantry",
+    "subcategory": "Nut Butters",
+    "description": "Smooth almond butter, natural.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "almond-butter",
+    "variants": [
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 7.99,
+        "sku": "HC-PAN-ALB-12OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 9.99,
+        "sku": "HC-PAN-ALB-16OZ"
+      },
+      {
+        "weightValue": 27,
+        "weightUnit": "oz",
+        "price": 14.99,
+        "sku": "HC-PAN-ALB-27OZ"
+      }
+    ],
+    "imageUrl": "/products/almond-butter.webp"
+  },
+  {
+    "nameEn": "Honey",
+    "category": "Pantry",
+    "subcategory": "Sweeteners",
+    "description": "Pure clover honey, raw and unfiltered.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "honey",
+    "variants": [
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 6.99,
+        "sku": "HC-PAN-HON-12OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 8.99,
+        "sku": "HC-PAN-HON-16OZ"
+      },
+      {
+        "weightValue": 24,
+        "weightUnit": "oz",
+        "price": 11.99,
+        "sku": "HC-PAN-HON-24OZ"
+      }
+    ],
+    "imageUrl": "/products/honey.webp"
+  },
+  {
+    "nameEn": "Marinara Sauce",
+    "category": "Pantry",
+    "subcategory": "Sauces",
+    "description": "Classic tomato marinara pasta sauce.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "marinara-sauce",
+    "variants": [
+      {
+        "weightValue": 24,
+        "weightUnit": "oz",
+        "price": 2.49,
+        "sku": "HC-PAN-MAR-24OZ"
+      },
+      {
+        "weightValue": 32,
+        "weightUnit": "oz",
+        "price": 3.29,
+        "sku": "HC-PAN-MAR-32OZ"
+      },
+      {
+        "weightValue": 45,
+        "weightUnit": "oz",
+        "price": 4.49,
+        "sku": "HC-PAN-MAR-45OZ"
+      }
+    ],
+    "imageUrl": "/products/marinara-sauce.webp"
+  },
+  {
+    "nameEn": "Salsa",
+    "category": "Pantry",
+    "subcategory": "Sauces",
+    "description": "Medium chunky tomato salsa.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "salsa",
+    "variants": [
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 3.29,
+        "sku": "HC-PAN-SAL-16OZ"
+      },
+      {
+        "weightValue": 24,
+        "weightUnit": "oz",
+        "price": 4.49,
+        "sku": "HC-PAN-SAL-24OZ"
+      },
+      {
+        "weightValue": 32,
+        "weightUnit": "oz",
+        "price": 5.49,
+        "sku": "HC-PAN-SAL-32OZ"
+      }
+    ],
+    "imageUrl": "/products/salsa.webp"
+  },
+  {
+    "nameEn": "Soy Sauce",
+    "category": "Pantry",
+    "subcategory": "Condiments",
+    "description": "Low-sodium soy sauce.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "soy-sauce",
+    "variants": [
+      {
+        "weightValue": 10,
+        "weightUnit": "fl oz",
+        "price": 2.99,
+        "sku": "HC-PAN-SOY-10FOZ"
+      },
+      {
+        "weightValue": 15,
+        "weightUnit": "fl oz",
+        "price": 3.99,
+        "sku": "HC-PAN-SOY-15FOZ"
+      },
+      {
+        "weightValue": 20,
+        "weightUnit": "fl oz",
+        "price": 4.99,
+        "sku": "HC-PAN-SOY-20FOZ"
+      }
+    ],
+    "imageUrl": "/products/soy-sauce.webp"
+  },
+  {
+    "nameEn": "Hot Sauce",
+    "category": "Pantry",
+    "subcategory": "Condiments",
+    "description": "Classic cayenne pepper hot sauce.",
+    "usdaFoodCode": 9000002,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "hot-sauce",
+    "variants": [
+      {
+        "weightValue": 5,
+        "weightUnit": "fl oz",
+        "price": 2.49,
+        "sku": "HC-PAN-HOT-5FOZ"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "fl oz",
+        "price": 3.99,
+        "sku": "HC-PAN-HOT-12FOZ"
+      },
+      {
+        "weightValue": 24,
+        "weightUnit": "fl oz",
+        "price": 6.99,
+        "sku": "HC-PAN-HOT-24FOZ"
+      }
+    ],
+    "imageUrl": "/products/hot-sauce.webp"
+  },
+  {
+    "nameEn": "Chicken Broth",
+    "category": "Pantry",
+    "subcategory": "Broths",
+    "description": "Low-sodium chicken broth, cooking base.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "chicken-broth",
+    "variants": [
+      {
+        "weightValue": 32,
+        "weightUnit": "fl oz",
+        "price": 2.99,
+        "sku": "HC-PAN-CBR-32FOZ"
+      },
+      {
+        "weightValue": 48,
+        "weightUnit": "fl oz",
+        "price": 3.99,
+        "sku": "HC-PAN-CBR-48FOZ"
+      },
+      {
+        "weightValue": 4,
+        "weightUnit": "each",
+        "price": 10.99,
+        "sku": "HC-PAN-CBR-4PK"
+      }
+    ],
+    "imageUrl": "/products/chicken-broth.webp"
+  },
+  {
+    "nameEn": "Coconut Oil",
+    "category": "Pantry",
+    "subcategory": "Oils",
+    "description": "Unrefined virgin coconut oil.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "coconut-oil",
+    "variants": [
+      {
+        "weightValue": 14,
+        "weightUnit": "oz",
+        "price": 6.99,
+        "sku": "HC-PAN-CNO-14OZ"
+      },
+      {
+        "weightValue": 23,
+        "weightUnit": "oz",
+        "price": 9.99,
+        "sku": "HC-PAN-CNO-23OZ"
+      },
+      {
+        "weightValue": 54,
+        "weightUnit": "oz",
+        "price": 16.99,
+        "sku": "HC-PAN-CNO-54OZ"
+      }
+    ],
+    "imageUrl": "/products/coconut-oil.webp"
+  },
+  {
+    "nameEn": "Maple Syrup",
+    "category": "Pantry",
+    "subcategory": "Sweeteners",
+    "description": "Pure grade A maple syrup.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "maple-syrup",
+    "variants": [
+      {
+        "weightValue": 8,
+        "weightUnit": "fl oz",
+        "price": 7.99,
+        "sku": "HC-PAN-MAP-8FOZ"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "fl oz",
+        "price": 10.99,
+        "sku": "HC-PAN-MAP-12FOZ"
+      },
+      {
+        "weightValue": 32,
+        "weightUnit": "fl oz",
+        "price": 19.99,
+        "sku": "HC-PAN-MAP-32FOZ"
+      }
+    ],
+    "imageUrl": "/products/maple-syrup.webp"
+  },
+  {
+    "nameEn": "Balsamic Vinegar",
+    "category": "Pantry",
+    "subcategory": "Vinegars",
+    "description": "Aged balsamic vinegar of Modena.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "balsamic-vinegar",
+    "variants": [
+      {
+        "weightValue": 8.5,
+        "weightUnit": "fl oz",
+        "price": 4.99,
+        "sku": "HC-PAN-BAL-8.5FOZ"
+      },
+      {
+        "weightValue": 16.9,
+        "weightUnit": "fl oz",
+        "price": 7.99,
+        "sku": "HC-PAN-BAL-16.9FOZ"
+      },
+      {
+        "weightValue": 25.4,
+        "weightUnit": "fl oz",
+        "price": 11.99,
+        "sku": "HC-PAN-BAL-25.4FOZ"
+      }
+    ],
+    "imageUrl": "/products/balsamic-vinegar.webp"
+  },
+  {
+    "nameEn": "Tomato Paste",
+    "category": "Pantry",
+    "subcategory": "Canned Goods",
+    "description": "Concentrated tomato paste tubes.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "tomato-paste",
+    "variants": [
+      {
+        "weightValue": 6,
+        "weightUnit": "oz",
+        "price": 1.29,
+        "sku": "HC-PAN-TMP-6OZ"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 2.29,
+        "sku": "HC-PAN-TMP-12OZ"
+      },
+      {
+        "weightValue": 4,
+        "weightUnit": "each",
+        "price": 4.49,
+        "sku": "HC-PAN-TMP-4PK"
+      }
+    ],
+    "imageUrl": "/products/tomato-paste.webp"
+  },
+  {
+    "nameEn": "Vegetable Broth",
+    "category": "Pantry",
+    "subcategory": "Broths",
+    "description": "Organic vegetable broth, vegan base.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "vegetable-broth",
+    "variants": [
+      {
+        "weightValue": 32,
+        "weightUnit": "fl oz",
+        "price": 2.79,
+        "sku": "HC-PAN-VBR-32FOZ"
+      },
+      {
+        "weightValue": 48,
+        "weightUnit": "fl oz",
+        "price": 3.79,
+        "sku": "HC-PAN-VBR-48FOZ"
+      },
+      {
+        "weightValue": 4,
+        "weightUnit": "each",
+        "price": 9.99,
+        "sku": "HC-PAN-VBR-4PK"
+      }
+    ],
+    "imageUrl": "/products/vegetable-broth.webp"
+  },
+  {
+    "nameEn": "Hummus",
+    "category": "Snacks",
+    "subcategory": "Dips",
+    "description": "Classic chickpea hummus, ready to eat.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "hummus",
+    "variants": [
+      {
+        "weightValue": 10,
+        "weightUnit": "oz",
+        "price": 3.99,
+        "sku": "HC-SNK-HUM-10OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 5.49,
+        "sku": "HC-SNK-HUM-16OZ"
+      },
+      {
+        "weightValue": 32,
+        "weightUnit": "oz",
+        "price": 8.99,
+        "sku": "HC-SNK-HUM-32OZ"
+      }
+    ],
+    "imageUrl": "/products/hummus.webp"
+  },
+  {
+    "nameEn": "Trail Mix",
+    "category": "Snacks",
+    "subcategory": "Nuts and Mixes",
+    "description": "Trail mix with nuts, seeds, and dried fruit.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "trail-mix",
+    "variants": [
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 5.99,
+        "sku": "HC-SNK-TRM-12OZ"
+      },
+      {
+        "weightValue": 24,
+        "weightUnit": "oz",
+        "price": 9.99,
+        "sku": "HC-SNK-TRM-24OZ"
+      },
+      {
+        "weightValue": 6,
+        "weightUnit": "oz",
+        "price": 3.49,
+        "sku": "HC-SNK-TRM-6OZ"
+      }
+    ],
+    "imageUrl": "/products/trail-mix.webp"
+  },
+  {
+    "nameEn": "Granola Bars",
+    "category": "Snacks",
+    "subcategory": "Bars",
+    "description": "Chewy oats and honey granola bars, 6-count box.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "granola-bars",
+    "variants": [
+      {
+        "weightValue": 6,
+        "weightUnit": "each",
+        "price": 4.49,
+        "sku": "HC-SNK-GRB-6CT"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "each",
+        "price": 7.99,
+        "sku": "HC-SNK-GRB-12CT"
+      },
+      {
+        "weightValue": 18,
+        "weightUnit": "each",
+        "price": 10.99,
+        "sku": "HC-SNK-GRB-18CT"
+      }
+    ],
+    "imageUrl": "/products/granola-bars.webp"
+  },
+  {
+    "nameEn": "Dark Chocolate",
+    "category": "Snacks",
+    "subcategory": "Chocolate",
+    "description": "72% cacao dark chocolate bar.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "dark-chocolate",
+    "variants": [
+      {
+        "weightValue": 3.5,
+        "weightUnit": "oz",
+        "price": 3.49,
+        "sku": "HC-SNK-DCH-3.5OZ"
+      },
+      {
+        "weightValue": 7,
+        "weightUnit": "oz",
+        "price": 5.99,
+        "sku": "HC-SNK-DCH-7OZ"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 8.99,
+        "sku": "HC-SNK-DCH-12OZ"
+      }
+    ],
+    "imageUrl": "/products/dark-chocolate.webp"
+  },
+  {
+    "nameEn": "Popcorn",
+    "category": "Snacks",
+    "subcategory": "Popcorn",
+    "description": "Microwave popcorn, lightly salted.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "popcorn",
+    "variants": [
+      {
+        "weightValue": 3,
+        "weightUnit": "each",
+        "price": 3.29,
+        "sku": "HC-SNK-POP-3CT"
+      },
+      {
+        "weightValue": 6,
+        "weightUnit": "each",
+        "price": 5.99,
+        "sku": "HC-SNK-POP-6CT"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "each",
+        "price": 10.99,
+        "sku": "HC-SNK-POP-12CT"
+      }
+    ],
+    "imageUrl": "/products/popcorn.webp"
+  },
+  {
+    "nameEn": "Mixed Nuts",
+    "category": "Snacks",
+    "subcategory": "Nuts and Mixes",
+    "description": "Roasted unsalted mixed nuts.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "mixed-nuts",
+    "variants": [
+      {
+        "weightValue": 10,
+        "weightUnit": "oz",
+        "price": 6.99,
+        "sku": "HC-SNK-MNU-10OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 9.99,
+        "sku": "HC-SNK-MNU-16OZ"
+      },
+      {
+        "weightValue": 32,
+        "weightUnit": "oz",
+        "price": 16.99,
+        "sku": "HC-SNK-MNU-32OZ"
+      }
+    ],
+    "imageUrl": "/products/mixed-nuts.webp"
+  },
+  {
+    "nameEn": "Rice Cakes",
+    "category": "Snacks",
+    "subcategory": "Crackers",
+    "description": "Lightly salted whole grain rice cakes.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "rice-cakes",
+    "variants": [
+      {
+        "weightValue": 4.1,
+        "weightUnit": "oz",
+        "price": 2.99,
+        "sku": "HC-SNK-RIC-4.1OZ"
+      },
+      {
+        "weightValue": 6.5,
+        "weightUnit": "oz",
+        "price": 3.99,
+        "sku": "HC-SNK-RIC-6.5OZ"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "each",
+        "price": 5.49,
+        "sku": "HC-SNK-RIC-12CT"
+      }
+    ],
+    "imageUrl": "/products/rice-cakes.webp"
+  },
+  {
+    "nameEn": "Pretzels",
+    "category": "Snacks",
+    "subcategory": "Crackers",
+    "description": "Classic twisted pretzels, lightly salted.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "pretzels",
+    "variants": [
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 3.49,
+        "sku": "HC-SNK-PRE-16OZ"
+      },
+      {
+        "weightValue": 32,
+        "weightUnit": "oz",
+        "price": 5.99,
+        "sku": "HC-SNK-PRE-32OZ"
+      },
+      {
+        "weightValue": 8,
+        "weightUnit": "oz",
+        "price": 2.49,
+        "sku": "HC-SNK-PRE-8OZ"
+      }
+    ],
+    "imageUrl": "/products/pretzels.webp"
+  },
+  {
+    "nameEn": "Baby Spinach",
+    "category": "Vegetables",
+    "subcategory": "Leafy Greens",
+    "description": "Pre-washed baby spinach clamshell.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "baby-spinach",
+    "variants": [
+      {
+        "weightValue": 5,
+        "weightUnit": "oz",
+        "price": 2.99,
+        "sku": "HC-VEG-BSP-5OZ"
+      },
+      {
+        "weightValue": 11,
+        "weightUnit": "oz",
+        "price": 4.49,
+        "sku": "HC-VEG-BSP-11OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 5.99,
+        "sku": "HC-VEG-BSP-16OZ"
+      }
+    ],
+    "imageUrl": "/products/baby-spinach.webp"
+  },
+  {
+    "nameEn": "Cod Fillet",
+    "category": "Proteins",
+    "subcategory": "Seafood",
+    "description": "Wild-caught cod fillets, mild white fish.",
+    "usdaFoodCode": 9000003,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "cod-fillet",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 9.99,
+        "sku": "HC-PRO-COD-1LB"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 8.49,
+        "sku": "HC-PRO-COD-12OZ"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 17.99,
+        "sku": "HC-PRO-COD-2LB"
+      }
+    ],
+    "imageUrl": "/products/cod-fillet.webp"
+  },
+  {
+    "nameEn": "Jasmine Rice",
+    "category": "Grains",
+    "subcategory": "Rice",
+    "description": "Fragrant Thai jasmine white rice.",
+    "usdaFoodCode": 9000004,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "jasmine-rice",
+    "variants": [
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 3.99,
+        "sku": "HC-GRN-JAS-2LB"
+      },
+      {
+        "weightValue": 5,
+        "weightUnit": "lb",
+        "price": 7.49,
+        "sku": "HC-GRN-JAS-5LB"
+      },
+      {
+        "weightValue": 20,
+        "weightUnit": "lb",
+        "price": 18.99,
+        "sku": "HC-GRN-JAS-20LB"
+      }
+    ],
+    "imageUrl": "/products/jasmine-rice.webp"
+  },
+  {
+    "nameEn": "String Cheese",
+    "category": "Dairy",
+    "subcategory": "Cheese",
+    "description": "Mozzarella string cheese sticks, snack size.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "string-cheese",
+    "variants": [
+      {
+        "weightValue": 12,
+        "weightUnit": "each",
+        "price": 4.49,
+        "sku": "HC-DAI-STC-12CT"
+      },
+      {
+        "weightValue": 24,
+        "weightUnit": "each",
+        "price": 7.99,
+        "sku": "HC-DAI-STC-24CT"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "each",
+        "price": 5.99,
+        "sku": "HC-DAI-STC-16CT"
+      }
+    ],
+    "imageUrl": "/products/string-cheese.webp"
+  },
+  {
+    "nameEn": "Dijon Mustard",
+    "category": "Pantry",
+    "subcategory": "Condiments",
+    "description": "Classic Dijon mustard, smooth and tangy.",
+    "usdaFoodCode": 9000005,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "dijon-mustard",
+    "variants": [
+      {
+        "weightValue": 8,
+        "weightUnit": "oz",
+        "price": 2.99,
+        "sku": "HC-PAN-DIJ-8OZ"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 3.99,
+        "sku": "HC-PAN-DIJ-12OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 4.99,
+        "sku": "HC-PAN-DIJ-16OZ"
+      }
+    ],
+    "imageUrl": "/products/dijon-mustard.webp"
+  },
+  {
+    "nameEn": "Pita Chips",
+    "category": "Snacks",
+    "subcategory": "Chips",
+    "description": "Baked sea salt pita chips.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "pita-chips",
+    "variants": [
+      {
+        "weightValue": 6,
+        "weightUnit": "oz",
+        "price": 3.99,
+        "sku": "HC-SNK-PIT-6OZ"
+      },
+      {
+        "weightValue": 10,
+        "weightUnit": "oz",
+        "price": 5.49,
+        "sku": "HC-SNK-PIT-10OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 7.99,
+        "sku": "HC-SNK-PIT-16OZ"
+      },
+      {
+        "weightValue": 20,
+        "weightUnit": "oz",
+        "price": 8.99,
+        "sku": "HC-SNK-PIT-20OZ"
+      }
+    ],
+    "imageUrl": "/products/pita-chips.webp"
+  },
+  {
+    "nameEn": "Yellow Onion",
+    "category": "Vegetables",
+    "subcategory": "Alliums",
+    "description": "Yellow cooking onions, pantry staple.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "yellow-onion",
+    "variants": [
+      {
+        "weightValue": 3,
+        "weightUnit": "lb",
+        "price": 2.49,
+        "sku": "HC-VEG-YON-3LB"
+      },
+      {
+        "weightValue": 5,
+        "weightUnit": "lb",
+        "price": 3.49,
+        "sku": "HC-VEG-YON-5LB"
+      },
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 0.99,
+        "sku": "HC-VEG-YON-1LB"
+      }
+    ],
+    "imageUrl": "/products/yellow-onion.webp"
+  },
+  {
+    "nameEn": "Garlic",
+    "category": "Vegetables",
+    "subcategory": "Alliums",
+    "description": "Fresh garlic bulbs, aromatic and essential.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "garlic",
+    "variants": [
+      {
+        "weightValue": 3,
+        "weightUnit": "each",
+        "price": 1.49,
+        "sku": "HC-VEG-GAR-3CT"
+      },
+      {
+        "weightValue": 5,
+        "weightUnit": "each",
+        "price": 2.29,
+        "sku": "HC-VEG-GAR-5CT"
+      },
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 4.99,
+        "sku": "HC-VEG-GAR-1LB"
+      }
+    ],
+    "imageUrl": "/products/garlic.webp"
+  },
+  {
+    "nameEn": "Beets",
+    "category": "Vegetables",
+    "subcategory": "Root Vegetables",
+    "description": "Red beets with greens, earthy and nutrient-dense.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "beets",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 2.49,
+        "sku": "HC-VEG-BEE-1LB"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 4.29,
+        "sku": "HC-VEG-BEE-2LB"
+      },
+      {
+        "weightValue": 3,
+        "weightUnit": "each",
+        "price": 2.99,
+        "sku": "HC-VEG-BEE-3CT"
+      }
+    ],
+    "imageUrl": "/products/beets.webp"
+  },
+  {
+    "nameEn": "Blackberries",
+    "category": "Fruits",
+    "subcategory": "Berries",
+    "description": "Fresh blackberries, deep purple and juicy.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "blackberries",
+    "variants": [
+      {
+        "weightValue": 6,
+        "weightUnit": "oz",
+        "price": 4.99,
+        "sku": "HC-FRT-BLA-6OZ"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 7.99,
+        "sku": "HC-FRT-BLA-12OZ"
+      },
+      {
+        "weightValue": 18,
+        "weightUnit": "oz",
+        "price": 10.99,
+        "sku": "HC-FRT-BLA-18OZ"
+      }
+    ],
+    "imageUrl": "/products/blackberries.webp"
+  },
+  {
+    "nameEn": "Chicken Thighs",
+    "category": "Proteins",
+    "subcategory": "Poultry",
+    "description": "Bone-in skin-on chicken thighs, juicy and flavorful.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "chicken-thighs",
+    "variants": [
+      {
+        "weightValue": 1,
+        "weightUnit": "lb",
+        "price": 4.49,
+        "sku": "HC-PRO-CHT-1LB"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "lb",
+        "price": 7.99,
+        "sku": "HC-PRO-CHT-2LB"
+      },
+      {
+        "weightValue": 3,
+        "weightUnit": "lb",
+        "price": 10.99,
+        "sku": "HC-PRO-CHT-3LB"
+      }
+    ],
+    "imageUrl": "/products/chicken-thighs.webp"
+  },
+  {
+    "nameEn": "Smoked Salmon",
+    "category": "Proteins",
+    "subcategory": "Seafood",
+    "description": "Cold-smoked Atlantic salmon, ready to serve.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "smoked-salmon",
+    "variants": [
+      {
+        "weightValue": 4,
+        "weightUnit": "oz",
+        "price": 6.99,
+        "sku": "HC-PRO-SSA-4OZ"
+      },
+      {
+        "weightValue": 8,
+        "weightUnit": "oz",
+        "price": 12.99,
+        "sku": "HC-PRO-SSA-8OZ"
+      },
+      {
+        "weightValue": 12,
+        "weightUnit": "oz",
+        "price": 17.99,
+        "sku": "HC-PRO-SSA-12OZ"
+      }
+    ],
+    "imageUrl": "/products/smoked-salmon.webp"
+  },
+  {
+    "nameEn": "Couscous",
+    "category": "Grains",
+    "subcategory": "Ancient Grains",
+    "description": "Instant Moroccan couscous, quick side dish.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "couscous",
+    "variants": [
+      {
+        "weightValue": 10,
+        "weightUnit": "oz",
+        "price": 2.49,
+        "sku": "HC-GRN-COU-10OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 3.49,
+        "sku": "HC-GRN-COU-16OZ"
+      },
+      {
+        "weightValue": 24,
+        "weightUnit": "oz",
+        "price": 4.99,
+        "sku": "HC-GRN-COU-24OZ"
+      }
+    ],
+    "imageUrl": "/products/couscous.webp"
+  },
+  {
+    "nameEn": "Sourdough Bread",
+    "category": "Grains",
+    "subcategory": "Bread",
+    "description": "Artisan sourdough loaf, tangy and chewy.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "sourdough-bread",
+    "variants": [
+      {
+        "weightValue": 24,
+        "weightUnit": "oz",
+        "price": 5.49,
+        "sku": "HC-GRN-SDB-24OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 4.49,
+        "sku": "HC-GRN-SDB-16OZ"
+      },
+      {
+        "weightValue": 2,
+        "weightUnit": "each",
+        "price": 9.99,
+        "sku": "HC-GRN-SDB-2PK"
+      }
+    ],
+    "imageUrl": "/products/sourdough-bread.webp"
+  },
+  {
+    "nameEn": "Parmesan Cheese",
+    "category": "Dairy",
+    "subcategory": "Cheese",
+    "description": "Grated Parmesan cheese, aged and savory.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "parmesan-cheese",
+    "variants": [
+      {
+        "weightValue": 5,
+        "weightUnit": "oz",
+        "price": 3.99,
+        "sku": "HC-DAI-PAR-5OZ"
+      },
+      {
+        "weightValue": 8,
+        "weightUnit": "oz",
+        "price": 5.99,
+        "sku": "HC-DAI-PAR-8OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 9.99,
+        "sku": "HC-DAI-PAR-16OZ"
+      }
+    ],
+    "imageUrl": "/products/parmesan-cheese.webp"
+  },
+  {
+    "nameEn": "Sour Cream",
+    "category": "Dairy",
+    "subcategory": "Dairy Spreads",
+    "description": "Cultured sour cream for dips and toppings.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "sour-cream",
+    "variants": [
+      {
+        "weightValue": 8,
+        "weightUnit": "oz",
+        "price": 1.99,
+        "sku": "HC-DAI-SCR-8OZ"
+      },
+      {
+        "weightValue": 16,
+        "weightUnit": "oz",
+        "price": 2.99,
+        "sku": "HC-DAI-SCR-16OZ"
+      },
+      {
+        "weightValue": 24,
+        "weightUnit": "oz",
+        "price": 3.99,
+        "sku": "HC-DAI-SCR-24OZ"
+      }
+    ],
+    "imageUrl": "/products/sour-cream.webp"
+  },
+  {
+    "nameEn": "Rice Vinegar",
+    "category": "Pantry",
+    "subcategory": "Vinegars",
+    "description": "Seasoned rice vinegar for dressings and sushi.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "rice-vinegar",
+    "variants": [
+      {
+        "weightValue": 10,
+        "weightUnit": "fl oz",
+        "price": 2.49,
+        "sku": "HC-PAN-RVI-10FOZ"
+      },
+      {
+        "weightValue": 15,
+        "weightUnit": "fl oz",
+        "price": 3.29,
+        "sku": "HC-PAN-RVI-15FOZ"
+      },
+      {
+        "weightValue": 25,
+        "weightUnit": "fl oz",
+        "price": 4.49,
+        "sku": "HC-PAN-RVI-25FOZ"
+      }
+    ],
+    "imageUrl": "/products/rice-vinegar.webp"
+  },
+  {
+    "nameEn": "Beef Jerky",
+    "category": "Snacks",
+    "subcategory": "Meat Snacks",
+    "description": "Original beef jerky, high-protein snack.",
+    "usdaFoodCode": null,
+    "isSeasonal": false,
+    "availableMonths": [],
+    "imageSlug": "beef-jerky",
+    "variants": [
+      {
+        "weightValue": 2.85,
+        "weightUnit": "oz",
+        "price": 6.99,
+        "sku": "HC-SNK-BJK-2.85OZ"
+      },
+      {
+        "weightValue": 8,
+        "weightUnit": "oz",
+        "price": 14.99,
+        "sku": "HC-SNK-BJK-8OZ"
+      },
+      {
+        "weightValue": 3,
+        "weightUnit": "each",
+        "price": 18.99,
+        "sku": "HC-SNK-BJK-3PK"
+      }
+    ],
+    "imageUrl": "/products/beef-jerky.webp"
+  }
+]
