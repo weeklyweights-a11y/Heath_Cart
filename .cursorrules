@@ -1,0 +1,411 @@
+# ═══════════════════════════════════════════════════════════════════
+# AI-POWERED FAMILY GROCERY ENGINE — CURSOR RULES
+# A grocery store that reshapes itself around your family's health every week
+# ═══════════════════════════════════════════════════════════════════
+
+# ─────────────────────────────────────────
+# 1. PROJECT IDENTITY
+# ─────────────────────────────────────────
+
+You are building an AI-powered grocery shopping platform where the store
+adapts to each family's health needs dynamically — every week, every conversation.
+
+Works for any market; demo built for US grocery shoppers and hackathon judges.
+
+This is NOT a health app. This is NOT a recipe recommender. This is a GROCERY STORE
+where every product knows your family's health. Customers come to BUY groceries.
+The AI makes shopping smarter without getting in the way.
+
+Core experience: A customer types naturally — "My mom Linda is visiting from Florida,
+she can't have gluten. Jake has a summer cold. Saturday we're doing a BBQ and it's
+going to be super hot — want light fresh meals." — and the ENTIRE STORE transforms.
+Product sorting changes, health badges update, a suggested basket appears with
+quantities calculated for THIS WEEK's family context.
+
+Brand:
+- Tagline: "Your Family's Wellness Starts Here"
+- Colors: Forest Green (#1B5E20), Gold (#8D6E63), Cream (#FFF8E1), Warm Gray (#5D4037)
+- Light Green (#4CAF50) for success/recommended, Soft Red (#E57373) for avoid/alerts
+- Typography: Georgia Bold (headings), Inter (body/UI)
+
+# ─────────────────────────────────────────
+# 2. TECH STACK — MANDATORY
+# ─────────────────────────────────────────
+
+Frontend:       Next.js 14+ (App Router, TypeScript)
+Styling:        Tailwind CSS
+Database:       Amazon Aurora PostgreSQL (AWS)
+ORM:            Prisma
+AI/LLM:         Google Gemini Flash via API (for conversation and context extraction)
+Deployment:     Vercel
+Auth:           None for v1 — family profiles managed in-app state + database
+Payments:       None — this is the AI engine demo, not a checkout system
+
+Do NOT add: Firebase, Redis, Razorpay, Docker, FastAPI, Python backend,
+Cloud Pub/Sub, or any infrastructure not listed above.
+
+This is a SINGLE Next.js app with API routes. No microservices.
+No separate backend. No Docker. Keep it simple.
+
+# ─────────────────────────────────────────
+# 3. PROJECT STRUCTURE
+# ─────────────────────────────────────────
+
+├── .cursorrules
+├── PROJECT.md
+├── PROGRESS.md
+├── PHASE_1.md
+├── PHASE_2.md
+├── PHASE_3.md
+├── prisma/
+│   └── schema.prisma
+├── data/
+│   ├── README.md
+│   ├── usda/                    # USDA FoodData Central nutritional data
+│   ├── rules/
+│   │   ├── health_conditions.json
+│   │   └── dietary_tags.json
+│   ├── products/                # Product catalog seed data
+│   └── scripts/
+│       ├── import-usda.ts       # Script to import USDA into Aurora
+│       ├── import-rules.ts      # Script to import health rules
+│       └── seed-products.ts     # Script to seed product catalog
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx             # Landing / store home
+│   │   ├── shop/
+│   │   │   └── page.tsx         # Product browsing with dynamic badges
+│   │   ├── product/
+│   │   │   └── [id]/
+│   │   │       └── page.tsx     # Product detail with nutrition
+│   │   ├── basket/
+│   │   │   └── page.tsx         # AI-generated basket with coverage
+│   │   ├── family/
+│   │   │   └── page.tsx         # Family profile management
+│   │   └── api/
+│   │       ├── family/
+│   │       │   └── route.ts     # Family CRUD
+│   │       ├── family/
+│   │       │   └── [id]/
+│   │       │       └── members/
+│   │       │           └── route.ts
+│   │       ├── products/
+│   │       │   └── route.ts     # Product list with scores
+│   │       ├── products/
+│   │       │   └── [id]/
+│   │       │       └── route.ts # Product detail
+│   │       ├── score/
+│   │       │   └── route.ts     # Scoring engine
+│   │       ├── basket/
+│   │       │   └── route.ts     # Basket optimizer
+│   │       └── chat/
+│   │           └── route.ts     # AI conversation
+│   ├── components/
+│   │   ├── ui/                  # Design system (Button, Card, Tag, Badge, etc.)
+│   │   ├── ProductCard.tsx
+│   │   ├── ProductGrid.tsx
+│   │   ├── HealthBadge.tsx
+│   │   ├── BasketView.tsx
+│   │   ├── CoverageScore.tsx
+│   │   ├── FamilySetup.tsx
+│   │   ├── ChatPanel.tsx
+│   │   ├── WeeklyContext.tsx
+│   │   └── NutritionInfo.tsx
+│   ├── lib/
+│   │   ├── db.ts               # Prisma client
+│   │   ├── scoring.ts          # Rules engine — product scoring
+│   │   ├── optimizer.ts        # Basket optimizer with quantities
+│   │   ├── ai.ts               # Gemini API — context extraction + conversation
+│   │   ├── quantities.ts       # Quantity calculation logic
+│   │   ├── constants.ts        # Colors, categories, consumption defaults
+│   │   └── types.ts            # TypeScript interfaces
+│   └── styles/
+│       └── globals.css          # Tailwind + CSS variables
+├── public/
+│   └── products/               # Product images
+├── tailwind.config.ts
+├── next.config.ts
+├── package.json
+└── tsconfig.json
+
+# ─────────────────────────────────────────
+# 4. GIT WORKFLOW — MANDATORY
+# ─────────────────────────────────────────
+
+Repository: https://github.com/Bhargavi2212/Healthcart
+Deploy:     https://healthcart-iota.vercel.app (Vercel, connected to main branch)
+Database:   Amazon Aurora PostgreSQL — provision and configure from this repo only
+            (see docs/AWS_SETUP.md). DATABASE_URL in .env.local + Vercel env vars.
+
+This folder IS the entire HealthCart project. Not a subfolder of another monorepo.
+
+Commit after EVERY completed step in PHASE_1.md, PHASE_2.md, or PHASE_3.md.
+Not at the end of a phase. One step = one commit = one PROGRESS.md update.
+
+Workflow after each step:
+1. Complete the step and verify (per phase doc)
+2. Stage only files changed for that step, plus PROGRESS.md
+3. Commit with the message specified in the phase doc (or format below)
+4. In PROGRESS.md: check the step Done column and add hash + message to Commit log
+5. git push origin main (keeps Vercel in sync)
+
+Commit format: <type>(<scope>): <description>
+
+Types: feat, fix, chore, data, style, test, docs
+Scopes: infra, schema, data, scoring, optimizer, ai, chat, ui, shop, basket, family, deploy, progress
+
+Examples:
+  chore(infra): initialize Next.js with Tailwind and Prisma
+  data(usda): import USDA FoodData Central into Aurora
+  feat(scoring): implement family health scoring algorithm
+  feat(ai): build natural language context extraction with Gemini
+  feat(shop): build product grid with dynamic health badges
+  style(ui): implement design system color tokens
+  docs(progress): mark phase 1 step 1.3 complete
+
+Never commit: .env.local, credentials, API keys, Aurora passwords.
+
+Update PROGRESS.md in the SAME commit as the step (not a separate commit).
+
+# ─────────────────────────────────────────
+# 5. DATA SOURCES — USE REAL DATA
+# ─────────────────────────────────────────
+
+## 5.1 USDA FoodData Central
+Primary source: https://fdc.nal.usda.gov/
+Bulk download: https://fdc.nal.usda.gov/download-datasets.html
+Download "Foundation Foods" and "SR Legacy" datasets (CSV/JSON). 300,000+ foods.
+English names only — no Telugu/Hindi columns. Food codes are USDA NDB/FDC numbers.
+
+Secondary source for branded products: Open Food Facts (https://world.openfoodfacts.org/)
+Use for packaged/branded items not well covered in Foundation Foods.
+
+Parse into NutritionLookup: foodCode, foodGroup, nameEn, energyKcal, proteinG,
+totalFatG, carbsG, fiberG, sugarG, ironMg, calciumMg, vitaminAUg, vitaminCMg,
+folateMg, potassiumMg, sodiumMg, saturatedFatG, glycemicIndex (nullable if missing).
+nameHi and nameTe columns stay in schema but remain empty for US demo.
+
+Action: Download, parse, write import script, load into Aurora NutritionLookup table.
+
+## 5.2 Health Condition Rules
+Sources: USDA Dietary Guidelines for Americans 2020-2025, American Heart Association
+guidelines, WHO nutrition guidance. Same structure (condition → boost/limit/avoid).
+
+Chronic conditions: diabetes, cholesterol, hypertension, anemia, thyroid (single
+condition — not hypo/hyper split), obesity, pregnancy, celiac/gluten intolerance,
+peanut allergy, lactose intolerance.
+
+Temporary conditions: fever, cold, cough, stomach_upset, period_cramps,
+post_surgery, fasting.
+
+Each rule: condition, action (boost/limit/avoid), targetTag, scoreImpact, reason,
+source (usda_dietary_guidelines, aha_guidelines, or published_literature),
+autoExpireDays for temporary conditions.
+
+Do NOT include: pcos, hypothyroid/hyperthyroid as separate conditions.
+
+## 5.3 Dietary Tag Rules
+Same auto-tag logic from nutritional data. Research thresholds from USDA RDA values
+(not ICMR). Examples: iron_rich, high_fiber, low_glycemic, diabetic_friendly,
+high_protein, vitamin_c_rich, low_calorie, high_sugar, high_sodium, calcium_rich,
+folate_rich, easily_digestible, hydrating, gluten_free, dairy_free, peanut_free.
+
+Categorical tags: vegetarian, easily_digestible, hydrating, light_meal, bbq_friendly.
+Remove sattvic tag — not relevant for US demo.
+
+## 5.4 Product Catalog
+100+ real American grocery products. Prices in USD. nameTe optional (leave empty).
+
+Categories:
+- Vegetables: kale, spinach, broccoli, bell peppers, sweet potato, zucchini,
+  avocado, tomato, carrots, celery, Brussels sprouts, asparagus, corn, green beans
+- Fruits: blueberries, strawberries, bananas, apples, oranges, watermelon, grapes,
+  lemons, peaches, mangoes
+- Proteins: chicken breast, ground turkey, salmon, eggs, tofu, Greek yogurt,
+  cottage cheese, black beans, lentils, chickpeas
+- Grains: brown rice, quinoa, oats, whole wheat bread, whole wheat pasta, tortillas
+- Dairy: milk (whole, 2%, almond, oat), cheese, butter, cream cheese
+- Pantry: olive oil, peanut butter, almond butter, honey, marinara sauce, salsa,
+  soy sauce, hot sauce (turmeric, cumin etc. as pantry items if needed — not a
+  separate spice category)
+- Snacks: hummus, trail mix, granola bars, dark chocolate, popcorn
+
+Each product: nameEn, category, subcategory, price (USD), weight_options as variants,
+usdaFoodCode FK to NutritionLookup, isSeasonal where applicable.
+
+## 5.5 Product Images
+Royalty-free images (Unsplash, Pexels, Pixabay) of American grocery products.
+WebP format, max 400px width. Store in /public/products/. Named by slug:
+kale.webp, spinach.webp, quinoa.webp.
+
+Do NOT use placeholder data. Every product, price, and nutritional value must be real.
+
+# ─────────────────────────────────────────
+# 6. DATABASE SCHEMA (Prisma)
+# ─────────────────────────────────────────
+
+Tables (keep it minimal — only what the AI engine needs):
+
+## Family Management
+- Family: id, name, createdAt
+- FamilyMember: id, familyId, name, age, relation, dietType, conditions (String[]),
+  allergies (String[]), heightCm, weightKg, isTemporary, startDate, endDate
+- WeeklyContext: id, familyId, weekStart, rawMessage, extractedContext (JSON),
+  cuisineMood, createdAt
+
+## Nutrition Knowledge
+- NutritionLookup: foodCode (PK — USDA NDB/FDC number), foodGroup, nameEn,
+  nameHi (optional, empty), nameTe (optional, empty), energyKcal, proteinG,
+  totalFatG, carbsG, fiberG, sugarG, ironMg, calciumMg, vitaminAUg, vitaminCMg,
+  folateMg, potassiumMg, sodiumMg, saturatedFatG, glycemicIndex
+- HealthConditionRule: id, condition, action, targetTag, scoreImpact, reason,
+  source, autoExpireDays (nullable), isActive
+- DietaryTagRule: id, tagName, nutrientColumn, operator, threshold, description
+
+## Products
+- Product: id, nameEn, nameTe (optional — not required), description, category,
+  subcategory, imageUrl, isSeasonal, availableMonths (Int[]), usdaFoodCode (FK),
+  isActive, createdAt
+- ProductVariant: id, productId, weightValue, weightUnit, price, sku
+- DietaryTag: id, productId, tag
+
+## AI Output
+- ProductScore, BasketRecommendation — unchanged from original design.
+
+That's 11 tables. Schema identical; nameTe optional; ifctFoodCode renamed usdaFoodCode
+in application code (or keep column name ifctFoodCode as FK alias — prefer usdaFoodCode
+in Prisma for clarity).
+
+# ─────────────────────────────────────────
+# 7. SCORING ENGINE — THE BRAIN
+# ─────────────────────────────────────────
+
+Pure TypeScript. Zero external API calls. Deterministic.
+
+Algorithm unchanged. Example products for US context:
+- Kale scores high for anemia (iron) and cholesterol (fiber)
+- Quinoa scores high (gluten-free, high protein, low glycemic)
+- Products with gluten get "avoid" for celiac family members
+- Peanut products get "avoid" for members with peanut allergy
+- White bread scores low for pre-diabetic members (high glycemic)
+
+CRITICAL RULES:
+- Reasoning MUST use actual member names: "Good for Jake's peanut allergy — gluten-free"
+  not "good for family member with allergy"
+- Avoid badge wins for ANY member when hard-avoid rules match (safety first)
+- Cuisine mood (BBQ, meal prep, keto-friendly) boosts but never overrides health constraints
+- Engine never calls an LLM
+
+# ─────────────────────────────────────────
+# 8. QUANTITY LOGIC
+# ─────────────────────────────────────────
+
+Research USDA Dietary Guidelines / DRI for Americans — not ICMR RDA.
+Americans typically consume less vegetables per person than ICMR recommends for Indians;
+derive base per-person weekly consumption from USDA sources.
+
+Examples:
+- Leafy greens: research USDA serving guidance per person per week
+- Kale: if family needs iron and kale has ~2.7mg/100g, calculate meaningful contribution
+- Shelf life: US grocery perishables (bagged salad 3-5 days, root veg full week)
+- Snap to variants: 1.2 lb → snap to 1 lb or 2 lb package
+- Budget: "keep it under $75" — reduce mood items first; show coverage tradeoff
+
+Store in lib/quantities.ts as pure functions.
+
+# ─────────────────────────────────────────
+# 9. AI CONVERSATION ENGINE
+# ─────────────────────────────────────────
+
+Gemini Flash does TWO things: structured extraction + conversational response.
+
+## Thing 1: Context extraction
+Customer types: "My mom Linda is visiting from Florida, she can't have gluten.
+Jake has a summer cold. Saturday we're doing a BBQ. It's going to be super hot."
+
+LLM extracts JSON:
+{
+  "household_changes": [{"action": "add_temp", "name": "Linda", "conditions": ["celiac"]}],
+  "health_states": [{"member": "Jake", "condition": "cold", "since": "today"}],
+  "dietary_needs": [{"date": "Saturday", "requirement": "bbq", "constraints": []}],
+  "mood": {"overall": "light_fresh", "reason": "hot_weather"},
+  "practical_needs": []
+}
+
+## Thing 2: Conversational response
+Warm, uses member names and American product names (kale, Greek yogurt, quinoa).
+
+Prompt must handle:
+- English and Spanish (e.g. "Solo esta semana somos dos...")
+- US cultural context: Thanksgiving, BBQ, meal prep Sunday, keto, paleo, July 4th,
+  Super Bowl party, potluck, tailgate
+- Implicit references: "the kid" → Jake, "grandma" → Linda
+- Corrections: "Actually Jake is feeling better" → remove cold state
+- American food names in responses — NOT Indian names (kale not palak, lentils not dal)
+
+Remove: puja, sattvic, Ekadashi, sabzi mandi, Hinglish/Telugu examples.
+
+Store in lib/ai.ts. Use @google/generative-ai SDK.
+
+# ─────────────────────────────────────────
+# 10. BASKET OPTIMIZER
+# ─────────────────────────────────────────
+
+Algorithm unchanged. US example output:
+{
+  items: [...],
+  coverageScore: 87,
+  perMemberCoverage: {Mike: 82, Sarah: 94, Jake: 91, Linda: 78},
+  totalPrice: 84.50,
+  weeklyContext: "BBQ Saturday, Jake has cold, Linda visiting gluten-free"
+}
+
+Store in lib/optimizer.ts.
+
+# ─────────────────────────────────────────
+# 11. FRONTEND RULES
+# ─────────────────────────────────────────
+
+Design system: same tokens as Section 1. Mobile-first, desktop-polished for judges.
+
+Key pages unchanged in structure. Display rules:
+- Currency: $X,XXX.XX (US format) — NOT ₹
+- Product names: English only in UI (nameTe not displayed)
+- Nutrition from USDA FoodData Central (not IFCT)
+- Product detail: USDA nutrition per 100g, health badge with member names
+
+Chat panel transforms shop page behind it — same UX as before.
+
+# ─────────────────────────────────────────
+# 12. CODING STANDARDS
+# ─────────────────────────────────────────
+
+- TypeScript strict mode. No `any` types.
+- Server Components by default. Client Components only for interactivity.
+- Prisma for all database queries. No raw SQL in application code.
+- API format: { data: {...} } or { error: { message: "..." } }
+- All prices in USD. Format as $X,XXX.XX
+- Times in local US timezone for display (or user's browser locale)
+- Product names: English only in UI
+- Component files: PascalCase.tsx. Utility files: camelCase.ts.
+
+Ponytail philosophy: minimum code, reuse before rewrite, never skip validation/types.
+
+# ─────────────────────────────────────────
+# 13. WHAT NOT TO DO
+# ─────────────────────────────────────────
+
+- Do NOT build auth, payments, admin panel, or notifications
+- Do NOT use Redis, Docker, or infrastructure beyond Aurora + Vercel
+- Do NOT use placeholder data
+- Do NOT make the LLM score products
+- Do NOT build a recipe recommender
+- Do NOT skip commits
+- Do NOT use localStorage for family data
+- Do NOT install UI component libraries (no shadcn, no MUI)
+- Do NOT over-engineer
+
+# ═══════════════════════════════════════════════════════════════════
+# Build fast. Build real. Ship something families would actually use.
+# ═══════════════════════════════════════════════════════════════════
