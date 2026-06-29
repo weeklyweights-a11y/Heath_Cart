@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1b5e20;
+  --color-primary-dark: #0d3b0e;
+  --color-success: #4caf50;
+  --color-accent: #8d6e63;
+  --color-cream: #fff8e1;
+  --color-text: #5d4037;
+  --color-danger: #e57373;
+  --color-warning: #ffb74d;
+}
+
+body {
+  @apply bg-cream text-text font-body antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Georgia, serif;
+  font-weight: 700;
+}
