@@ -1,0 +1,46 @@
+{
+  "name": "healthcart",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "import-data": "tsx data/scripts/import-all.ts",
+    "import:usda": "tsx data/scripts/import-usda.ts",
+    "import:rules": "tsx data/scripts/import-rules.ts",
+    "seed:products": "tsx data/scripts/seed-products.ts",
+    "generate:tags": "tsx data/scripts/generate-tags.ts",
+    "seed:all": "npm run seed:products && npm run generate:tags",
+    "verify:data": "tsx data/scripts/verify-data.ts",
+    "provision:aurora": "tsx data/scripts/provision-aurora.ts",
+    "teardown:aurora": "tsx data/scripts/teardown-aurora.ts",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "@prisma/client": "^6.9.0",
+    "next": "14.2.35",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-ec2": "^3.1075.0",
+    "@aws-sdk/client-rds": "^3.1075.0",
+    "@aws-sdk/client-sts": "^3.1075.0",
+    "@types/node": "^20.17.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "csv-parse": "^5.6.0",
+    "dotenv": "^16.4.7",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.35",
+    "postcss": "^8.4.49",
+    "prisma": "^6.9.0",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}

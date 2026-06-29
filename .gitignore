@@ -38,6 +38,7 @@ Thumbs.db
 # data downloads (large; import scripts regenerate)
 data/usda/raw/
 data/usda/*.zip
+data/usda/usda_data.json
 data/openfoodfacts/raw/
 
 # test
@@ -46,7 +47,11 @@ coverage/
 
 # vercel
 .vercel
+.env.vercel
+.env.vercel.*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+
+.vercel
+.env*
