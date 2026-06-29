@@ -353,7 +353,7 @@
   {
     "condition": "peanut_allergy",
     "action": "avoid",
-    "targetTag": "peanut_free",
+    "targetTag": "contains_peanut",
     "scoreImpact": -40,
     "reason": "Peanut-containing products are unsafe.",
     "source": "published_literature",

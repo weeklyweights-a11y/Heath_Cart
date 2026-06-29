@@ -122,6 +122,7 @@ function evalCategorical(
     if (!allergen.containsGluten) tags.add("gluten_free");
     else tags.add("contains_gluten");
     if (!allergen.containsPeanut) tags.add("peanut_free");
+    else tags.add("contains_peanut");
     if (!allergen.containsDairy) tags.add("dairy_free");
   } else {
     tags.add("gluten_free");

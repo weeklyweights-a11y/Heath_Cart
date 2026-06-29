@@ -9,6 +9,7 @@ export const CATEGORICAL_TAGS = [
   "gluten_free",
   "dairy_free",
   "peanut_free",
+  "contains_peanut",
   "contains_gluten",
   "high_goitrogen",
   "selenium_rich",
