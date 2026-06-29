@@ -1,0 +1,203 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum HealthAction {
+  boost
+  limit
+  avoid
+}
+
+enum MemberRelation {
+  self
+  spouse
+  child
+  parent
+  grandparent
+  sibling
+  other
+}
+
+enum DietType {
+  vegetarian
+  non_vegetarian
+  flexible
+}
+
+enum HealthBadge {
+  recommended
+  neutral
+  limit
+  avoid
+}
+
+model Family {
+  id        String   @id @default(cuid())
+  name      String
+  createdAt DateTime @default(now())
+
+  members               FamilyMember[]
+  weeklyContexts        WeeklyContext[]
+  productScores         ProductScore[]
+  basketRecommendations BasketRecommendation[]
+}
+
+model FamilyMember {
+  id          String         @id @default(cuid())
+  familyId    String
+  name        String
+  age         Int
+  relation    MemberRelation
+  dietType    DietType
+  conditions  String[]
+  allergies   String[]
+  heightCm    Float?
+  weightKg    Float?
+  isTemporary Boolean        @default(false)
+  startDate   DateTime?
+  endDate     DateTime?
+
+  family Family @relation(fields: [familyId], references: [id], onDelete: Cascade)
+}
+
+model WeeklyContext {
+  id                String   @id @default(cuid())
+  familyId          String
+  weekStart         DateTime @db.Date
+  rawMessage        String
+  extractedContext  Json
+  cuisineMood       String?
+  createdAt         DateTime @default(now())
+
+  family Family @relation(fields: [familyId], references: [id], onDelete: Cascade)
+
+  @@unique([familyId, weekStart])
+}
+
+model NutritionLookup {
+  foodCode       Int     @id
+  foodGroup      String?
+  nameEn         String
+  nameHi         String?
+  nameTe         String?
+  energyKcal     Float?
+  proteinG       Float?
+  totalFatG      Float?
+  carbsG         Float?
+  fiberG         Float?
+  sugarG         Float?
+  ironMg         Float?
+  calciumMg      Float?
+  vitaminAUg     Float?
+  vitaminCMg     Float?
+  folateMg       Float?
+  potassiumMg    Float?
+  sodiumMg       Float?
+  saturatedFatG  Float?
+  magnesiumMg    Float?
+  glycemicIndex  Float?
+
+  products Product[]
+}
+
+model HealthConditionRule {
+  id             String       @id @default(cuid())
+  condition      String
+  action         HealthAction
+  targetTag      String
+  scoreImpact    Int
+  reason         String
+  source         String
+  autoExpireDays Int?
+  isActive       Boolean      @default(true)
+
+  @@unique([condition, action, targetTag])
+}
+
+model DietaryTagRule {
+  id            String  @id @default(cuid())
+  tagName       String  @unique
+  nutrientColumn String?
+  operator      String?
+  threshold     Float?
+  description   String
+  isActive      Boolean @default(true)
+}
+
+model Product {
+  id              String   @id @default(cuid())
+  nameEn          String
+  nameTe          String?
+  description     String?
+  usdaFoodCode    Int
+  category        String
+  subcategory     String
+  imageUrl        String?
+  isSeasonal      Boolean  @default(false)
+  availableMonths Int[]
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+
+  nutrition NutritionLookup @relation(fields: [usdaFoodCode], references: [foodCode], onDelete: Restrict)
+  variants  ProductVariant[]
+  tags      DietaryTag[]
+  scores    ProductScore[]
+
+  @@unique([nameEn, category])
+}
+
+model ProductVariant {
+  id           String  @id @default(cuid())
+  productId    String
+  weightValue  Float
+  weightUnit   String
+  price        Decimal @db.Decimal(10, 2)
+  sku          String?
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([productId, weightValue, weightUnit])
+}
+
+model DietaryTag {
+  id        String @id @default(cuid())
+  productId String
+  tag       String
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([productId, tag])
+}
+
+model ProductScore {
+  id         String      @id @default(cuid())
+  familyId   String
+  productId  String
+  score      Float
+  badge      HealthBadge
+  reasoning  Json
+  computedAt DateTime    @default(now())
+
+  family  Family  @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([familyId, productId])
+  @@index([familyId])
+}
+
+model BasketRecommendation {
+  id             String   @id @default(cuid())
+  familyId       String
+  basketJson     Json
+  coverageScore  Float
+  totalPrice     Decimal  @db.Decimal(10, 2)
+  context        String?
+  createdAt      DateTime @default(now())
+
+  family Family @relation(fields: [familyId], references: [id], onDelete: Cascade)
+}
