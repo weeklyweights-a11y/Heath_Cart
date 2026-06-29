@@ -72,6 +72,21 @@ export function formatBudgetTradeoff(
   return `Under $${budget.toFixed(0)}: ${afterCoverage}% coverage. Reduced: ${reduced}.${nutrientNote}`;
 }
 
+const MEMBER_SUFFIX_RE = /\s*—\s*recommended for [^.]+\.?$/i;
+
+/** Pull health explanations out of score lines (drops the "recommended for Name" tail). */
+export function extractHealthReasons(scoreReasoning: string[]): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const raw of scoreReasoning) {
+    const cleaned = raw.replace(MEMBER_SUFFIX_RE, "").trim();
+    if (!cleaned || seen.has(cleaned)) continue;
+    seen.add(cleaned);
+    out.push(cleaned.endsWith(".") ? cleaned : `${cleaned}.`);
+  }
+  return out;
+}
+
 /** Human-readable explanation for why a product landed in the weekly basket. */
 export function formatBasketItemWhy(params: {
   category: string;
@@ -83,16 +98,14 @@ export function formatBasketItemWhy(params: {
   const { category, membersBenefiting, scoreReasoning, headcount, variantLabel } =
     params;
 
+  const healthReasons = extractHealthReasons(scoreReasoning);
   let why: string;
-  if (scoreReasoning.length > 0) {
-    why = scoreReasoning[0].endsWith(".")
-      ? scoreReasoning[0]
-      : `${scoreReasoning[0]}.`;
+  if (healthReasons.length > 0) {
+    why = healthReasons.slice(0, 2).join(" ");
   } else if (membersBenefiting.length > 0) {
-    const names = membersBenefiting.join(" and ");
-    why = `Supports ${names}'s health profile this week.`;
+    why = `Nutrient-rich ${category.toLowerCase()} pick matched to your family's weekly needs.`;
   } else {
-    why = `Balanced ${category.toLowerCase()} choice for your household's weekly nutrition.`;
+    why = `Covers your household's weekly ${category.toLowerCase()} nutrition.`;
   }
 
   const sizing =
@@ -101,6 +114,30 @@ export function formatBasketItemWhy(params: {
       : `Sized for ${headcount} people at home (${variantLabel}).`;
 
   return `${why} ${sizing}`;
+}
+
+/** Split stored basket copy into a clear "why" line and optional sizing note. */
+export function getBasketItemCopy(item: {
+  reasoning: string;
+  membersBenefiting: string[];
+}): { why: string; sizing: string | null } {
+  const sizingMatch = item.reasoning.match(/(Sized for .+\)\.?)\s*$/i);
+  const sizing = sizingMatch?.[1] ?? null;
+  let why = sizingMatch
+    ? item.reasoning.slice(0, sizingMatch.index).trim()
+    : item.reasoning.trim();
+
+  why = extractHealthReasons([why]).join(" ") || why;
+  why = why.replace(MEMBER_SUFFIX_RE, "").trim();
+
+  if (!why) {
+    why =
+      item.membersBenefiting.length > 0
+        ? "Included because it fits your family's health profiles this week."
+        : "Included to round out your family's weekly nutrition.";
+  }
+
+  return { why, sizing };
 }
 
 export function pickChatProductHighlights(params: {

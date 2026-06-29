@@ -125,12 +125,18 @@ function computeScores(
     }
 
     if (allMembersHealthy(members) && product.nutrition) {
-      score += nutritionalDensityScore(
+      const densityBoost = nutritionalDensityScore(
         product.nutrition,
         product.isSeasonal,
         referenceMonth,
         product.availableMonths,
       );
+      if (densityBoost > 0) {
+        reasoning.push(
+          "Nutrient-dense choice with fiber, protein, or vitamins for balanced weekly eating.",
+        );
+      }
+      score += densityBoost;
     }
 
     if (moodBoosts.length > 0 && !hasAvoidMatch) {

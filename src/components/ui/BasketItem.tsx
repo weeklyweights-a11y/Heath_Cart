@@ -2,6 +2,7 @@
 
 import ProductImage from "@/components/ui/ProductImage";
 import { formatUsd } from "@/lib/format";
+import { getBasketItemCopy } from "@/lib/member-labels";
 import type { BasketItem as BasketItemType } from "@/lib/types";
 
 interface BasketItemProps {
@@ -20,6 +21,7 @@ export default function BasketItemRow({
   onVariantClick,
 }: BasketItemProps) {
   const variantLabel = `${item.variant.weightValue} ${item.variant.weightUnit}`;
+  const { why, sizing } = getBasketItemCopy(item);
 
   return (
     <div className="flex gap-3 rounded-lg bg-white p-3 shadow-sm">
@@ -47,12 +49,19 @@ export default function BasketItemRow({
         >
           {variantLabel}
         </button>
+        <p className="mt-2 text-sm text-text/90">
+          <span className="font-semibold text-text">Why: </span>
+          {why}
+        </p>
         {item.membersBenefiting.length > 0 && (
-          <p className="mt-1 text-xs font-medium text-primary">
-            For: {item.membersBenefiting.join(", ")}
+          <p className="mt-1 text-xs text-text/70">
+            <span className="font-medium text-text/80">Good for: </span>
+            {item.membersBenefiting.join(", ")}
           </p>
         )}
-        <p className="mt-1 text-sm text-text/80">{item.reasoning}</p>
+        {sizing && (
+          <p className="mt-1 text-xs text-text/60">{sizing}</p>
+        )}
         <div className="mt-2 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <button

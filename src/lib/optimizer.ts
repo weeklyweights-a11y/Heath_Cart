@@ -431,6 +431,7 @@ export async function addItemToBasket(
   let items = record.basketJson as unknown as BasketItem[];
   const unitPrice = Number(variant.price);
   const existing = items.find((i) => i.productId === productId);
+  const ctx = await buildActiveFamilyContext(familyId);
 
   if (existing) {
     const prevQty = existing.quantity;
@@ -447,6 +448,13 @@ export async function addItemToBasket(
       existing.price = unit * existing.quantity;
     }
   } else {
+    const scores = await scoreProductsForFamily(familyId);
+    const scoreMap = new Map(scores.map((s) => [s.productId, s]));
+    const rules = await prisma.healthConditionRule.findMany();
+    const tags = product.tags.map((t) => t.tag);
+    const benefiting = membersBenefiting(tags, ctx.activeMembers, rules);
+    const score = scoreMap.get(productId);
+
     items.push({
       productId,
       name: product.nameEn,
@@ -457,12 +465,17 @@ export async function addItemToBasket(
         weightUnit: variant.weightUnit,
       },
       price: unitPrice * quantity,
-      reasoning: `Added for your family's weekly needs.`,
-      membersBenefiting: [],
+      reasoning: formatBasketItemWhy({
+        category: product.category,
+        membersBenefiting: benefiting,
+        scoreReasoning: score?.reasoning ?? [],
+        headcount: ctx.activeMembers.length,
+        variantLabel: `${variant.weightValue} ${variant.weightUnit}`,
+      }),
+      membersBenefiting: benefiting,
     });
   }
 
-  const ctx = await buildActiveFamilyContext(familyId);
   const enriched = await itemsToInternal(items, ctx.activeMembers);
   const cov = overallCoverage(ctx.activeMembers, enriched);
   const totalPrice = items.reduce((s, i) => s + i.price, 0);
