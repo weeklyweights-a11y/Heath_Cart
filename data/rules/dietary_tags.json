@@ -1,0 +1,107 @@
+[
+  {
+    "tagName": "iron_rich",
+    "nutrientColumn": "ironMg",
+    "operator": "gt",
+    "threshold": 2.0,
+    "description": "Iron ≥ 2.0 mg per 100g (USDA DRI reference for rich sources)"
+  },
+  {
+    "tagName": "high_fiber",
+    "nutrientColumn": "fiberG",
+    "operator": "gt",
+    "threshold": 3.0,
+    "description": "Dietary fiber > 3 g per 100g"
+  },
+  {
+    "tagName": "low_glycemic",
+    "nutrientColumn": "glycemicIndex",
+    "operator": "lt",
+    "threshold": 55,
+    "description": "GI < 55 when available; proxy in generator when null (sugar < 10g, fiber > 2g)"
+  },
+  {
+    "tagName": "magnesium_rich",
+    "nutrientColumn": "magnesiumMg",
+    "operator": "gt",
+    "threshold": 50,
+    "description": "Magnesium > 50 mg per 100g; categorical fallback in generator"
+  },
+  {
+    "tagName": "high_protein",
+    "nutrientColumn": "proteinG",
+    "operator": "gt",
+    "threshold": 10,
+    "description": "Protein > 10 g per 100g"
+  },
+  {
+    "tagName": "vitamin_c_rich",
+    "nutrientColumn": "vitaminCMg",
+    "operator": "gt",
+    "threshold": 15,
+    "description": "Vitamin C > 15 mg per 100g"
+  },
+  {
+    "tagName": "low_calorie",
+    "nutrientColumn": "energyKcal",
+    "operator": "lt",
+    "threshold": 40,
+    "description": "Energy < 40 kcal per 100g"
+  },
+  {
+    "tagName": "high_sodium",
+    "nutrientColumn": "sodiumMg",
+    "operator": "gt",
+    "threshold": 400,
+    "description": "Sodium > 400 mg per 100g (AHA limit context)"
+  },
+  {
+    "tagName": "high_sugar",
+    "nutrientColumn": "sugarG",
+    "operator": "gt",
+    "threshold": 10,
+    "description": "Total sugars > 10 g per 100g"
+  },
+  {
+    "tagName": "calcium_rich",
+    "nutrientColumn": "calciumMg",
+    "operator": "gt",
+    "threshold": 100,
+    "description": "Calcium > 100 mg per 100g"
+  },
+  {
+    "tagName": "folate_rich",
+    "nutrientColumn": "folateMg",
+    "operator": "gt",
+    "threshold": 0.03,
+    "description": "Folate > 30 mcg DFE per 100g (stored as 0.03 mg)"
+  },
+  {
+    "tagName": "high_saturated_fat",
+    "nutrientColumn": "saturatedFatG",
+    "operator": "gt",
+    "threshold": 5,
+    "description": "Saturated fat > 5 g per 100g"
+  },
+  {
+    "tagName": "potassium_rich",
+    "nutrientColumn": "potassiumMg",
+    "operator": "gt",
+    "threshold": 300,
+    "description": "Potassium > 300 mg per 100g"
+  },
+  {
+    "tagName": "diabetic_friendly",
+    "nutrientColumn": "sugarG",
+    "operator": "lt",
+    "threshold": 5,
+    "description": "Low sugar (< 5g); generator also requires fiber > 2g for composite tag"
+  },
+  {
+    "tagName": "selenium_rich",
+    "nutrientColumn": null,
+    "operator": null,
+    "threshold": null,
+    "description": "Categorical tag for Brazil nuts and fish — applied in generate-tags.ts"
+  }
+]
