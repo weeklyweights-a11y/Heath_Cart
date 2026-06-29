@@ -8,11 +8,11 @@ Run on **desktop (1024px+)** and **mobile (375px)**. Mark pass/fail.
 | 2 | Click "Try the Demo" → Johnson family created, shop opens | [ ] | [ ] |
 | 3 | Browse — kale green (Mike), peanut butter red (Jake), quinoa green (Linda) | [ ] | [ ] |
 | 4 | Open kale — USDA nutrition, fiber highlighted, full reasoning | [ ] | [ ] |
-| 5 | Chat: Linda visiting + Jake cold + hot weather + BBQ message | [ ] | [ ] |
+| 5 | Chat: Linda visiting + Jake cold + hot weather + BBQ message (v2: safety audit + graph traces) | [ ] | [ ] |
 | 6 | AI responds naturally, acknowledging everything | [ ] | [ ] |
 | 7 | Shop transforms (desktop behind panel; mobile after closing chat) | [ ] | [ ] |
 | 8 | Ask: "Can Jake have trail mix with his cold?" — allergy + cold advice | [ ] | [ ] |
-| 9 | Open basket — items, ~87% coverage, ~$84.50 total | [ ] | [ ] |
+| 9 | Open basket — items, coverage %, total; expand **Show evidence** for graph path | [ ] | [ ] |
 | 10 | Per-member coverage: Mike, Jake, Linda, Sarah percentages | [ ] | [ ] |
 | 11 | Change kale 1 lb → 2 lb — live coverage update | [ ] | [ ] |
 | 12 | Set budget $75 — re-optimize + tradeoffs | [ ] | [ ] |

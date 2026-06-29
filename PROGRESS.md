@@ -83,3 +83,17 @@
 | 2026-06-29 | 2.10 | 9408941 | test(ai): verify natural language context extraction across 7 input scenarios |
 | 2026-06-29 | 2.11 | 7f6f604 | test(optimizer): verify basket generation across 6 constraint scenarios |
 | 2026-06-29 | 3.1-3.13 | fd6fd3b | feat(phase3): complete frontend, chat-driven shop, basket, and deploy docs |
+| 2026-06-27 | Intel v2 | _pending_ | feat(intelligence): Intelligence Layer v2 — graph, cosine ranking, CSP basket, orchestrator |
+
+## Intelligence Layer v2
+
+| Phase | Task | Done |
+|-------|------|:----:|
+| 0 | Feature flag, INTELLIGENCE_V2.md, golden scenarios, benchmark v2 | [x] |
+| 1 | KgNode/KgEdge schema, seed-knowledge-graph, FoodOn map | [x] |
+| 2 | household-state, hard-filter, intent-agent, safety-audit | [x] |
+| 3 | nutrient-vector, cosine-rank, hybrid-score, score-products-v2 | [x] |
+| 4 | basket-csp, trace-path, BasketItem evidence UI | [x] |
+| 5 | pgvector embed pipeline + semantic fallback | [x] |
+| 6 | orchestrator, formatter-agent, thin chat route | [x] |
+| 7 | Neo4j stub, FoodKG stub, v1 fallback via flag | [x] |

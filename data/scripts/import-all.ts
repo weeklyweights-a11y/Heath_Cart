@@ -3,6 +3,7 @@ import { prisma } from "./prisma-client";
 import { CATEGORICAL_TAGS } from "../rules/tag-vocabulary";
 import { importHealthRules } from "./import-health-rules";
 import { importDietaryTagRules } from "./import-rules";
+import { seedKnowledgeGraph } from "./seed-knowledge-graph";
 
 export async function validateTargetTags(): Promise<void> {
   const healthRules = await prisma.healthConditionRule.findMany({
@@ -60,6 +61,9 @@ async function main(): Promise<void> {
   await importHealthRules();
   await importDietaryTagRules();
   await validateTargetTags();
+
+  console.log("=== Knowledge graph seed ===");
+  await seedKnowledgeGraph();
 
   if (withSeed) {
     console.log("=== Catalog seed + tags ===");

@@ -36,6 +36,24 @@ enum HealthBadge {
   avoid
 }
 
+enum KgNodeType {
+  clinical_concept
+  nutrient_need
+  nutrient_limit
+  tag
+  intent
+  foodon_term
+}
+
+enum KgEdgeRelation {
+  REQUIRES
+  AVOIDS
+  SATISFIED_BY
+  PREFERS
+  MAPS_TO
+  LIMITS
+}
+
 model Family {
   id        String   @id @default(cuid())
   name      String
@@ -45,6 +63,7 @@ model Family {
   weeklyContexts        WeeklyContext[]
   productScores         ProductScore[]
   basketRecommendations BasketRecommendation[]
+  intelligenceRuns      IntelligenceRun[]
 }
 
 model FamilyMember {
@@ -138,6 +157,7 @@ model Product {
   category        String
   subcategory     String
   imageUrl        String?
+  foodonId        String?
   isSeasonal      Boolean  @default(false)
   availableMonths Int[]
   isActive        Boolean  @default(true)
@@ -175,18 +195,58 @@ model DietaryTag {
 }
 
 model ProductScore {
-  id         String      @id @default(cuid())
-  familyId   String
-  productId  String
-  score      Float
-  badge      HealthBadge
-  reasoning  Json
-  computedAt DateTime    @default(now())
+  id             String      @id @default(cuid())
+  familyId       String
+  productId      String
+  score          Float
+  badge          HealthBadge
+  reasoning      Json
+  scoreBreakdown Json?
+  computedAt     DateTime    @default(now())
 
   family  Family  @relation(fields: [familyId], references: [id], onDelete: Cascade)
   product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
 
   @@unique([familyId, productId])
+  @@index([familyId])
+}
+
+model KgNode {
+  id        String     @id @default(cuid())
+  type      KgNodeType
+  key       String     @unique
+  label     String
+  metadata  Json?
+  edgesFrom KgEdge[]   @relation("KgEdgeFrom")
+  edgesTo   KgEdge[]   @relation("KgEdgeTo")
+}
+
+model KgEdge {
+  id         String         @id @default(cuid())
+  fromNodeId String
+  toNodeId   String
+  relation   KgEdgeRelation
+  weight     Float          @default(1.0)
+  reason     String?
+  source     String?
+  fromNode   KgNode         @relation("KgEdgeFrom", fields: [fromNodeId], references: [id], onDelete: Cascade)
+  toNode     KgNode         @relation("KgEdgeTo", fields: [toNodeId], references: [id], onDelete: Cascade)
+
+  @@unique([fromNodeId, toNodeId, relation])
+  @@index([fromNodeId])
+  @@index([toNodeId])
+}
+
+model IntelligenceRun {
+  id         String   @id @default(cuid())
+  familyId   String
+  message    String
+  traceJson  Json
+  durationMs Int
+  createdAt  DateTime @default(now())
+
+  family Family @relation(fields: [familyId], references: [id], onDelete: Cascade)
+
   @@index([familyId])
 }
 

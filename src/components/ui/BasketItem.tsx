@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import ProductImage from "@/components/ui/ProductImage";
 import { formatUsd } from "@/lib/format";
 import { getBasketItemCopy } from "@/lib/member-labels";
@@ -20,8 +21,10 @@ export default function BasketItemRow({
   onRemove,
   onVariantClick,
 }: BasketItemProps) {
+  const [showEvidence, setShowEvidence] = useState(false);
   const variantLabel = `${item.variant.weightValue} ${item.variant.weightUnit}`;
   const { why, sizing } = getBasketItemCopy(item);
+  const explanation = item.explanation;
 
   return (
     <div className="flex gap-3 rounded-lg bg-white p-3 shadow-sm">
@@ -61,6 +64,40 @@ export default function BasketItemRow({
         )}
         {sizing && (
           <p className="mt-1 text-xs text-text/60">{sizing}</p>
+        )}
+        {explanation && (
+          <div className="mt-2">
+            <button
+              type="button"
+              onClick={() => setShowEvidence((v) => !v)}
+              className="text-xs font-medium text-primary hover:underline"
+            >
+              {showEvidence ? "Hide evidence" : "Show evidence"}
+            </button>
+            {showEvidence && (
+              <div className="mt-1 rounded bg-gray-50 p-2 text-xs text-text/70">
+                {explanation.graphPath.length > 0 && (
+                  <p>
+                    <span className="font-medium">Graph: </span>
+                    {explanation.graphPath.join(" → ")}
+                  </p>
+                )}
+                {explanation.scoreBreakdown && (
+                  <p className="mt-1">
+                    Scores — nutrient: {(explanation.scoreBreakdown.nutrient * 100).toFixed(0)}%,
+                    graph: {(explanation.scoreBreakdown.graph * 100).toFixed(0)}%,
+                    seasonal: {(explanation.scoreBreakdown.seasonal * 100).toFixed(0)}%
+                  </p>
+                )}
+                {explanation.constraintsChecked.length > 0 && (
+                  <p className="mt-1">
+                    <span className="font-medium">Checked: </span>
+                    {explanation.constraintsChecked.join("; ")}
+                  </p>
+                )}
+              </div>
+            )}
+          </div>
         )}
         <div className="mt-2 flex items-center justify-between">
           <div className="flex items-center gap-2">

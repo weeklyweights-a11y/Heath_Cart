@@ -18,7 +18,12 @@ export async function GET(request: NextRequest) {
 
     let scoreMap = new Map<
       string,
-      { score: number; badge: HealthBadge; reasoning: string[] }
+      {
+        score: number;
+        badge: HealthBadge;
+        reasoning: string[];
+        scoreBreakdown?: import("@/lib/types").ScoreBreakdown;
+      }
     >();
 
     if (familyId) {
@@ -26,7 +31,12 @@ export async function GET(request: NextRequest) {
       scoreMap = new Map(
         scores.map((s) => [
           s.productId,
-          { score: s.score, badge: s.badge, reasoning: s.reasoning },
+          {
+            score: s.score,
+            badge: s.badge,
+            reasoning: s.reasoning,
+            scoreBreakdown: s.scoreBreakdown,
+          },
         ]),
       );
     }
@@ -57,6 +67,8 @@ export async function GET(request: NextRequest) {
         score: s?.score,
         badge: s?.badge,
         reasoning: s ? s.reasoning.slice(0, 2) : undefined,
+        scoreBreakdown: s?.scoreBreakdown,
+        graphPath: s?.scoreBreakdown?.graphPaths?.[0],
       };
     });
 

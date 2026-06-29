@@ -89,6 +89,19 @@ export default function ProductDetailClient({ id }: { id: string }) {
             reasoning={product.reasoning}
           />
         )}
+        {product.scoreBreakdown && (
+          <p className="rounded-lg bg-gray-50 px-3 py-2 text-xs text-text/70">
+            Intelligence scores — nutrient: {(product.scoreBreakdown.nutrient * 100).toFixed(0)}%,
+            graph: {(product.scoreBreakdown.graph * 100).toFixed(0)}%,
+            semantic: {(product.scoreBreakdown.semantic * 100).toFixed(0)}%,
+            seasonal: {(product.scoreBreakdown.seasonal * 100).toFixed(0)}%
+            {product.graphPath?.length ? (
+              <span className="mt-1 block">
+                Graph: {product.graphPath.join(" → ")}
+              </span>
+            ) : null}
+          </p>
+        )}
         <div className="flex flex-wrap gap-2">
           {product.tags.map((t) => (
             <Tag key={t} label={t} />

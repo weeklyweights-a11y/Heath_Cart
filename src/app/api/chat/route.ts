@@ -1,10 +1,10 @@
 import { NextRequest } from "next/server";
+import { isIntelligenceV2Enabled } from "@/lib/intelligence/config";
+import { runChat } from "@/lib/intelligence/agents/orchestrator";
 import { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/db";
 import { extractContext, generateResponse } from "@/lib/ai";
-import {
-  applyExtractedContext,
-} from "@/lib/context-applier";
+import { applyExtractedContext } from "@/lib/context-applier";
 import {
   badRequest,
   chatBodySchema,
@@ -21,6 +21,22 @@ export async function POST(request: NextRequest) {
   try {
     const body = chatBodySchema.safeParse(await request.json());
     if (!body.success) return badRequest(body.error.message);
+
+    if (isIntelligenceV2Enabled()) {
+      const result = await runChat({
+        familyId: body.data.familyId,
+        message: body.data.message,
+        budget: body.data.budget,
+      });
+      return ok({
+        response: result.response,
+        extractedContext: result.extractedContext,
+        updatedScores: result.updatedScores,
+        basket: result.basket,
+        basketId: result.basketId,
+        explanationTraces: result.explanationTraces,
+      });
+    }
 
     const family = await getFamilyById(body.data.familyId);
     if (!family) return notFound("Family not found");

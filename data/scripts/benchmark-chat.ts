@@ -162,6 +162,8 @@ async function main(): Promise<void> {
     console.log(`  Average: ${fmt(avg)}`);
     console.log(`  Min:     ${fmt(min)}`);
     console.log(`  Max:     ${fmt(max)}`);
+    console.log(`  Mode:    v1 (INTELLIGENCE_V2=${process.env.INTELLIGENCE_V2 ?? "false"})`);
+    console.log(`  Tip:     npm run benchmark:chat:v2 for v1 vs v2 comparison`);
   }
 }
 

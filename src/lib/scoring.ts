@@ -1,4 +1,5 @@
 import type { HealthBadge, NutritionLookup, Product } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 import { prisma } from "./db";
 import {
   buildActiveFamilyContext,
@@ -10,6 +11,13 @@ import {
   nutritionalDensityScore,
 } from "./nutritional-density";
 import type { ScoredProduct } from "./types";
+import { isIntelligenceV2Enabled } from "./intelligence/config";
+import { clearGraphTraversalCache } from "./intelligence/graph/traverse";
+import {
+  readCachedScoresV2,
+  scoreProductsV2,
+} from "./intelligence/ranking/score-products-v2";
+import { withFamilyScoreLock } from "./intelligence/score-lock";
 
 const BADGE_THRESHOLDS = {
   recommended: 20,
@@ -38,7 +46,10 @@ function parseReasoningJson(value: unknown): string[] {
 }
 
 export async function invalidateFamilyScores(familyId: string): Promise<void> {
-  await prisma.productScore.deleteMany({ where: { familyId } });
+  await withFamilyScoreLock(familyId, async () => {
+    clearGraphTraversalCache(familyId);
+    await prisma.productScore.deleteMany({ where: { familyId } });
+  });
 }
 
 async function readCachedScores(
@@ -56,6 +67,7 @@ async function readCachedScores(
     score: r.score,
     badge: r.badge,
     reasoning: parseReasoningJson(r.reasoning),
+    scoreBreakdown: r.scoreBreakdown as unknown as ScoredProduct["scoreBreakdown"],
   }));
 }
 
@@ -63,20 +75,26 @@ async function persistScores(
   familyId: string,
   results: ScoredProduct[],
 ): Promise<void> {
-  await prisma.$transaction([
-    prisma.productScore.deleteMany({ where: { familyId } }),
-    prisma.productScore.createMany({
-      data: results.map((r) => ({
-        familyId,
-        productId: r.productId,
-        score: r.score,
-        badge: r.badge,
-        reasoning: r.reasoning,
-      })),
-    }),
-  ]);
+  await withFamilyScoreLock(familyId, () =>
+    prisma.$transaction([
+      prisma.productScore.deleteMany({ where: { familyId } }),
+      prisma.productScore.createMany({
+        data: results.map((r) => ({
+          familyId,
+          productId: r.productId,
+          score: r.score,
+          badge: r.badge,
+          reasoning: r.reasoning,
+          scoreBreakdown: r.scoreBreakdown
+            ? (JSON.parse(JSON.stringify(r.scoreBreakdown)) as Prisma.InputJsonValue)
+            : undefined,
+        })),
+      }),
+    ]),
+  );
 }
 
+/** v1 point tally — fallback when INTELLIGENCE_V2=false only. */
 function computeScores(
   ctx: FamilyContextResult,
   rules: Awaited<ReturnType<typeof prisma.healthConditionRule.findMany>>,
@@ -161,6 +179,14 @@ export async function scoreProductsForFamily(
   familyId: string,
   options?: { force?: boolean; ctx?: FamilyContextResult },
 ): Promise<ScoredProduct[]> {
+  if (isIntelligenceV2Enabled()) {
+    if (!options?.force) {
+      const cached = await readCachedScoresV2(familyId);
+      if (cached) return cached;
+    }
+    return scoreProductsV2(familyId, { force: options?.force });
+  }
+
   if (!options?.force) {
     const cached = await readCachedScores(familyId);
     if (cached) return cached;
@@ -194,6 +220,8 @@ export async function getScoredProductDetails(
     score: number;
     badge: HealthBadge;
     reasoning: string[];
+    scoreBreakdown?: ScoredProduct["scoreBreakdown"];
+    graphPath?: string[];
   }[]
 > {
   const scores = await scoreProductsForFamily(familyId);
@@ -224,6 +252,8 @@ export async function getScoredProductDetails(
         score: s.score,
         badge: s.badge,
         reasoning: s.reasoning,
+        scoreBreakdown: s.scoreBreakdown,
+        graphPath: s.scoreBreakdown?.graphPaths?.[0],
       };
     })
     .filter((x): x is NonNullable<typeof x> => x != null)

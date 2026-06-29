@@ -83,11 +83,29 @@ export interface FamilyDto {
   members: FamilyMemberDto[];
 }
 
+export interface ScoreBreakdown {
+  nutrient: number;
+  graph: number;
+  semantic: number;
+  seasonal: number;
+  graphPaths?: string[][];
+}
+
+export interface ItemExplanation {
+  why: string;
+  goodFor: string[];
+  graphPath: string[];
+  scoreBreakdown?: ScoreBreakdown;
+  constraintsChecked: string[];
+  sizing: string;
+}
+
 export interface ScoredProduct {
   productId: string;
   score: number;
   badge: HealthBadge;
   reasoning: string[];
+  scoreBreakdown?: ScoreBreakdown;
 }
 
 export interface ScoredProductDetail extends ScoredProduct {
@@ -114,6 +132,7 @@ export interface BasketItem {
   membersBenefiting: string[];
   category?: string;
   imageUrl?: string | null;
+  explanation?: ItemExplanation;
 }
 
 export interface BasketResult {
@@ -148,6 +167,8 @@ export interface ProductDto {
   badge?: HealthBadge;
   reasoning?: string[];
   score?: number;
+  scoreBreakdown?: ScoreBreakdown;
+  graphPath?: string[];
 }
 
 /** Product card in chat — may include weekly basket qty from the optimizer. */
@@ -155,6 +176,7 @@ export interface ChatProductHighlight extends ProductDto {
   basketQty?: number;
   variantLabel?: string;
   highlightReason?: string;
+  graphPath?: string[];
 }
 
 export interface NutrientGaps {

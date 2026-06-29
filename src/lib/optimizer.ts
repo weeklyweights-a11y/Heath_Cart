@@ -12,6 +12,18 @@ import { enrichBasketItems } from "./basket-enrich";
 import { formatBasketItemWhy } from "./member-labels";
 import type { ActiveMember, BasketItem, BasketResult } from "./types";
 import { weeklyTargetsForMember } from "./rda";
+import { isIntelligenceV2Enabled } from "./intelligence/config";
+import {
+  assertProductAllowedV2,
+  generateBasketV2,
+  persistBasketResult,
+} from "./intelligence/basket/basket-csp";
+import { buildHouseholdState } from "./intelligence/retrieval/household-state";
+import {
+  buildItemExplanation,
+  explanationToReasoning,
+  membersBenefitingFromGraph,
+} from "./intelligence/explain/trace-path";
 
 interface BasketItemInternal extends BasketItem {
   priority: number;
@@ -111,6 +123,10 @@ export async function generateBasket(
   familyId: string,
   options?: { budget?: number },
 ): Promise<BasketResult> {
+  if (isIntelligenceV2Enabled()) {
+    return generateBasketV2(familyId, options);
+  }
+
   const ctx = await buildActiveFamilyContext(familyId);
   const members = ctx.activeMembers;
   const gaps = calculateNutrientGaps(members);
@@ -311,6 +327,10 @@ export async function adjustBasket(
     }
   }
 
+  if (isIntelligenceV2Enabled()) {
+    return persistBasketResult(familyId, basketId, items, record.context ?? "");
+  }
+
   const ctx = await buildActiveFamilyContext(familyId);
   const members = ctx.activeMembers;
 
@@ -387,6 +407,16 @@ export async function getBasketById(basketId: string): Promise<BasketResult> {
   if (!record) throw new Error("Basket not found");
 
   const items = record.basketJson as unknown as BasketItem[];
+
+  if (isIntelligenceV2Enabled()) {
+    return persistBasketResult(
+      record.familyId,
+      basketId,
+      items,
+      record.context ?? "",
+    );
+  }
+
   const ctx = await buildActiveFamilyContext(record.familyId);
   const enriched = await itemsToInternal(items, ctx.activeMembers);
   const cov = overallCoverage(ctx.activeMembers, enriched);
@@ -428,6 +458,10 @@ export async function addItemToBasket(
   const variant = product.variants.find((v) => v.id === variantId);
   if (!variant) throw new Error("Variant not found");
 
+  if (isIntelligenceV2Enabled()) {
+    await assertProductAllowedV2(familyId, productId);
+  }
+
   let items = record.basketJson as unknown as BasketItem[];
   const unitPrice = Number(variant.price);
   const existing = items.find((i) => i.productId === productId);
@@ -450,10 +484,43 @@ export async function addItemToBasket(
   } else {
     const scores = await scoreProductsForFamily(familyId);
     const scoreMap = new Map(scores.map((s) => [s.productId, s]));
-    const rules = await prisma.healthConditionRule.findMany();
     const tags = product.tags.map((t) => t.tag);
-    const benefiting = membersBenefiting(tags, ctx.activeMembers, rules);
-    const score = scoreMap.get(productId);
+    let benefiting: string[];
+    let reasoning: string;
+    let explanation: BasketItem["explanation"] | undefined;
+
+    if (isIntelligenceV2Enabled()) {
+      const state = await buildHouseholdState(familyId);
+      benefiting = membersBenefitingFromGraph(
+        tags,
+        ctx.activeMembers,
+        state.graphRetrieval.requiredTags,
+      );
+      const score = scoreMap.get(productId);
+      explanation = buildItemExplanation({
+        productName: product.nameEn,
+        category: product.category,
+        membersBenefiting: benefiting,
+        scoreReasoning: score?.reasoning ?? [],
+        scoreBreakdown: score?.scoreBreakdown,
+        graphPath: score?.scoreBreakdown?.graphPaths?.[0],
+        constraintsChecked: ["hard-filter: pass"],
+        headcount: ctx.activeMembers.length,
+        variantLabel: `${variant.weightValue} ${variant.weightUnit}`,
+      });
+      reasoning = explanationToReasoning(explanation);
+    } else {
+      const rules = await prisma.healthConditionRule.findMany();
+      benefiting = membersBenefiting(tags, ctx.activeMembers, rules);
+      const score = scoreMap.get(productId);
+      reasoning = formatBasketItemWhy({
+        category: product.category,
+        membersBenefiting: benefiting,
+        scoreReasoning: score?.reasoning ?? [],
+        headcount: ctx.activeMembers.length,
+        variantLabel: `${variant.weightValue} ${variant.weightUnit}`,
+      });
+    }
 
     items.push({
       productId,
@@ -465,15 +532,14 @@ export async function addItemToBasket(
         weightUnit: variant.weightUnit,
       },
       price: unitPrice * quantity,
-      reasoning: formatBasketItemWhy({
-        category: product.category,
-        membersBenefiting: benefiting,
-        scoreReasoning: score?.reasoning ?? [],
-        headcount: ctx.activeMembers.length,
-        variantLabel: `${variant.weightValue} ${variant.weightUnit}`,
-      }),
+      reasoning,
       membersBenefiting: benefiting,
+      ...(explanation ? { explanation } : {}),
     });
+  }
+
+  if (isIntelligenceV2Enabled()) {
+    return persistBasketResult(familyId, targetId, items, record.context ?? "");
   }
 
   const enriched = await itemsToInternal(items, ctx.activeMembers);

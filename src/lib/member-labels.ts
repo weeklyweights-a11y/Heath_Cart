@@ -167,6 +167,8 @@ export function pickChatProductHighlights(params: {
       badge: s?.badge ?? p.badge,
       reasoning: s?.reasoning ?? p.reasoning,
       score: s?.score ?? p.score,
+      scoreBreakdown: s?.scoreBreakdown ?? p.scoreBreakdown,
+      graphPath: s?.scoreBreakdown?.graphPaths?.[0] ?? p.graphPath,
       ...extra,
     };
   };
@@ -192,6 +194,7 @@ export function pickChatProductHighlights(params: {
           basketQty: item.quantity,
           variantLabel: `${item.variant.weightValue} ${item.variant.weightUnit}`,
           highlightReason: item.reasoning,
+          graphPath: item.explanation?.graphPath,
         });
         if (h) {
           toAdd.push(h);

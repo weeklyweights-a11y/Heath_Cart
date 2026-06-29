@@ -44,6 +44,7 @@ export default function ProductCard({
           <HealthBadge
             badge={product.badge as BadgeType}
             reasoning={product.reasoning}
+            scoreBreakdown={product.scoreBreakdown}
             size="sm"
           />
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import type { HealthBadge as BadgeType } from "@/lib/types";
+import type { HealthBadge as BadgeType, ScoreBreakdown } from "@/lib/types";
 
 const styles: Record<
   BadgeType,
@@ -15,19 +15,27 @@ const styles: Record<
 interface HealthBadgeProps {
   badge: BadgeType;
   reasoning?: string[];
+  scoreBreakdown?: ScoreBreakdown;
   size?: "sm" | "md" | "lg";
   showLabel?: boolean;
+}
+
+function breakdownTip(b?: ScoreBreakdown): string {
+  if (!b) return "";
+  return `Nutrient ${(b.nutrient * 100).toFixed(0)}% · Graph ${(b.graph * 100).toFixed(0)}% · Semantic ${(b.semantic * 100).toFixed(0)}% · Seasonal ${(b.seasonal * 100).toFixed(0)}%`;
 }
 
 export default function HealthBadge({
   badge,
   reasoning = [],
+  scoreBreakdown,
   size = "md",
   showLabel = true,
 }: HealthBadgeProps) {
   const s = styles[badge];
   const pad = size === "sm" ? "px-2 py-0.5 text-xs" : size === "lg" ? "px-4 py-2 text-base" : "px-3 py-1 text-sm";
   const tip = reasoning[0] ?? "";
+  const breakdown = breakdownTip(scoreBreakdown);
 
   return (
     <span className="group relative inline-block">
@@ -36,9 +44,15 @@ export default function HealthBadge({
       >
         {showLabel ? s.label : badge}
       </span>
-      {tip && (
-        <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-1 hidden w-48 -translate-x-1/2 rounded bg-text px-2 py-1 text-xs text-white group-hover:block group-focus-within:block">
+      {(tip || breakdown) && (
+        <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-1 hidden w-52 -translate-x-1/2 rounded bg-text px-2 py-1 text-xs text-white group-hover:block group-focus-within:block">
           {tip}
+          {breakdown && (
+            <>
+              {tip ? " " : ""}
+              <span className="block mt-1 text-white/80">{breakdown}</span>
+            </>
+          )}
         </span>
       )}
     </span>

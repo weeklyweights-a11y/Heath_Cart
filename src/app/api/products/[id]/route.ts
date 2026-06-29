@@ -25,6 +25,8 @@ export async function GET(
       score: number;
       badge: string;
       reasoning: string[];
+      scoreBreakdown?: import("@/lib/types").ScoreBreakdown;
+      graphPath?: string[];
     } | null = null;
 
     if (familyId) {
@@ -35,6 +37,8 @@ export async function GET(
           score: match.score,
           badge: match.badge,
           reasoning: match.reasoning,
+          scoreBreakdown: match.scoreBreakdown,
+          graphPath: match.scoreBreakdown?.graphPaths?.[0],
         };
       }
     }

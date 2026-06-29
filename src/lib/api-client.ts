@@ -6,6 +6,7 @@ import type {
   FamilyMemberDto,
   ProductDto,
   ScoredProduct,
+  ScoreBreakdown,
 } from "./types";
 
 async function request<T>(
@@ -90,6 +91,8 @@ export interface ProductDetail extends ProductDto {
   tags: string[];
   nutrition: Record<string, number | null> | null;
   reasoning?: string[];
+  scoreBreakdown?: ScoreBreakdown;
+  graphPath?: string[];
 }
 
 export async function fetchProduct(id: string, familyId?: string) {
@@ -107,6 +110,7 @@ export interface ChatResponse {
   updatedScores: ScoredProduct[];
   basket: BasketResult;
   basketId: string;
+  explanationTraces?: unknown;
 }
 
 export async function sendChat(body: {

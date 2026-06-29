@@ -92,3 +92,13 @@ npx prisma studio
 - Enable **Stop temporarily** on dev clusters when idle (Aurora Serverless v2 optional)
 
 All AWS work for HealthCart happens in this repository: env vars → Prisma → Aurora. No Docker, no separate backend service.
+
+## 8. pgvector (Intelligence v2 Phase 5, optional)
+
+For semantic product embeddings, enable the `vector` extension on Aurora PostgreSQL 15+:
+
+```sql
+CREATE EXTENSION IF NOT EXISTS vector;
+```
+
+Set `PGVECTOR_ENABLED=true` and run `npm run embed:products`. If the extension is unavailable, v2 falls back to intent→tag matching (`score_semantic` from fallback, not pgvector).
