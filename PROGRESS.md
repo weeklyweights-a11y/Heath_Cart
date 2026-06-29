@@ -43,7 +43,7 @@
 | 2.8 | Build basket API route | [x] | 0c273da |
 | 2.9 | Test scoring with Johnson family | [x] | d7bb68d — all 6 PASS |
 | 2.10 | Test context extraction with natural text | [x] | 9408941 — all 7 PASS |
-| 2.11 | Test basket generation with budget constraint | [x] | 91934ce — all 6 PASS |
+| 2.11 | Test basket generation with budget constraint | [x] | 7f6f604 — all 6 PASS |
 
 ## Phase 3 — Frontend + Deploy (Hours 15-24)
 
@@ -81,4 +81,4 @@
 | 2026-06-29 | 2.8 | 0c273da | feat(basket): build basket API with generation and real-time adjustment |
 | 2026-06-29 | 2.9 | d7bb68d | test(scoring): verify scoring across 6 family context scenarios |
 | 2026-06-29 | 2.10 | 9408941 | test(ai): verify natural language context extraction across 7 input scenarios |
-| 2026-06-29 | 2.11 | 91934ce | test(optimizer): verify basket generation across 6 constraint scenarios |
+| 2026-06-29 | 2.11 | 7f6f604 | test(optimizer): verify basket generation across 6 constraint scenarios |
