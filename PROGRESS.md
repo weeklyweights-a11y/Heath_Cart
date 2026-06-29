@@ -33,17 +33,17 @@
 
 | Step | Task | Done | Commit |
 |------|------|:----:|--------|
-| 2.1 | Build Family CRUD API routes | [ ] | |
-| 2.2 | Build scoring engine (lib/scoring.ts) | [ ] | |
-| 2.3 | Build scoring API route | [ ] | |
-| 2.4 | Build natural language context extraction (lib/ai.ts) | [ ] | |
-| 2.5 | Build chat API route with Gemini | [ ] | |
-| 2.6 | Build quantity calculation logic (lib/quantities.ts) | [ ] | |
-| 2.7 | Build basket optimizer (lib/optimizer.ts) | [ ] | |
-| 2.8 | Build basket API route | [ ] | |
-| 2.9 | Test scoring with Johnson family | [ ] | |
-| 2.10 | Test context extraction with natural text | [ ] | |
-| 2.11 | Test basket generation with budget constraint | [ ] | |
+| 2.1 | Build Family CRUD API routes | [x] | a12ccef |
+| 2.2 | Build scoring engine (lib/scoring.ts) | [x] | 27a3ad1 |
+| 2.3 | Build scoring API route | [x] | 8afb866 |
+| 2.4 | Build natural language context extraction (lib/ai.ts) | [x] | b81f526 |
+| 2.5 | Build chat API route with Gemini | [x] | 9f1b21f |
+| 2.6 | Build quantity calculation logic (lib/quantities.ts) | [x] | 28294b3 |
+| 2.7 | Build basket optimizer (lib/optimizer.ts) | [x] | dfe8845 |
+| 2.8 | Build basket API route | [x] | 0c273da |
+| 2.9 | Test scoring with Johnson family | [x] | d7bb68d — all 6 PASS |
+| 2.10 | Test context extraction with natural text | [x] | 9408941 — all 7 PASS |
+| 2.11 | Test basket generation with budget constraint | [x] | 91934ce — all 6 PASS |
 
 ## Phase 3 — Frontend + Deploy (Hours 15-24)
 
@@ -71,3 +71,14 @@
 |------|------|------|---------|
 | 2026-06-27 | setup | 3262f86 | docs(spec): add project specification and build phases |
 | 2026-06-27 | setup | e70a3c3 | chore(infra): add repo scaffold, AWS guide, and progress tracker |
+| 2026-06-29 | 2.1 | a12ccef | feat(family): build family and member CRUD API routes |
+| 2026-06-29 | 2.2 | 27a3ad1 | feat(scoring): implement family health scoring algorithm with personalized reasoning |
+| 2026-06-29 | 2.3 | 8afb866 | feat(scoring): build scoring and product listing API routes |
+| 2026-06-29 | 2.4 | b81f526 | feat(ai): build natural language context extraction with Gemini Flash |
+| 2026-06-29 | 2.5 | 9f1b21f | feat(chat): build chat API with context extraction, scoring, and conversation |
+| 2026-06-29 | 2.6 | 28294b3 | feat(quantities): build quantity calculation with USDA RDA, shelf life, and budget logic |
+| 2026-06-29 | 2.7 | dfe8845 | feat(optimizer): build basket optimizer with coverage scoring and budget constraints |
+| 2026-06-29 | 2.8 | 0c273da | feat(basket): build basket API with generation and real-time adjustment |
+| 2026-06-29 | 2.9 | d7bb68d | test(scoring): verify scoring across 6 family context scenarios |
+| 2026-06-29 | 2.10 | 9408941 | test(ai): verify natural language context extraction across 7 input scenarios |
+| 2026-06-29 | 2.11 | 91934ce | test(optimizer): verify basket generation across 6 constraint scenarios |
