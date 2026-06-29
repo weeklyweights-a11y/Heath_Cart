@@ -2,6 +2,14 @@
 
 HealthCart uses **Amazon Aurora PostgreSQL** as the only AWS service. Provision and connect it from this project — no separate infra repo.
 
+> **Important:** HealthCart does **not** use the RITWIT monorepo Docker Postgres (`ritwit-postgres` on `localhost:5432`). That database belongs to the separate `RITWIT_WEB` project. HealthCart must use its own Aurora cluster and database name `healthcart`.
+
+**AWS account:** Sign in at [AWS Console](https://console.aws.amazon.com/) with the email used for this project (e.g. `bhargavinallapuneni89@gmail.com`).
+
+**Vercel deploy:** [healthcart-iota.vercel.app](https://healthcart-iota.vercel.app) — set `DATABASE_URL` in Vercel before the app can read/write data.
+
+**Starting fresh (wrong AWS account / no RDS access):** follow [AWS_NEW_ACCOUNT.md](./AWS_NEW_ACCOUNT.md) — create IAM user `healthcart-deploy`, run `npm run teardown:aurora`, then `npm run provision:aurora` with `AWS_PROFILE=healthcart`.
+
 ## 1. Create Aurora cluster (AWS Console)
 
 1. Sign in to [AWS Console](https://console.aws.amazon.com/) → **RDS** → **Create database**.
@@ -38,6 +46,8 @@ Vercel variables (all environments):
 | `GEMINI_API_KEY` | From [Google AI Studio](https://aistudio.google.com/apikey) |
 
 Redeploy Vercel after changing env vars.
+
+**If `vercel env ls` shows no variables:** add `DATABASE_URL` and `GEMINI_API_KEY` in the Vercel dashboard (Settings → Environment Variables) for Production, Preview, and Development, then run `npx vercel env pull .env.local` locally.
 
 ## 3. Run migrations from this repo
 
