@@ -20,27 +20,6 @@ Works for any market; demo built for US grocery shoppers.
 
 All infrastructure is provisioned and configured from **this repository** — Aurora connection string and API keys go in `.env.local` locally and in Vercel project settings for production.
 
-## Build phases
-
-| Phase | Doc | Hours |
-|-------|-----|-------|
-| 1 — Foundation | [PHASE_1.md](./PHASE_1.md) | 1–4 |
-| 2 — AI Engine | [PHASE_2.md](./PHASE_2.md) | 5–14 |
-| 3 — Frontend + Deploy | [PHASE_3.md](./PHASE_3.md) | 15–24 |
-
-Progress and commit log: [PROGRESS.md](./PROGRESS.md)
-
-## Git workflow (required)
-
-**One commit per completed step** — not per phase. Format:
-
-```
-<type>(<scope>): <description>
-```
-
-Example: `feat(schema): write complete Prisma schema with 11 tables`
-
-After every commit: update `PROGRESS.md` (check the step, add commit hash).
 
 ## Quick start
 
