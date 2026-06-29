@@ -25,15 +25,15 @@
   <line x1="680" y1="110" x2="760" y2="110" stroke="#1B5E20" stroke-width="2"/>
   <line x1="680" y1="180" x2="760" y2="180" stroke="#1B5E20" stroke-width="2"/>
   <!-- Labels -->
-  <text x="600" y="280" text-anchor="middle" font-size="13" fill="#5D4037">USDA FoodData Central · 15+ health conditions (USDA/AHA) · 100+ American grocery products</text>
-  <text x="600" y="310" text-anchor="middle" font-size="13" fill="#5D4037">Real-time scoring · Natural language in English/Spanish</text>
+  <text x="600" y="280" text-anchor="middle" font-size="13" fill="#5D4037">USDA FoodData Central Â· 15+ health conditions (USDA/AHA) Â· 100+ American grocery products</text>
+  <text x="600" y="310" text-anchor="middle" font-size="13" fill="#5D4037">Real-time scoring Â· Natural language in English/Spanish</text>
   <!-- Flow -->
   <text x="60" y="380" font-size="14" fill="#1B5E20" font-weight="bold">Data flow:</text>
-  <text x="60" y="410" font-size="13" fill="#5D4037">1. Natural text ’ Gemini (context extraction)</text>
-  <text x="60" y="435" font-size="13" fill="#5D4037">2. Extracted context ’ stored in Aurora</text>
+  <text x="60" y="410" font-size="13" fill="#5D4037">1. Natural text â†’ Gemini (context extraction)</text>
+  <text x="60" y="435" font-size="13" fill="#5D4037">2. Extracted context â†’ stored in Aurora</text>
   <text x="60" y="460" font-size="13" fill="#5D4037">3. Scoring engine reads family + products + health rules</text>
-  <text x="60" y="485" font-size="13" fill="#5D4037">4. Scores ’ frontend (re-sort, badges update)</text>
-  <text x="60" y="510" font-size="13" fill="#5D4037">5. Basket optimizer ’ designed basket with quantities + coverage</text>
+  <text x="60" y="485" font-size="13" fill="#5D4037">4. Scores â†’ frontend (re-sort, badges update)</text>
+  <text x="60" y="510" font-size="13" fill="#5D4037">5. Basket optimizer â†’ designed basket with quantities + coverage</text>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
       <path d="M0,0 L0,6 L9,3 z" fill="#1B5E20"/>

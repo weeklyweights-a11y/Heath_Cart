@@ -16,6 +16,7 @@ import {
 } from "@/lib/api-client";
 import type {
   BasketResult,
+  ChatProductHighlight,
   ExtractedContext,
   FamilyDto,
   ProductDto,
@@ -29,7 +30,8 @@ const BASKET_KEY = "healthcart_basketId";
 export interface ChatMessage {
   role: "user" | "assistant";
   content: string;
-  products?: ProductDto[];
+  productsToAdd?: ChatProductHighlight[];
+  productsToLimit?: ChatProductHighlight[];
   basketSummary?: BasketResult;
 }
 

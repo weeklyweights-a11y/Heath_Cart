@@ -18,10 +18,16 @@
     "teardown:aurora": "tsx data/scripts/teardown-aurora.ts",
     "seed:johnson": "tsx data/scripts/seed-johnson-family.ts",
     "seed:johnson-core": "tsx data/scripts/seed-johnson-core.ts",
+    "download:images": "tsx data/scripts/download-product-images.ts",
+    "verify:images": "tsx data/scripts/verify-product-images.ts",
+    "generate:images": "tsx data/scripts/generate-product-images.ts",
+    "generate:images:placeholders": "tsx data/scripts/update-product-images.ts",
+    "benchmark:chat": "tsx data/scripts/benchmark-chat.ts",
     "test": "vitest run",
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@google/genai": "^2.10.0",
     "@google/generative-ai": "^0.24.0",
     "@prisma/client": "^6.9.0",
     "next": "14.2.35",

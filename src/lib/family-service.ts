@@ -1,5 +1,6 @@
 import { prisma } from "./db";
 import { loadFullFamily, toFamilyDto } from "./family-context";
+import { invalidateFamilyScores } from "./scoring";
 import type { FamilyDto } from "./types";
 
 export async function createFamily(name: string): Promise<FamilyDto> {
@@ -55,6 +56,7 @@ export async function addFamilyMember(
     },
   });
 
+  await invalidateFamilyScores(familyId);
   return loadFullFamily(familyId);
 }
 
@@ -89,6 +91,7 @@ export async function updateFamilyMember(
     },
   });
 
+  await invalidateFamilyScores(familyId);
   return loadFullFamily(familyId);
 }
 
@@ -102,5 +105,6 @@ export async function deleteFamilyMember(
   if (!member) throw new Error("Member not found");
 
   await prisma.familyMember.delete({ where: { id: memberId } });
+  await invalidateFamilyScores(familyId);
   return loadFullFamily(familyId);
 }

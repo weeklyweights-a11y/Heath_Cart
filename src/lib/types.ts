@@ -150,6 +150,13 @@ export interface ProductDto {
   score?: number;
 }
 
+/** Product card in chat — may include weekly basket qty from the optimizer. */
+export interface ChatProductHighlight extends ProductDto {
+  basketQty?: number;
+  variantLabel?: string;
+  highlightReason?: string;
+}
+
 export interface NutrientGaps {
   ironMg: number;
   fiberG: number;

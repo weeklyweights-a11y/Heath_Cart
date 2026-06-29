@@ -1,4 +1,11 @@
-import type { ExtractedContext, FamilyMemberDto, HealthBadge, ProductDto } from "./types";
+import type {
+  BasketResult,
+  ChatProductHighlight,
+  ExtractedContext,
+  FamilyMemberDto,
+  ProductDto,
+  ScoredProduct,
+} from "./types";
 
 const CONDITION_LABELS: Record<string, string> = {
   diabetes: "pre-diabetic",
@@ -65,14 +72,157 @@ export function formatBudgetTradeoff(
   return `Under $${budget.toFixed(0)}: ${afterCoverage}% coverage. Reduced: ${reduced}.${nutrientNote}`;
 }
 
+/** Human-readable explanation for why a product landed in the weekly basket. */
+export function formatBasketItemWhy(params: {
+  category: string;
+  membersBenefiting: string[];
+  scoreReasoning: string[];
+  headcount: number;
+  variantLabel: string;
+}): string {
+  const { category, membersBenefiting, scoreReasoning, headcount, variantLabel } =
+    params;
+
+  let why: string;
+  if (scoreReasoning.length > 0) {
+    why = scoreReasoning[0].endsWith(".")
+      ? scoreReasoning[0]
+      : `${scoreReasoning[0]}.`;
+  } else if (membersBenefiting.length > 0) {
+    const names = membersBenefiting.join(" and ");
+    why = `Supports ${names}'s health profile this week.`;
+  } else {
+    why = `Balanced ${category.toLowerCase()} choice for your household's weekly nutrition.`;
+  }
+
+  const sizing =
+    headcount === 1
+      ? `Sized for 1 person at home (${variantLabel}).`
+      : `Sized for ${headcount} people at home (${variantLabel}).`;
+
+  return `${why} ${sizing}`;
+}
+
+export function pickChatProductHighlights(params: {
+  response: string;
+  catalog: ProductDto[];
+  scores: ScoredProduct[];
+  basket?: BasketResult | null;
+  addLimit?: number;
+  limitLimit?: number;
+}): { toAdd: ChatProductHighlight[]; toLimit: ChatProductHighlight[] } {
+  const addLimit = params.addLimit ?? 6;
+  const limitLimit = params.limitLimit ?? 3;
+  const scoreMap = new Map(params.scores.map((s) => [s.productId, s]));
+  const catalogMap = new Map(params.catalog.map((p) => [p.id, p]));
+  const lower = params.response.toLowerCase();
+  const seen = new Set<string>();
+
+  const enrich = (
+    productId: string,
+    extra?: Partial<ChatProductHighlight>,
+  ): ChatProductHighlight | null => {
+    const p = catalogMap.get(productId);
+    if (!p) return null;
+    const s = scoreMap.get(productId);
+    return {
+      ...p,
+      badge: s?.badge ?? p.badge,
+      reasoning: s?.reasoning ?? p.reasoning,
+      score: s?.score ?? p.score,
+      ...extra,
+    };
+  };
+
+  const toAdd: ChatProductHighlight[] = [];
+
+  if (params.basket?.items.length) {
+    const byCategory = new Map<string, typeof params.basket.items>();
+    for (const item of params.basket.items) {
+      const cat = item.category ?? "Other";
+      const list = byCategory.get(cat) ?? [];
+      list.push(item);
+      byCategory.set(cat, list);
+    }
+    const categories = Array.from(byCategory.keys());
+    for (let round = 0; toAdd.length < addLimit && round < 8; round++) {
+      for (const cat of categories) {
+        const item = byCategory.get(cat)?.[round];
+        if (!item || seen.has(item.productId)) continue;
+        const s = scoreMap.get(item.productId);
+        if (s?.badge === "avoid") continue;
+        const h = enrich(item.productId, {
+          basketQty: item.quantity,
+          variantLabel: `${item.variant.weightValue} ${item.variant.weightUnit}`,
+          highlightReason: item.reasoning,
+        });
+        if (h) {
+          toAdd.push(h);
+          seen.add(item.productId);
+        }
+        if (toAdd.length >= addLimit) break;
+      }
+    }
+  }
+
+  for (const p of params.catalog) {
+    if (toAdd.length >= addLimit) break;
+    if (seen.has(p.id)) continue;
+    if (!lower.includes(p.nameEn.toLowerCase())) continue;
+    const s = scoreMap.get(p.id);
+    if (s?.badge === "avoid" || s?.badge === "limit") continue;
+    const h = enrich(p.id);
+    if (h) {
+      toAdd.push(h);
+      seen.add(p.id);
+    }
+  }
+
+  const ranked = [...params.scores].sort((a, b) => b.score - a.score);
+  for (const s of ranked) {
+    if (toAdd.length >= addLimit) break;
+    if (seen.has(s.productId)) continue;
+    if (s.badge === "avoid" || s.badge === "limit") continue;
+    const h = enrich(s.productId);
+    if (h) {
+      toAdd.push(h);
+      seen.add(s.productId);
+    }
+  }
+
+  const toLimit: ChatProductHighlight[] = [];
+  const limitScores = params.scores.filter(
+    (s) => s.badge === "avoid" || s.badge === "limit",
+  );
+  const mentionedFirst = limitScores.filter((s) => {
+    const p = catalogMap.get(s.productId);
+    return p && lower.includes(p.nameEn.toLowerCase());
+  });
+  for (const s of [...mentionedFirst, ...limitScores]) {
+    if (toLimit.length >= limitLimit) break;
+    if (toLimit.some((x) => x.id === s.productId)) continue;
+    const h = enrich(s.productId, {
+      highlightReason: s.reasoning[0],
+    });
+    if (h) toLimit.push(h);
+  }
+
+  return { toAdd, toLimit };
+}
+
+/** @deprecated Use pickChatProductHighlights */
 export function matchProductsInResponse(
   response: string,
   catalog: ProductDto[],
 ): ProductDto[] {
-  const lower = response.toLowerCase();
-  const matched = catalog.filter((p) => lower.includes(p.nameEn.toLowerCase()));
-  if (matched.length) return matched.slice(0, 3);
-  return catalog
-    .filter((p) => p.badge === "avoid" || p.badge === "limit")
-    .slice(0, 3);
+  return pickChatProductHighlights({
+    response,
+    catalog,
+    scores: catalog.map((p) => ({
+      productId: p.id,
+      score: p.score ?? 0,
+      badge: p.badge ?? "neutral",
+      reasoning: p.reasoning ?? [],
+    })),
+  }).toAdd.slice(0, 3);
 }

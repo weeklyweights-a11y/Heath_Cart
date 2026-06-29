@@ -46,7 +46,7 @@ const emptyForm = (): MemberBody => ({
 });
 
 export default function FamilySetup() {
-  const { familyId, family, setFamilyId, setFamily } = useHealthCart();
+  const { familyId, family, setFamilyId, setFamily, setBasket } = useHealthCart();
   const [familyName, setFamilyName] = useState("");
   const [form, setForm] = useState<MemberBody>(emptyForm());
   const [customCondition, setCustomCondition] = useState("");
@@ -136,6 +136,10 @@ export default function FamilySetup() {
     setLoading(false);
     if (data) {
       setFamily(data);
+      setBasket(null);
+      if (typeof window !== "undefined") {
+        sessionStorage.removeItem("healthcart_basketId");
+      }
       resetForm();
     }
   };

@@ -223,13 +223,25 @@ export async function generateResponse(
   context: ExtractedContext,
   scores: ScoredProduct[],
   basket?: BasketResult | null,
+  productNames?: Map<string, string>,
 ): Promise<string> {
-  const top = scores
-    .slice(0, 5)
-    .map((s) => s.productId)
+  const nameOf = (id: string) => productNames?.get(id) ?? id;
+
+  const topRecommended = scores
+    .filter((s) => s.badge === "recommended")
+    .slice(0, 8)
+    .map((s) => nameOf(s.productId))
     .join(", ");
+
   const basketSummary = basket
     ? `${basket.items.length} items, $${basket.totalPrice.toFixed(2)}, coverage ${basket.coverageScore}%`
+    : "none yet";
+
+  const basketSampleNames = basket
+    ? basket.items
+        .slice(0, 8)
+        .map((i) => `${i.name} (×${i.quantity})`)
+        .join(", ")
     : "none yet";
 
   const apiKey = process.env.GEMINI_API_KEY ?? process.env.GOOGLE_API_KEY;
@@ -243,8 +255,9 @@ export async function generateResponse(
     const prompt = buildResponsePrompt(
       message,
       JSON.stringify(context),
-      top,
+      topRecommended || "see basket",
       basketSummary,
+      basketSampleNames,
     );
     const result = await model.generateContent(prompt);
     return result.response.text();

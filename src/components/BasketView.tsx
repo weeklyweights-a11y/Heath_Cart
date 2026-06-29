@@ -128,7 +128,11 @@ export default function BasketView() {
   }
 
   if (!basket && loading) {
-    return <p className="text-center">Loading basket...</p>;
+    return (
+      <p className="text-center text-text/80">
+        Building your personalized basket — scoring products for your family…
+      </p>
+    );
   }
 
   if (!basket?.items.length) {

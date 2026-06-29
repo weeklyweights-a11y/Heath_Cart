@@ -8,7 +8,7 @@ import ChatBubble from "@/components/ui/ChatBubble";
 import { useHealthCart } from "@/context/HealthCartContext";
 import { addToBasket, sendChat } from "@/lib/api-client";
 import { formatUsd } from "@/lib/format";
-import { matchProductsInResponse } from "@/lib/member-labels";
+import { pickChatProductHighlights } from "@/lib/member-labels";
 import type { ProductDto } from "@/lib/types";
 
 const SUGGESTIONS = [
@@ -82,11 +82,25 @@ export default function ChatPanel() {
       setExtractedContext(data.extractedContext);
       await refetchFamily();
 
-      const matched = matchProductsInResponse(data.response, productCatalog);
+      const catalogWithScores: ProductDto[] = productCatalog.map((p) => {
+        const s = data.updatedScores.find((sc) => sc.productId === p.id);
+        return s
+          ? { ...p, badge: s.badge, reasoning: s.reasoning, score: s.score }
+          : p;
+      });
+
+      const { toAdd, toLimit } = pickChatProductHighlights({
+        response: data.response,
+        catalog: catalogWithScores,
+        scores: data.updatedScores,
+        basket: data.basket,
+      });
+
       addMessage({
         role: "assistant",
         content: data.response,
-        products: matched.length ? matched : undefined,
+        productsToAdd: toAdd.length ? toAdd : undefined,
+        productsToLimit: toLimit.length ? toLimit : undefined,
         basketSummary: data.basket.items.length ? data.basket : undefined,
       });
     },
@@ -102,7 +116,7 @@ export default function ChatPanel() {
     ],
   );
 
-  const handleAddProduct = async (product: ProductDto) => {
+  const handleAddProduct = async (product: ProductDto, qty = 1) => {
     if (!familyId) return;
     const detail = await fetch(`/api/products/${product.id}?familyId=${familyId}`);
     const json = await detail.json();
@@ -113,7 +127,7 @@ export default function ChatPanel() {
       basketId: basketId ?? undefined,
       productId: product.id,
       variantId: variant.id,
-      quantity: 1,
+      quantity: qty,
     });
     if (data) setBasket(data);
   };
@@ -213,28 +227,74 @@ export default function ChatPanel() {
                   footer={
                     m.role === "assistant" ? (
                       <>
-                        {m.products?.map((p) => (
-                          <div key={p.id} className="max-w-[200px]">
-                            <ProductCard
-                              product={p}
-                              familyId={familyId ?? undefined}
-                              onAdd={() => handleAddProduct(p)}
-                            />
+                        {m.productsToAdd && m.productsToAdd.length > 0 && (
+                          <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                              Add to your weekly basket
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                              {m.productsToAdd.map((p) => (
+                                <div key={p.id} className="max-w-[200px]">
+                                  {p.basketQty != null && (
+                                    <p className="mb-1 text-xs font-medium text-primary">
+                                      Weekly: {p.basketQty}× {p.variantLabel ?? ""}
+                                    </p>
+                                  )}
+                                  {p.highlightReason && (
+                                    <p className="mb-1 line-clamp-2 text-xs text-text/70">
+                                      {p.highlightReason}
+                                    </p>
+                                  )}
+                                  <ProductCard
+                                    product={p}
+                                    familyId={familyId ?? undefined}
+                                    onAdd={() =>
+                                      handleAddProduct(p, p.basketQty ?? 1)
+                                    }
+                                  />
+                                </div>
+                              ))}
+                            </div>
                           </div>
-                        ))}
+                        )}
+                        {m.productsToLimit && m.productsToLimit.length > 0 && (
+                          <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-danger">
+                              Limit or avoid this week
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                              {m.productsToLimit.map((p) => (
+                                <div key={p.id} className="max-w-[200px]">
+                                  {p.highlightReason && (
+                                    <p className="mb-1 line-clamp-2 text-xs text-text/70">
+                                      {p.highlightReason}
+                                    </p>
+                                  )}
+                                  <ProductCard
+                                    product={p}
+                                    familyId={familyId ?? undefined}
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                         {m.basketSummary && (
                           <div className="rounded-lg bg-white p-3 text-sm shadow-sm">
                             <p className="font-medium">
-                              {m.basketSummary.items.length} items ·{" "}
-                              {m.basketSummary.coverageScore}% coverage ·{" "}
-                              {formatUsd(m.basketSummary.totalPrice)}
+                              Full weekly basket: {m.basketSummary.items.length}{" "}
+                              items · {formatUsd(m.basketSummary.totalPrice)}
+                            </p>
+                            <p className="mt-1 text-xs text-text/70">
+                              Quantities are sized for your household this week.
                             </p>
                             <Link
                               href="/basket"
                               className="mt-2 inline-block text-primary underline"
                               onClick={() => setChatOpen(false)}
                             >
-                              View Full Basket
+                              View all {m.basketSummary.items.length} items with
+                              quantities
                             </Link>
                           </div>
                         )}

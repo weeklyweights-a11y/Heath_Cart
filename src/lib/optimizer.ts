@@ -9,6 +9,7 @@ import {
   SEVERITY_CONDITIONS,
 } from "./basket-config";
 import { enrichBasketItems } from "./basket-enrich";
+import { formatBasketItemWhy } from "./member-labels";
 import type { ActiveMember, BasketItem, BasketResult } from "./types";
 import { weeklyTargetsForMember } from "./rda";
 
@@ -113,7 +114,7 @@ export async function generateBasket(
   const ctx = await buildActiveFamilyContext(familyId);
   const members = ctx.activeMembers;
   const gaps = calculateNutrientGaps(members);
-  const scores = await scoreProductsForFamily(familyId);
+  const scores = await scoreProductsForFamily(familyId, { ctx });
   const scoreMap = new Map(scores.map((s) => [s.productId, s]));
 
   const products = await prisma.product.findMany({
@@ -166,7 +167,13 @@ export async function generateBasket(
           weightUnit: variant.weightUnit,
         },
         price: qty.unitPrice * qty.quantity,
-        reasoning: qty.reasoning,
+        reasoning: formatBasketItemWhy({
+          category: p.category,
+          membersBenefiting: benefiting,
+          scoreReasoning: scoreMap.get(p.id)?.reasoning ?? [],
+          headcount: members.length,
+          variantLabel: `${variant.weightValue} ${variant.weightUnit}`,
+        }),
         membersBenefiting: benefiting,
         priority: maxCondScore,
         nutrients: {

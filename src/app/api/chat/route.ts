@@ -66,7 +66,9 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    const updatedScores = await scoreProductsForFamily(body.data.familyId);
+    const updatedScores = await scoreProductsForFamily(body.data.familyId, {
+      force: true,
+    });
 
     const budget =
       body.data.budget ??
@@ -77,11 +79,24 @@ export async function POST(request: NextRequest) {
       ...(budget != null ? { budget } : {}),
     });
 
+    const nameIds = Array.from(
+      new Set([
+        ...updatedScores.slice(0, 20).map((s) => s.productId),
+        ...basket.items.map((i) => i.productId),
+      ]),
+    );
+    const nameRows = await prisma.product.findMany({
+      where: { id: { in: nameIds } },
+      select: { id: true, nameEn: true },
+    });
+    const productNames = new Map(nameRows.map((r) => [r.id, r.nameEn]));
+
     const response = await generateResponse(
       body.data.message,
       applied.mergedContext,
       updatedScores,
       basket,
+      productNames,
     );
 
     return ok({

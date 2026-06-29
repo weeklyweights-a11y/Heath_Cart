@@ -47,7 +47,12 @@ export default function BasketItemRow({
         >
           {variantLabel}
         </button>
-        <p className="mt-1 text-sm italic text-text/70">{item.reasoning}</p>
+        {item.membersBenefiting.length > 0 && (
+          <p className="mt-1 text-xs font-medium text-primary">
+            For: {item.membersBenefiting.join(", ")}
+          </p>
+        )}
+        <p className="mt-1 text-sm text-text/80">{item.reasoning}</p>
         <div className="mt-2 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <button

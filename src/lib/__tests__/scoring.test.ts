@@ -111,7 +111,7 @@ describe("scoring scenarios", () => {
 
   it("1) base scoring — kale high, peanut butter avoid for Jake", async () => {
     await clearWeeklyContext(coreFamilyId);
-    const scores = await scoreProductsForFamily(coreFamilyId);
+    const scores = await scoreProductsForFamily(coreFamilyId, { force: true });
     const kale = await findProduct("Kale");
     const peanut = await findProduct("Peanut Butter");
     const kaleScore = scores.find((s) => s.productId === kale?.id);
@@ -127,7 +127,7 @@ describe("scoring scenarios", () => {
         { action: "add_temp", name: "Linda", conditions: ["celiac"] },
       ],
     });
-    const scores = await scoreProductsForFamily(coreFamilyId);
+    const scores = await scoreProductsForFamily(coreFamilyId, { force: true });
     const sourdough = await findProduct("Sourdough");
     const breadScore = scores.find((s) => s.productId === sourdough?.id);
     expect(breadScore?.badge).toBe("avoid");
@@ -135,12 +135,12 @@ describe("scoring scenarios", () => {
 
   it("3) Jake cold — hydrating items rank higher", async () => {
     await clearWeeklyContext(coreFamilyId);
-    const base = await scoreProductsForFamily(coreFamilyId);
+    const base = await scoreProductsForFamily(coreFamilyId, { force: true });
     await setWeeklyContext(coreFamilyId, {
       ...emptyExtractedContext(),
       health_states: [{ member: "Jake", condition: "cold", since: "today" }],
     });
-    const scores = await scoreProductsForFamily(coreFamilyId);
+    const scores = await scoreProductsForFamily(coreFamilyId, { force: true });
     const watermelon = await findProduct("Watermelon");
     const wm = scores.find((s) => s.productId === watermelon?.id);
     const baseWm = base.find((s) => s.productId === watermelon?.id);
@@ -153,7 +153,7 @@ describe("scoring scenarios", () => {
       mood: { overall: "bbq" },
       dietary_needs: [{ requirement: "bbq" }],
     });
-    const scores = await scoreProductsForFamily(coreFamilyId);
+    const scores = await scoreProductsForFamily(coreFamilyId, { force: true });
     const chicken = await findProduct("Chicken Breast");
     const ch = scores.find((s) => s.productId === chicken?.id);
     expect(ch && ch.score).toBeGreaterThan(0);
@@ -168,7 +168,7 @@ describe("scoring scenarios", () => {
         { action: "members_away", name: "Jake" },
       ],
     });
-    const scores = await scoreProductsForFamily(fullFamilyId);
+    const scores = await scoreProductsForFamily(fullFamilyId, { force: true });
     const peanut = await findProduct("Peanut Butter");
     const pb = scores.find((s) => s.productId === peanut?.id);
     const jakeReason = pb?.reasoning.some((r) => r.includes("Jake")) ?? false;
@@ -177,7 +177,7 @@ describe("scoring scenarios", () => {
 
   it("6) cleared context returns chronic-only scoring", async () => {
     await clearWeeklyContext(coreFamilyId);
-    const a = await scoreProductsForFamily(coreFamilyId);
+    const a = await scoreProductsForFamily(coreFamilyId, { force: true });
     const b = await scoreProductsForFamily(coreFamilyId);
     expect(a.map((s) => s.productId)).toEqual(b.map((s) => s.productId));
   });
