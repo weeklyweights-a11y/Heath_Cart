@@ -73,6 +73,14 @@ export const basketAdjustSchema = z.object({
   ),
 });
 
+export const basketAddSchema = z.object({
+  familyId: z.string().min(1),
+  basketId: z.string().optional(),
+  productId: z.string().min(1),
+  variantId: z.string().min(1),
+  quantity: z.number().positive().optional(),
+});
+
 export function parseId(id: string | undefined, label: string): string {
   if (!id || id.trim() === "") {
     throw new Error(`Missing ${label}`);

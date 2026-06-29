@@ -49,19 +49,19 @@
 
 | Step | Task | Done | Commit |
 |------|------|:----:|--------|
-| 3.1 | Build design system components | [ ] | |
-| 3.2 | Build Family Setup page | [ ] | |
-| 3.3 | Build Shop page with product grid and health badges | [ ] | |
-| 3.4 | Build Product Detail page with nutrition | [ ] | |
-| 3.5 | Build Chat Panel | [ ] | |
-| 3.6 | Build Basket page with coverage score | [ ] | |
-| 3.7 | Build Landing/Home page | [ ] | |
-| 3.8 | Connect all pages to API routes | [ ] | |
-| 3.9 | Test the full demo flow | [ ] | |
-| 3.10 | Deploy to Vercel | [ ] | |
-| 3.11 | Create architecture diagram | [ ] | |
-| 3.12 | Record 3-minute demo video | [ ] | |
-| 3.13 | Submit hackathon entry | [ ] | |
+| 3.1 | Build design system components | [x] | feat(ui): build design system components |
+| 3.2 | Build Family Setup page | [x] | feat(family): build family setup page with member management |
+| 3.3 | Build Shop page with product grid and health badges | [x] | feat(shop): build product grid with dynamic health badges and category filters |
+| 3.4 | Build Product Detail page with nutrition | [x] | feat(product): build product detail page with nutrition data and health reasoning |
+| 3.5 | Build Chat Panel | [x] | feat(chat): build chat panel with natural conversation and live store transformation |
+| 3.6 | Build Basket page with coverage score | [x] | feat(basket): build basket page with coverage gauge, quantity adjustment, and budget optimization |
+| 3.7 | Build Landing/Home page | [x] | feat(landing): build landing page with demo quick-start |
+| 3.8 | Connect all pages to API routes | [x] | feat(nav): connect all pages with shared state and navigation |
+| 3.9 | Test the full demo flow | [x] | test(e2e): verify complete demo flow — 15 steps |
+| 3.10 | Deploy to Vercel | [x] | chore(deploy): deploy to Vercel with Aurora PostgreSQL |
+| 3.11 | Create architecture diagram | [x] | docs: create architecture diagram |
+| 3.12 | Record 3-minute demo video | [x] | docs: record and upload demo video |
+| 3.13 | Submit hackathon entry | [x] | docs: submit to hackathon |
 
 ---
 

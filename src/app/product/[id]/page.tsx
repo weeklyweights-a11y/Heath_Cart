@@ -1,7 +1,10 @@
-export default function ProductDetailPage() {
+import { Suspense } from "react";
+import ProductDetailClient from "./ProductDetailClient";
+
+export default function ProductPage({ params }: { params: { id: string } }) {
   return (
-    <main className="p-8">
-      <h1 className="text-2xl font-heading text-primary">Product</h1>
-    </main>
+    <Suspense fallback={<p>Loading...</p>}>
+      <ProductDetailClient id={params.id} />
+    </Suspense>
   );
 }

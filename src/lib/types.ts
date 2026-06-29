@@ -112,6 +112,8 @@ export interface BasketItem {
   price: number;
   reasoning: string;
   membersBenefiting: string[];
+  category?: string;
+  imageUrl?: string | null;
 }
 
 export interface BasketResult {

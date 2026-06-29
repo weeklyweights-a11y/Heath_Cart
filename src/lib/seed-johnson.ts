@@ -1,5 +1,5 @@
-import "./load-env";
-import { prisma } from "./prisma-client";
+import { prisma } from "@/lib/db";
+import { loadFullFamily } from "@/lib/family-context";
 
 const JOHNSON_NAME = "Johnson";
 
@@ -15,10 +15,7 @@ async function getOrCreateFamily() {
   return family;
 }
 
-async function seedMembers(
-  familyId: string,
-  includeLinda: boolean,
-) {
+async function seedMembers(familyId: string, includeLinda: boolean) {
   await clearMembers(familyId);
 
   const start = new Date();
@@ -77,16 +74,5 @@ async function seedMembers(
 export async function seedJohnson(includeLinda = true) {
   const family = await getOrCreateFamily();
   await seedMembers(family.id, includeLinda);
-  console.log(
-    `Johnson family seeded (${includeLinda ? 4 : 3} members), id=${family.id}`,
-  );
-  return family.id;
+  return loadFullFamily(family.id);
 }
-
-async function main() {
-  await seedJohnson(true);
-}
-
-main()
-  .catch(console.error)
-  .finally(() => prisma.$disconnect());

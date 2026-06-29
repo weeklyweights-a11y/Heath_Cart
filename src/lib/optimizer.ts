@@ -8,6 +8,7 @@ import {
   ITEMS_PER_CATEGORY,
   SEVERITY_CONDITIONS,
 } from "./basket-config";
+import { enrichBasketItems } from "./basket-enrich";
 import type { ActiveMember, BasketItem, BasketResult } from "./types";
 import { weeklyTargetsForMember } from "./rda";
 
@@ -252,12 +253,12 @@ export async function generateBasket(
     .filter(Boolean)
     .join("; ");
 
+  const stripped = finalItems.map(({ priority: _p, nutrients: _n, ...rest }) => rest);
+
   const basketRecord = await prisma.basketRecommendation.create({
     data: {
       familyId,
-      basketJson: finalItems.map(
-        ({ priority: _p, nutrients: _n, ...rest }) => rest,
-      ) as unknown as import("@prisma/client").Prisma.InputJsonValue,
+      basketJson: stripped as unknown as import("@prisma/client").Prisma.InputJsonValue,
       coverageScore: cov.overall,
       totalPrice,
       context: weeklySummary || null,
@@ -266,7 +267,7 @@ export async function generateBasket(
 
   return {
     basketId: basketRecord.id,
-    items: finalItems.map(({ priority: _p, nutrients: _n, ...rest }) => rest),
+    items: await enrichBasketItems(stripped),
     coverageScore: Math.round(cov.overall),
     perMemberCoverage: cov.perMember,
     totalPrice,
@@ -339,7 +340,138 @@ export async function adjustBasket(
 
   return {
     basketId,
-    items,
+    items: await enrichBasketItems(items),
+    coverageScore: Math.round(cov.overall),
+    perMemberCoverage: cov.perMember,
+    totalPrice,
+    weeklyContext: record.context ?? "",
+  };
+}
+
+async function itemsToInternal(
+  items: BasketItem[],
+  members: ActiveMember[],
+): Promise<BasketItemInternal[]> {
+  const enriched: BasketItemInternal[] = [];
+  for (const item of items) {
+    const product = await prisma.product.findUnique({
+      where: { id: item.productId },
+      include: { nutrition: true },
+    });
+    enriched.push({
+      ...item,
+      priority: 50,
+      nutrients: {
+        ironMg: product?.nutrition?.ironMg ?? 0,
+        fiberG: product?.nutrition?.fiberG ?? 0,
+        vitaminCMg: product?.nutrition?.vitaminCMg ?? 0,
+        proteinG: product?.nutrition?.proteinG ?? 0,
+        calciumMg: product?.nutrition?.calciumMg ?? 0,
+      },
+    });
+  }
+  return enriched;
+}
+
+export async function getBasketById(basketId: string): Promise<BasketResult> {
+  const record = await prisma.basketRecommendation.findUnique({
+    where: { id: basketId },
+  });
+  if (!record) throw new Error("Basket not found");
+
+  const items = record.basketJson as unknown as BasketItem[];
+  const ctx = await buildActiveFamilyContext(record.familyId);
+  const enriched = await itemsToInternal(items, ctx.activeMembers);
+  const cov = overallCoverage(ctx.activeMembers, enriched);
+  const totalPrice = items.reduce((s, i) => s + i.price, 0);
+
+  return {
+    basketId: record.id,
+    items: await enrichBasketItems(items),
+    coverageScore: Math.round(cov.overall),
+    perMemberCoverage: cov.perMember,
+    totalPrice,
+    weeklyContext: record.context ?? "",
+  };
+}
+
+export async function addItemToBasket(
+  familyId: string,
+  productId: string,
+  variantId: string,
+  quantity: number,
+  basketId?: string,
+): Promise<BasketResult> {
+  let targetId = basketId;
+  if (!targetId) {
+    const generated = await generateBasket(familyId);
+    targetId = generated.basketId;
+  }
+
+  const record = await prisma.basketRecommendation.findFirst({
+    where: { id: targetId, familyId },
+  });
+  if (!record) throw new Error("Basket not found");
+
+  const product = await prisma.product.findUnique({
+    where: { id: productId },
+    include: { variants: true, tags: true, nutrition: true },
+  });
+  if (!product) throw new Error("Product not found");
+  const variant = product.variants.find((v) => v.id === variantId);
+  if (!variant) throw new Error("Variant not found");
+
+  let items = record.basketJson as unknown as BasketItem[];
+  const unitPrice = Number(variant.price);
+  const existing = items.find((i) => i.productId === productId);
+
+  if (existing) {
+    const prevQty = existing.quantity;
+    existing.quantity += quantity;
+    const unit = existing.price / prevQty;
+    if (existing.variant.variantId !== variantId) {
+      existing.variant = {
+        variantId: variant.id,
+        weightValue: variant.weightValue,
+        weightUnit: variant.weightUnit,
+      };
+      existing.price = unitPrice * existing.quantity;
+    } else {
+      existing.price = unit * existing.quantity;
+    }
+  } else {
+    items.push({
+      productId,
+      name: product.nameEn,
+      quantity,
+      variant: {
+        variantId: variant.id,
+        weightValue: variant.weightValue,
+        weightUnit: variant.weightUnit,
+      },
+      price: unitPrice * quantity,
+      reasoning: `Added for your family's weekly needs.`,
+      membersBenefiting: [],
+    });
+  }
+
+  const ctx = await buildActiveFamilyContext(familyId);
+  const enriched = await itemsToInternal(items, ctx.activeMembers);
+  const cov = overallCoverage(ctx.activeMembers, enriched);
+  const totalPrice = items.reduce((s, i) => s + i.price, 0);
+
+  await prisma.basketRecommendation.update({
+    where: { id: targetId },
+    data: {
+      basketJson: items as unknown as import("@prisma/client").Prisma.InputJsonValue,
+      coverageScore: cov.overall,
+      totalPrice,
+    },
+  });
+
+  return {
+    basketId: targetId,
+    items: await enrichBasketItems(items),
     coverageScore: Math.round(cov.overall),
     perMemberCoverage: cov.perMember,
     totalPrice,

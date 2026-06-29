@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import AppShell from "@/components/AppShell";
+import { HealthCartProvider } from "@/context/HealthCartContext";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -13,7 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="font-body">
+        <HealthCartProvider>
+          <AppShell>{children}</AppShell>
+        </HealthCartProvider>
+      </body>
     </html>
   );
 }
