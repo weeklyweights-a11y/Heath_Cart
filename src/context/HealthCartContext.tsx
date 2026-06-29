@@ -10,6 +10,7 @@ import {
   type ReactNode,
 } from "react";
 import {
+  ensureGuestFamily,
   fetchBasket,
   fetchFamily,
   fetchProducts,
@@ -60,6 +61,8 @@ interface HealthCartContextValue {
   loadBasketFromStorage: () => Promise<void>;
   refreshProductCatalog: () => Promise<void>;
   getBasketQty: (productId: string) => number;
+  /** Creates a default household when none exists (for shop without family setup). */
+  ensureFamilyForShopping: () => Promise<string | null>;
 }
 
 const HealthCartContext = createContext<HealthCartContextValue | null>(null);
@@ -140,6 +143,15 @@ export function HealthCartProvider({ children }: { children: ReactNode }) {
     [basket],
   );
 
+  const ensureFamilyForShopping = useCallback(async (): Promise<string | null> => {
+    if (familyId) return familyId;
+    const { familyId: fid, family: f, error } = await ensureGuestFamily();
+    if (!fid || error) return null;
+    setFamilyId(fid);
+    if (f) setFamily(f);
+    return fid;
+  }, [familyId, setFamilyId]);
+
   useEffect(() => {
     async function init() {
       const params = new URLSearchParams(window.location.search);
@@ -199,6 +211,7 @@ export function HealthCartProvider({ children }: { children: ReactNode }) {
       loadBasketFromStorage,
       refreshProductCatalog,
       getBasketQty,
+      ensureFamilyForShopping,
     }),
     [
       familyId,
@@ -220,6 +233,7 @@ export function HealthCartProvider({ children }: { children: ReactNode }) {
       loadBasketFromStorage,
       refreshProductCatalog,
       getBasketQty,
+      ensureFamilyForShopping,
       clearUnread,
       addMessage,
     ],

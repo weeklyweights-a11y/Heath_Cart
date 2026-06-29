@@ -15,7 +15,8 @@ import type { HealthBadge } from "@/lib/types";
 export default function ProductDetailClient({ id }: { id: string }) {
   const searchParams = useSearchParams();
   const urlFamilyId = searchParams.get("familyId");
-  const { familyId: ctxFamilyId, family, basketId, setBasket } = useHealthCart();
+  const { familyId: ctxFamilyId, family, basketId, setBasket, ensureFamilyForShopping } =
+    useHealthCart();
   const familyId = urlFamilyId ?? ctxFamilyId;
   const [product, setProduct] = useState<ProductDetail | null>(null);
   const [variantId, setVariantId] = useState<string>("");
@@ -34,10 +35,11 @@ export default function ProductDetailClient({ id }: { id: string }) {
   const selectedVariant = product?.variants.find((v) => v.id === variantId);
 
   const handleAdd = async () => {
-    if (!familyId || !variantId) return;
+    const fid = familyId ?? (await ensureFamilyForShopping());
+    if (!fid || !variantId) return;
     setAdding(true);
     const { data, error } = await addToBasket({
-      familyId,
+      familyId: fid,
       basketId: basketId ?? undefined,
       productId: id,
       variantId,
@@ -117,14 +119,17 @@ export default function ProductDetailClient({ id }: { id: string }) {
         <Button
           onClick={handleAdd}
           loading={adding}
-          disabled={!familyId}
+          disabled={!variantId}
           className="w-full"
         >
           Add to Basket
         </Button>
         {toast && <p className="text-sm text-primary">{toast}</p>}
         {!familyId && (
-          <p className="text-sm text-text/70">Set up your family to add items.</p>
+          <p className="text-sm text-text/70">
+            No family profile yet — we&apos;ll create a basic household so you can shop.
+            Customize members on the Family page for personalized scores.
+          </p>
         )}
       </div>
     </div>

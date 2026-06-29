@@ -164,3 +164,24 @@ export async function seedJohnsonDemo() {
     { method: "POST" },
   );
 }
+
+/** Creates a minimal household so shop/basket works before full family setup. */
+export async function ensureGuestFamily() {
+  const { data: family, error } = await createFamily("My household");
+  if (!family) return { error: error ?? "Could not create household" };
+
+  const { data: withMember, error: memberError } = await addMember(family.id, {
+    name: "You",
+    age: 30,
+    relation: "self",
+    dietType: "flexible",
+    conditions: [],
+    allergies: [],
+  });
+
+  return {
+    familyId: family.id,
+    family: withMember ?? family,
+    error: memberError,
+  };
+}

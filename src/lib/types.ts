@@ -163,6 +163,8 @@ export interface ProductDto {
   nameEn: string;
   category: string;
   price: number;
+  /** Cheapest variant size label, e.g. "16 oz" */
+  priceVariantLabel?: string;
   imageUrl?: string | null;
   badge?: HealthBadge;
   reasoning?: string[];

@@ -53,16 +53,20 @@ export async function GET(request: NextRequest) {
     });
 
     const mapped = products.map((p) => {
-      const cheapest = p.variants.reduce(
-        (min, v) => Math.min(min, Number(v.price)),
-        Number(p.variants[0]?.price ?? 0),
+      const cheapestVariant = p.variants.reduce(
+        (min, v) => (Number(v.price) < Number(min.price) ? v : min),
+        p.variants[0],
       );
+      const cheapest = Number(cheapestVariant?.price ?? 0);
       const s = scoreMap.get(p.id);
       return {
         id: p.id,
         nameEn: p.nameEn,
         category: p.category,
         price: cheapest,
+        priceVariantLabel: cheapestVariant
+          ? `${cheapestVariant.weightValue} ${cheapestVariant.weightUnit}`
+          : undefined,
         imageUrl: p.imageUrl,
         score: s?.score,
         badge: s?.badge,

@@ -52,7 +52,14 @@ export default function ProductCard({
       <Link href={href}>
         <h3 className="line-clamp-2 font-medium text-text">{product.nameEn}</h3>
       </Link>
-      <p className="mt-1 font-semibold text-primary">{formatUsd(product.price)}</p>
+      <p className="mt-1 font-semibold text-primary">
+        {formatUsd(product.price)}
+        {product.priceVariantLabel ? (
+          <span className="ml-1 text-sm font-normal text-text/60">
+            / {product.priceVariantLabel}
+          </span>
+        ) : null}
+      </p>
       <div className="mt-auto pt-3">
         {basketQty > 0 && onIncrement && onDecrement ? (
           <div className="flex items-center justify-center gap-3">

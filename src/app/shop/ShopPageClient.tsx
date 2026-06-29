@@ -15,6 +15,7 @@ export default function ShopPageClient() {
     getBasketQty,
     setBasket,
     basketId,
+    ensureFamilyForShopping,
   } = useHealthCart();
   const [products, setProducts] = useState<ProductDto[]>([]);
   const [loading, setLoading] = useState(true);
@@ -61,13 +62,14 @@ export default function ShopPageClient() {
   }, [products, scoreMap, familyId]);
 
   const handleAdd = async (product: ProductDto) => {
-    if (!familyId) return;
+    const fid = familyId ?? (await ensureFamilyForShopping());
+    if (!fid) return;
     const res = await fetch(`/api/products/${product.id}`);
     const json = await res.json();
     const variant = json.data?.variants?.[0];
     if (!variant) return;
     const { data } = await addToBasket({
-      familyId,
+      familyId: fid,
       basketId: basketId ?? undefined,
       productId: product.id,
       variantId: variant.id,
@@ -76,22 +78,25 @@ export default function ShopPageClient() {
   };
 
   const handleQtyChange = async (product: ProductDto, delta: number) => {
-    if (!familyId || !basketId) {
-      if (delta > 0) handleAdd(product);
+    const fid = familyId ?? (await ensureFamilyForShopping());
+    if (!fid) return;
+    let activeBasketId = basketId;
+    if (!activeBasketId) {
+      await handleAdd(product);
       return;
     }
     const qty = getBasketQty(product.id) + delta;
     if (qty <= 0) {
       const { data } = await adjustBasket({
-        familyId,
-        basketId,
+        familyId: fid,
+        basketId: activeBasketId,
         adjustments: [{ productId: product.id, newQuantity: "remove" }],
       });
       if (data) setBasket(data);
     } else {
       const { data } = await adjustBasket({
-        familyId,
-        basketId,
+        familyId: fid,
+        basketId: activeBasketId,
         adjustments: [{ productId: product.id, newQuantity: qty }],
       });
       if (data) setBasket(data);
@@ -103,7 +108,8 @@ export default function ShopPageClient() {
       <h1 className="text-3xl text-primary">Shop</h1>
       {!familyId && (
         <p className="rounded-lg bg-white p-4 text-sm text-text/80">
-          Set up your family to see personalized health badges.
+          Add items anytime — set up your family on the Family page for personalized
+          health badges and smarter recommendations.
         </p>
       )}
       <input
@@ -141,9 +147,9 @@ export default function ShopPageClient() {
         familyId={familyId ?? undefined}
         loading={loading}
         getBasketQty={getBasketQty}
-        onAdd={familyId ? handleAdd : undefined}
-        onIncrement={familyId ? (p) => handleQtyChange(p, 1) : undefined}
-        onDecrement={familyId ? (p) => handleQtyChange(p, -1) : undefined}
+        onAdd={handleAdd}
+        onIncrement={(p) => handleQtyChange(p, 1)}
+        onDecrement={(p) => handleQtyChange(p, -1)}
       />
     </div>
   );
