@@ -82,3 +82,4 @@
 | 2026-06-29 | 2.9 | d7bb68d | test(scoring): verify scoring across 6 family context scenarios |
 | 2026-06-29 | 2.10 | 9408941 | test(ai): verify natural language context extraction across 7 input scenarios |
 | 2026-06-29 | 2.11 | 7f6f604 | test(optimizer): verify basket generation across 6 constraint scenarios |
+| 2026-06-29 | 3.1-3.13 | fd6fd3b | feat(phase3): complete frontend, chat-driven shop, basket, and deploy docs |
