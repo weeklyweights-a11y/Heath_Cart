@@ -1,0 +1,587 @@
+[
+  {
+    "condition": "diabetes",
+    "action": "boost",
+    "targetTag": "low_glycemic",
+    "scoreImpact": 15,
+    "reason": "Low glycemic foods help manage blood sugar spikes.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "diabetes",
+    "action": "boost",
+    "targetTag": "high_fiber",
+    "scoreImpact": 12,
+    "reason": "Fiber slows glucose absorption per USDA guidelines.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "diabetes",
+    "action": "boost",
+    "targetTag": "diabetic_friendly",
+    "scoreImpact": 10,
+    "reason": "Low sugar with adequate fiber supports glycemic control.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "diabetes",
+    "action": "limit",
+    "targetTag": "high_sugar",
+    "scoreImpact": -15,
+    "reason": "High sugar foods spike blood glucose.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "diabetes",
+    "action": "avoid",
+    "targetTag": "high_sugar",
+    "scoreImpact": -25,
+    "reason": "Avoid very high sugar items for diabetes management.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "cholesterol",
+    "action": "boost",
+    "targetTag": "high_fiber",
+    "scoreImpact": 14,
+    "reason": "Soluble fiber helps lower LDL cholesterol (AHA).",
+    "source": "aha_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "cholesterol",
+    "action": "limit",
+    "targetTag": "high_saturated_fat",
+    "scoreImpact": -18,
+    "reason": "Saturated fat raises LDL cholesterol.",
+    "source": "aha_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "cholesterol",
+    "action": "avoid",
+    "targetTag": "high_saturated_fat",
+    "scoreImpact": -30,
+    "reason": "Limit high saturated fat for dyslipidemia.",
+    "source": "aha_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "cholesterol",
+    "action": "boost",
+    "targetTag": "low_calorie",
+    "scoreImpact": 8,
+    "reason": "Lower calorie density supports weight and lipid goals.",
+    "source": "aha_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "hypertension",
+    "action": "boost",
+    "targetTag": "potassium_rich",
+    "scoreImpact": 15,
+    "reason": "Potassium-rich foods support blood pressure (DASH).",
+    "source": "aha_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "hypertension",
+    "action": "limit",
+    "targetTag": "high_sodium",
+    "scoreImpact": -20,
+    "reason": "Excess sodium raises blood pressure.",
+    "source": "aha_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "hypertension",
+    "action": "avoid",
+    "targetTag": "high_sodium",
+    "scoreImpact": -35,
+    "reason": "Avoid high-sodium foods for hypertension.",
+    "source": "aha_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "hypertension",
+    "action": "boost",
+    "targetTag": "high_fiber",
+    "scoreImpact": 8,
+    "reason": "DASH pattern emphasizes fiber-rich produce.",
+    "source": "aha_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "anemia",
+    "action": "boost",
+    "targetTag": "iron_rich",
+    "scoreImpact": 20,
+    "reason": "Iron-rich foods address iron-deficiency anemia.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "anemia",
+    "action": "boost",
+    "targetTag": "folate_rich",
+    "scoreImpact": 12,
+    "reason": "Folate supports red blood cell formation.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "anemia",
+    "action": "boost",
+    "targetTag": "vitamin_c_rich",
+    "scoreImpact": 10,
+    "reason": "Vitamin C enhances non-heme iron absorption.",
+    "source": "published_literature",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "anemia",
+    "action": "limit",
+    "targetTag": "high_sugar",
+    "scoreImpact": -5,
+    "reason": "Limit empty calories when focusing on nutrient density.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "thyroid",
+    "action": "boost",
+    "targetTag": "selenium_rich",
+    "scoreImpact": 12,
+    "reason": "Selenium supports thyroid hormone metabolism.",
+    "source": "published_literature",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "thyroid",
+    "action": "limit",
+    "targetTag": "high_goitrogen",
+    "scoreImpact": -10,
+    "reason": "Raw cruciferous goitrogens may affect iodine uptake when overconsumed.",
+    "source": "published_literature",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "thyroid",
+    "action": "avoid",
+    "targetTag": "high_goitrogen",
+    "scoreImpact": -18,
+    "reason": "Limit high-goitrogen foods with thyroid concerns.",
+    "source": "published_literature",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "obesity",
+    "action": "boost",
+    "targetTag": "high_fiber",
+    "scoreImpact": 14,
+    "reason": "High fiber increases satiety per USDA weight guidance.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "obesity",
+    "action": "boost",
+    "targetTag": "low_calorie",
+    "scoreImpact": 16,
+    "reason": "Low calorie density supports energy balance.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "obesity",
+    "action": "limit",
+    "targetTag": "high_sugar",
+    "scoreImpact": -12,
+    "reason": "Limit added sugars for weight management.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "obesity",
+    "action": "limit",
+    "targetTag": "high_saturated_fat",
+    "scoreImpact": -10,
+    "reason": "Limit energy-dense saturated fats.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "pregnancy_trimester_1",
+    "action": "boost",
+    "targetTag": "folate_rich",
+    "scoreImpact": 18,
+    "reason": "Folate critical for neural tube development (USDA pregnancy guidance).",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "pregnancy_trimester_1",
+    "action": "boost",
+    "targetTag": "iron_rich",
+    "scoreImpact": 14,
+    "reason": "Iron needs rise during pregnancy.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "pregnancy_trimester_1",
+    "action": "boost",
+    "targetTag": "calcium_rich",
+    "scoreImpact": 12,
+    "reason": "Calcium supports fetal bone development.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "pregnancy_trimester_1",
+    "action": "limit",
+    "targetTag": "high_sugar",
+    "scoreImpact": -8,
+    "reason": "Limit excess sugar during pregnancy.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "pregnancy_trimester_2",
+    "action": "boost",
+    "targetTag": "folate_rich",
+    "scoreImpact": 17,
+    "reason": "Folate critical for neural tube development (USDA pregnancy guidance).",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "pregnancy_trimester_2",
+    "action": "boost",
+    "targetTag": "iron_rich",
+    "scoreImpact": 13,
+    "reason": "Iron needs rise during pregnancy.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "pregnancy_trimester_2",
+    "action": "boost",
+    "targetTag": "calcium_rich",
+    "scoreImpact": 12,
+    "reason": "Calcium supports fetal bone development.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "pregnancy_trimester_2",
+    "action": "limit",
+    "targetTag": "high_sugar",
+    "scoreImpact": -8,
+    "reason": "Limit excess sugar during pregnancy.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "pregnancy_trimester_3",
+    "action": "boost",
+    "targetTag": "folate_rich",
+    "scoreImpact": 16,
+    "reason": "Folate critical for neural tube development (USDA pregnancy guidance).",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "pregnancy_trimester_3",
+    "action": "boost",
+    "targetTag": "iron_rich",
+    "scoreImpact": 12,
+    "reason": "Iron needs rise during pregnancy.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "pregnancy_trimester_3",
+    "action": "boost",
+    "targetTag": "calcium_rich",
+    "scoreImpact": 12,
+    "reason": "Calcium supports fetal bone development.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "pregnancy_trimester_3",
+    "action": "limit",
+    "targetTag": "high_sugar",
+    "scoreImpact": -8,
+    "reason": "Limit excess sugar during pregnancy.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "celiac",
+    "action": "boost",
+    "targetTag": "gluten_free",
+    "scoreImpact": 20,
+    "reason": "Gluten-free foods safe for celiac disease.",
+    "source": "published_literature",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "celiac",
+    "action": "avoid",
+    "targetTag": "contains_gluten",
+    "scoreImpact": -30,
+    "reason": "Wheat, barley, and rye products contain gluten and must be avoided for celiac disease.",
+    "source": "published_literature",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "peanut_allergy",
+    "action": "boost",
+    "targetTag": "peanut_free",
+    "scoreImpact": 25,
+    "reason": "Peanut-free foods required for peanut allergy.",
+    "source": "published_literature",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "peanut_allergy",
+    "action": "avoid",
+    "targetTag": "peanut_free",
+    "scoreImpact": -40,
+    "reason": "Peanut-containing products are unsafe.",
+    "source": "published_literature",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "lactose_intolerance",
+    "action": "boost",
+    "targetTag": "dairy_free",
+    "scoreImpact": 18,
+    "reason": "Dairy-free alternatives avoid lactose.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "lactose_intolerance",
+    "action": "limit",
+    "targetTag": "dairy_free",
+    "scoreImpact": -15,
+    "reason": "Lactose-containing dairy may cause symptoms.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "fever",
+    "action": "boost",
+    "targetTag": "hydrating",
+    "scoreImpact": 12,
+    "reason": "Hydrating foods support fluid intake during fever.",
+    "source": "published_literature",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "fever",
+    "action": "boost",
+    "targetTag": "easily_digestible",
+    "scoreImpact": 10,
+    "reason": "Easy-to-digest foods during illness (WHO supportive care).",
+    "source": "published_literature",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "fever",
+    "action": "limit",
+    "targetTag": "high_saturated_fat",
+    "scoreImpact": -8,
+    "reason": "Heavy fats harder to digest during fever.",
+    "source": "published_literature",
+    "autoExpireDays": 7
+  },
+  {
+    "condition": "cold",
+    "action": "boost",
+    "targetTag": "vitamin_c_rich",
+    "scoreImpact": 12,
+    "reason": "Vitamin C supports immune function during cold.",
+    "source": "published_literature",
+    "autoExpireDays": 5
+  },
+  {
+    "condition": "cold",
+    "action": "boost",
+    "targetTag": "hydrating",
+    "scoreImpact": 10,
+    "reason": "Fluids and hydrating foods during upper respiratory illness.",
+    "source": "published_literature",
+    "autoExpireDays": 5
+  },
+  {
+    "condition": "cold",
+    "action": "boost",
+    "targetTag": "easily_digestible",
+    "scoreImpact": 8,
+    "reason": "Light foods when appetite is reduced.",
+    "source": "published_literature",
+    "autoExpireDays": 5
+  },
+  {
+    "condition": "cough",
+    "action": "boost",
+    "targetTag": "hydrating",
+    "scoreImpact": 12,
+    "reason": "Warm fluids soothe cough symptoms.",
+    "source": "published_literature",
+    "autoExpireDays": 5
+  },
+  {
+    "condition": "cough",
+    "action": "limit",
+    "targetTag": "high_sugar",
+    "scoreImpact": -6,
+    "reason": "Limit irritants; very sweet foods may worsen throat discomfort.",
+    "source": "published_literature",
+    "autoExpireDays": 5
+  },
+  {
+    "condition": "stomach_upset",
+    "action": "boost",
+    "targetTag": "easily_digestible",
+    "scoreImpact": 15,
+    "reason": "Bland easy-digest foods for GI upset.",
+    "source": "published_literature",
+    "autoExpireDays": 3
+  },
+  {
+    "condition": "stomach_upset",
+    "action": "limit",
+    "targetTag": "high_fiber",
+    "scoreImpact": -10,
+    "reason": "High fiber may worsen acute stomach upset.",
+    "source": "published_literature",
+    "autoExpireDays": 3
+  },
+  {
+    "condition": "stomach_upset",
+    "action": "avoid",
+    "targetTag": "high_saturated_fat",
+    "scoreImpact": -15,
+    "reason": "Avoid greasy foods during stomach upset.",
+    "source": "published_literature",
+    "autoExpireDays": 3
+  },
+  {
+    "condition": "constipation",
+    "action": "boost",
+    "targetTag": "high_fiber",
+    "scoreImpact": 18,
+    "reason": "Fiber supports bowel regularity.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": 5
+  },
+  {
+    "condition": "constipation",
+    "action": "boost",
+    "targetTag": "hydrating",
+    "scoreImpact": 10,
+    "reason": "Adequate fluids with fiber prevent constipation.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": 5
+  },
+  {
+    "condition": "period_cramps",
+    "action": "boost",
+    "targetTag": "magnesium_rich",
+    "scoreImpact": 14,
+    "reason": "Magnesium may ease menstrual cramps (literature).",
+    "source": "published_literature",
+    "autoExpireDays": 5
+  },
+  {
+    "condition": "period_cramps",
+    "action": "boost",
+    "targetTag": "iron_rich",
+    "scoreImpact": 10,
+    "reason": "Iron supports blood loss replacement.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": 5
+  },
+  {
+    "condition": "period_cramps",
+    "action": "limit",
+    "targetTag": "high_sodium",
+    "scoreImpact": -8,
+    "reason": "Sodium may worsen bloating with cramps.",
+    "source": "published_literature",
+    "autoExpireDays": 5
+  },
+  {
+    "condition": "post_surgery",
+    "action": "boost",
+    "targetTag": "high_protein",
+    "scoreImpact": 16,
+    "reason": "Protein supports wound healing post-surgery.",
+    "source": "published_literature",
+    "autoExpireDays": 14
+  },
+  {
+    "condition": "post_surgery",
+    "action": "boost",
+    "targetTag": "easily_digestible",
+    "scoreImpact": 12,
+    "reason": "Gentle foods during early recovery.",
+    "source": "published_literature",
+    "autoExpireDays": 14
+  },
+  {
+    "condition": "post_surgery",
+    "action": "limit",
+    "targetTag": "high_sugar",
+    "scoreImpact": -8,
+    "reason": "Limit sugar while focusing on recovery nutrition.",
+    "source": "published_literature",
+    "autoExpireDays": 14
+  },
+  {
+    "condition": "fasting",
+    "action": "boost",
+    "targetTag": "hydrating",
+    "scoreImpact": 15,
+    "reason": "Hydration during fasting periods.",
+    "source": "published_literature",
+    "autoExpireDays": 1
+  },
+  {
+    "condition": "fasting",
+    "action": "limit",
+    "targetTag": "high_protein",
+    "scoreImpact": -5,
+    "reason": "Heavy protein meals break fast intent.",
+    "source": "published_literature",
+    "autoExpireDays": 1
+  },
+  {
+    "condition": "obesity",
+    "action": "boost",
+    "targetTag": "light_meal",
+    "scoreImpact": 6,
+    "reason": "Light meals support calorie goals.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  },
+  {
+    "condition": "diabetes",
+    "action": "boost",
+    "targetTag": "bbq_friendly",
+    "scoreImpact": 5,
+    "reason": "Lean grilled options fit diabetic BBQ choices.",
+    "source": "usda_dietary_guidelines",
+    "autoExpireDays": null
+  }
+]
