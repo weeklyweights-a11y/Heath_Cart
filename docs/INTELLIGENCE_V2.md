@@ -85,3 +85,19 @@ Follow [`.cursor/rules/ponytail.mdc`](../../.cursor/rules/ponytail.mdc): reuse `
 | safety-audit | Deterministic | Re-check allergies/vegetarian |
 | semantic-retrieval | Deterministic | pgvector or intent fallback |
 | basket-csp | Deterministic | Category selection + budget |
+
+## Shipped vs deferred (v2 release)
+
+**Shipped (Phases 0–6):** Postgres knowledge graph, hard-filter, normalized nutrient cosine, hybrid scoring, CSP basket, safety audit, orchestrator, constrained formatter, intent→tag semantic fallback (15%), golden tests, `verify:v2-ready` / `verify:v2-completion`.
+
+**Deferred (Phase 7 stretch — follow-up epic):**
+
+| Item | Status | Notes |
+|------|--------|-------|
+| pgvector semantic | Not enabled | `PGVECTOR_ENABLED=false`; intent→tag fallback is production default |
+| Neo4j Aura sync | Stub | [`neo4j-client.ts`](../src/lib/intelligence/graph/neo4j-client.ts) delegates to Postgres |
+| FoodKG USDA subset | Stub | [`import-foodkg-usda-subset.ts`](../data/scripts/import-foodkg-usda-subset.ts) |
+| v1 deprecation | Rollback kept | Set `INTELLIGENCE_V2=false` to revert; remove after stable prod |
+| Formatter hallucination test | Not automated | Prompt-only guardrails today |
+
+Epic name for later: **Intelligence v2 Phase 7 — stretch**

@@ -83,7 +83,12 @@
 | 2026-06-29 | 2.10 | 9408941 | test(ai): verify natural language context extraction across 7 input scenarios |
 | 2026-06-29 | 2.11 | 7f6f604 | test(optimizer): verify basket generation across 6 constraint scenarios |
 | 2026-06-29 | 3.1-3.13 | fd6fd3b | feat(phase3): complete frontend, chat-driven shop, basket, and deploy docs |
-| 2026-06-27 | Intel v2 | _pending_ | feat(intelligence): Intelligence Layer v2 — graph, cosine ranking, CSP basket, orchestrator |
+| 2026-06-27 | Intel v2 | a1395a2 | feat(intelligence): ship v2 graph + hybrid scoring + CSP basket |
+| 2026-06-27 | Shop UX | d0d8d27 | feat(shop): add to basket without family setup |
+
+## Intelligence Layer v2 — shipped
+
+Phases 0–6 deployed. Phase 7 stretch deferred — see [docs/INTELLIGENCE_V2.md](./docs/INTELLIGENCE_V2.md#shipped-vs-deferred-v2-release).
 
 ## Intelligence Layer v2
 
