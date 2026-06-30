@@ -53,5 +53,14 @@ coverage/
 # typescript
 *.tsbuildinfo
 
-.vercel
-.env*
+# logs
+*.log
+generate-images.log
+
+# Cursor agent config (local only)
+.cursorrules
+.cursor/
+
+# Markdown docs (README.md is the only doc tracked in git)
+*.md
+!README.md
